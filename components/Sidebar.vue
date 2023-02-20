@@ -29,7 +29,9 @@ const links = [
                     class="flex items-center justify-center h-9 hover:bg-gray-800/40 relative rounded"
                     exact
                 >
-                    <Icon :name="link.icon" class="w-5 h-5 text-white" />
+                    <ClientOnly>
+                        <Icon :name="link.icon" class="w-5 h-5 text-white" />
+                    </ClientOnly>
                 </NuxtLink>
             </li>
         </ul>
@@ -39,19 +41,23 @@ const links = [
                     class="flex items-center justify-center h-9 hover:bg-gray-800/40 relative rounded"
                     title="Settings"
                 >
-                    <Icon
-                        name="heroicons:cog-8-tooth"
-                        class="w-6 h-6 text-white"
-                    />
+                    <ClientOnly>
+                        <Icon
+                            name="heroicons:cog-8-tooth"
+                            class="w-6 h-6 text-white"
+                        />
+                    </ClientOnly>
                 </li>
                 <li
                     class="flex items-center justify-center h-9 hover:bg-gray-800/40 relative rounded"
                     title="Profile"
                 >
-                    <Icon
-                        name="heroicons:user-circle"
-                        class="w-6 h-6 text-white"
-                    />
+                    <ClientOnly>
+                        <Icon
+                            name="heroicons:user-circle"
+                            class="w-6 h-6 text-white"
+                        />
+                    </ClientOnly>
                 </li>
             </ul>
         </div>
@@ -59,8 +65,7 @@ const links = [
 </template>
 
 <style scoped>
-a.nuxt-link-active,
-a.nuxt-link-exact-active {
+.router-link-active {
     @apply bg-gray-800/40 before:block before:absolute before:h-4 before:w-[2px] before:bg-green-600 before:left-0 before:rounded;
 }
 </style>

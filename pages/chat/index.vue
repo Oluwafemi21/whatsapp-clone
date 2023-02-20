@@ -2,8 +2,10 @@
     <NuxtPage />
 </template>
 
-<script>
-export default {};
+<script setup>
+definePageMeta({
+    layout: "custom",
+});
 </script>
 
 <style></style>

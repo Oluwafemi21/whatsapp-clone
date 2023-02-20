@@ -23,9 +23,5 @@
     </div>
 </template>
 
-<script setup>
-definePageMeta({
-    layout: "custom",
-});
-</script>
+<script setup></script>
 <style scoped></style>
