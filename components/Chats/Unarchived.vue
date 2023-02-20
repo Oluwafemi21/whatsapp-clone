@@ -6,7 +6,7 @@
                 <ul class="flex">
                     <li
                         class="flex items-center justify-center px-4 py-2 hover:bg-gray-800/40 relative rounded"
-                        title="New Chat(Ctrl+N) \nNew Group(Ctrl+Shift+N)"
+                        :title="'New Chat(Ctrl+N) New Group(Ctrl+Shift+N)'"
                     >
                         <Icon name="lucide:edit" class="text-white" />
                     </li>
@@ -21,18 +21,10 @@
                 </ul>
             </div>
         </div>
-        <div class="search-box w-full relative">
-            <input
-                type="text"
-                class="text-sm w-full pr-8 h-9 bg-neutral-800 rounded-md text-white border-neutral-800 border-b-2 border-b-white focus:outline-none focus:border-neutral-600 focus:ring-transparent focus:placeholder:text-gray-500 focus:bg-black/40 focus:border-b-green-600 placeholder:text-white"
-                placeholder="Search or start a new chat"
-                title="Ctrl+F"
-            />
-            <Icon
-                name="quill:search"
-                class="absolute top-2.5 right-2 w-4 h-4 text-white"
-            />
-        </div>
+        <FormBaseInput
+            v-model="searchTerm"
+            :placeholder="'Search or start a new chat'"
+        />
     </header>
 
     <section class="h-screen overflow-y-scroll">
@@ -61,11 +53,14 @@
 </template>
 
 <script setup>
+import { ref } from "vue";
 const currentTab = useState("active-component");
 
 const showArchivedChats = () => {
     currentTab.value = "ChatsArchived";
 };
+
+const searchTerm = ref("");
 
 const chats = [
     {

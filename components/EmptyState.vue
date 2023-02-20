@@ -6,7 +6,7 @@
         <article class="max-w-xl text-neutral-500">
             <p>Send and receive messages without keeping your phone online.</p>
             <p>
-                Use Whatsappon on up to 4 linked devices and 1 phone at the same
+                Use Whatsapp on up to 4 linked devices and 1 phone at the same
                 time.
             </p>
         </article>

@@ -1,37 +1,29 @@
 <template>
-    <header class="flex flex-col justify-between gap-3 mb-5 px-2">
-        <div class="flex items-center gap-4">
-            <button
-                class="hover:bg-neutral-800 py-2 px-3 rounded-md"
-                @click="showUnarchivedChats"
-            >
-                <Icon name="heroicons:arrow-left" class="w-4 h-4 text-white" />
-            </button>
-            <h3 class="text-xl font-medium text-white">Archived</h3>
-        </div>
-        <FormBaseInput
-            v-model="searchTerm"
-            :placeholder="'Search archived chats'"
-        />
-    </header>
-    <section class="h-screen overflow-y-scroll">
-        <ul class="flex flex-col gap-2">
-            <li v-for="chat in chats" :key="chat.id">
-                <ChatsChatCard :chat="chat" />
-            </li>
-        </ul>
+    <section
+        class="chats bg-transparent col-span-3 rounded-tl-lg border-black/25 border border-r-0 px-2 py-2"
+    >
+        <header class="flex flex-col justify-between gap-3 mb-5 px-2">
+            <div class="flex items-center justify-between">
+                <h3 class="text-xl font-medium text-white">Status</h3>
+            </div>
+        </header>
+
+        <section class="h-screen overflow-y-scroll">
+            <ul class="flex flex-col gap-2">
+                <li v-for="chat in chats" :key="chat.id">
+                    <ChatsChatCard :chat="chat" />
+                </li>
+            </ul>
+        </section>
     </section>
 </template>
 
 <script setup>
-import { ref } from "vue";
 const currentTab = useState("active-component");
 
-const showUnarchivedChats = () => {
-    currentTab.value = "ChatsUnarchived";
+const showArchivedChats = () => {
+    currentTab.value = "ChatsArchived";
 };
-
-const searchTerm = ref("");
 
 const chats = [
     {
@@ -39,7 +31,7 @@ const chats = [
         name: "Mum Mtn",
         time: "1:43 PM",
         message: "Next week",
-        status: "archived",
+        status: "unarchived",
         messageCount: 1,
     },
     {
@@ -47,7 +39,7 @@ const chats = [
         name: "Mr Marv",
         time: "10:33 AM",
         message: "No issues",
-        status: "archived",
+        status: "unarchived",
         messageCount: 2,
     },
 
@@ -56,7 +48,7 @@ const chats = [
         name: "Mr Marv",
         time: "10:33 AM",
         message: "No issues",
-        status: "archived",
+        status: "unarchived",
         messageCount: 0,
     },
 
@@ -65,7 +57,7 @@ const chats = [
         name: "Moses",
         time: "10:33 AM",
         message: "No issues",
-        status: "archived",
+        status: "unarchived",
         messageCount: 2,
     },
     {
@@ -73,7 +65,7 @@ const chats = [
         name: "Simon",
         time: "10:33 AM",
         message: "No issues",
-        status: "archived",
+        status: "unarchived",
         messageCount: 3,
     },
     {
@@ -81,7 +73,7 @@ const chats = [
         name: "Peter",
         time: "10:33 AM",
         message: "No issues",
-        status: "archived",
+        status: "unarchived",
         messageCount: 0,
     },
     {
@@ -89,7 +81,7 @@ const chats = [
         name: "David",
         time: "10:33 AM",
         message: "No issues",
-        status: "archived",
+        status: "unarchived",
         messageCount: 0,
     },
     {
@@ -97,7 +89,7 @@ const chats = [
         name: "Daniel",
         time: "10:33 AM",
         message: "No issues",
-        status: "archived",
+        status: "unarchived",
         messageCount: 0,
     },
     {
@@ -105,7 +97,7 @@ const chats = [
         name: "Moses",
         time: "10:33 AM",
         message: "No issues",
-        status: "archived",
+        status: "unarchived",
         messageCount: 0,
     },
     {
@@ -113,7 +105,7 @@ const chats = [
         name: "Developer's Community",
         time: "10:33 AM",
         message: "No issues",
-        status: "archived",
+        status: "unarchived",
         messageCount: 0,
     },
     {
@@ -121,7 +113,7 @@ const chats = [
         name: "Family",
         time: "10:33 AM",
         message: "Big: Helloooo",
-        status: "archived",
+        status: "unarchived",
         messageCount: 0,
     },
 ];
