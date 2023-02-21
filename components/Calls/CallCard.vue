@@ -1,7 +1,7 @@
 <template>
     <NuxtLink
         :to="{
-            name: 'call-index-user-id',
+            name: 'calls-user-id',
             params: {
                 user: call.name,
                 id: call.id,
@@ -12,31 +12,57 @@
         <div
             class="bg-neutral-700 h-12 w-12 grid place-content-center rounded-full flex-shrink-0"
         >
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                class="w-7 h-7 text-neutral-500"
-            >
-                <path
-                    fill-rule="evenodd"
-                    d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z"
-                    clip-rule="evenodd"
-                />
-            </svg>
+            <Icon
+                name="mingcute:user-3-fill"
+                class="w-6 h-6 text-neutral-500"
+            />
         </div>
         <div class="w-full flex flex-col gap-2">
             <div class="flex items-center justify-between text-white">
                 <p class="font-medium text-xs">{{ call.name }}</p>
                 <span class="text-xs text-gray-500">{{ call.time }}</span>
             </div>
-            <div class="flex items-center justify-between gap-2">
-                <div class="flex items-center gap-2"></div>
+            <div class="flex items-center gap-2">
+                <Icon
+                    v-if="call.status === 'missed'"
+                    class="text-red-400"
+                    :name="
+                        call.type === 'phone'
+                            ? 'uil:missed-call'
+                            : 'material-symbols:missed-video-call-outline'
+                    "
+                />
+                <Icon
+                    v-else
+                    class="text-white"
+                    :name="
+                        call.type === 'phone'
+                            ? 'ph:phone-light'
+                            : 'majesticons:video-camera-line'
+                    "
+                />
+                <span
+                    class="text-xs capitalize"
+                    :class="{
+                        'text-red-400': call.status === 'missed',
+                        'text-white': call.status !== 'missed',
+                    }"
+                    >{{ call.status }}
+                    {{ call.callCount > 0 ? `(${call.callCount})` : null }}
+                </span>
             </div>
         </div>
     </NuxtLink>
 </template>
 
-<script setup></script>
+<script setup>
+defineProps({
+    call: {
+        type: Object,
+        required: true,
+        default: () => ({}),
+    },
+});
+</script>
 
 <style></style>

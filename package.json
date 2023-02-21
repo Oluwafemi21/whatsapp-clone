@@ -9,10 +9,12 @@
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.4.1",
+    "@vueuse/nuxt": "^9.13.0",
     "nuxt": "^3.2.2"
   },
   "dependencies": {
     "@tailwindcss/forms": "^0.5.3",
+    "@vueuse/core": "^9.13.0",
     "nuxt-icon": "^0.3.2"
   }
 }

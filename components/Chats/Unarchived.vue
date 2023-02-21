@@ -2,6 +2,7 @@
     <header class="flex flex-col justify-between gap-3 mb-5 px-2">
         <div class="flex items-center justify-between">
             <h3 class="text-xl font-medium text-white">Chats</h3>
+
             <div class="tools">
                 <ul class="flex">
                     <li
@@ -21,6 +22,7 @@
                 </ul>
             </div>
         </div>
+
         <FormBaseInput
             v-model="searchTerm"
             :placeholder="'Search or start a new chat'"

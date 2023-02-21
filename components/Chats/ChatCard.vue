@@ -43,7 +43,7 @@
 
                     <span
                         v-if="chat.status === 'archived'"
-                        class="text-white text-xs bg-neutral-700 p-1 rounded-md"
+                        class="text-white text-[10px] bg-neutral-700 py-0.5 px-1 rounded-md capitalize"
                         >{{ chat.status }}</span
                     >
                     <span

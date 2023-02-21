@@ -20,6 +20,18 @@
                 >Tailwind CSS</NuxtLink
             >.
         </p>
+        <div class="flex items-center gap-5">
+            <NuxtLink
+                to="/chat"
+                class="bg-green-600 text-white px-5 py-2 rounded-full font-medium hover:bg-green-500"
+                >Get Started</NuxtLink
+            >
+            <NuxtLink
+                to="/"
+                class="bg-neutral-900 text-white px-5 py-2 rounded-full hover:bg-neutral-800 ring-2 ring-neutral-700"
+                >View on Github</NuxtLink
+            >
+        </div>
     </div>
 </template>
 

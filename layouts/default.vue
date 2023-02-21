@@ -1,9 +1,9 @@
 <template>
     <div class="h-screen flex flex-col w-full overflow-hidden">
         <TheHeader />
-        <Sidebar />
-        <main class="bg-black/90 flex-1 ml-12 mt-10">
+        <main class="bg-black/90 flex-1 mt-10">
             <section class="chat w-full bg-transparent border border-black/25">
+                <NuxtLoadingIndicator />
                 <slot />
             </section>
         </main>

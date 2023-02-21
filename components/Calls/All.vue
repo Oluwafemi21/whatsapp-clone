@@ -13,8 +13,8 @@
 
         <section class="h-screen overflow-y-scroll">
             <ul class="flex flex-col gap-2">
-                <li v-for="chat in chats" :key="chat.id">
-                    <ChatsChatCard :chat="chat" />
+                <li v-for="call in calls" :key="call.id">
+                    <CallsCallCard :call="call" />
                 </li>
             </ul>
         </section>
@@ -25,19 +25,16 @@
 import { ref } from "vue";
 const currentTab = useState("active-component");
 
-const showArchivedChats = () => {
-    currentTab.value = "ChatsArchived";
-};
-
 const searchTerm = ref("");
 
-const chats = [
+const calls = [
     {
         id: 1,
         name: "Mum Mtn",
         time: "1:43 PM",
         status: "missed",
         callCount: 1,
+        type: "phone",
     },
     {
         id: 2,
@@ -46,6 +43,7 @@ const chats = [
 
         status: "missed",
         callCount: 2,
+        type: "video",
     },
 
     {
@@ -55,14 +53,16 @@ const chats = [
 
         status: "missed",
         callCount: 0,
+        type: "phone",
     },
 
     {
         id: 4,
         name: "Moses",
         time: "10:33 AM",
-        status: "missed",
+        status: "outgoing",
         callCount: 2,
+        type: "phone",
     },
     {
         id: 5,
@@ -70,6 +70,7 @@ const chats = [
         time: "10:33 AM",
         status: "missed",
         callCount: 3,
+        type: "phone",
     },
     {
         id: 6,
@@ -77,6 +78,7 @@ const chats = [
         time: "10:33 AM",
         status: "incoming",
         callCount: 0,
+        type: "phone",
     },
 ];
 </script>

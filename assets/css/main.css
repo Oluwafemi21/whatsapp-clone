@@ -25,3 +25,57 @@ body {
     background-color: #d6d6d6;
     border-radius: 24px;
 }
+
+.page-enter-active,
+.page-leave-active {
+    transition: opacity 0.5s;
+}
+
+.page-enter,
+.page-leave-to {
+    opacity: 0;
+}
+
+/* Layout */
+.layout-enter-active,
+.layout-leave-active {
+    transition: opacity 0.1s;
+}
+
+.layout-enter,
+.layout-leave-active {
+    opacity: 0;
+}
+
+.slide-bottom-enter-active,
+.slide-bottom-leave-active {
+    transition: opacity 0.2s ease-in-out, transform 0.15s ease-in-out;
+}
+
+.slide-bottom-enter,
+.slide-bottom-leave-to {
+    opacity: 0;
+    transform: translate3d(0, 15px, 0);
+}
+
+.slide-top-enter-active,
+.slide-top-leave-active {
+    transition: opacity 0.1s ease-in-out, transform 0.15s ease-in-out;
+}
+
+.slide-top-enter,
+.slide-top-leave-to {
+    opacity: 0;
+    transform: translateY(-15px);
+}
+
+.slide-right-enter-active,
+.slide-right-leave-active {
+    transition: opacity 0.2s ease-in-out, transform 0.15s ease-in-out;
+}
+
+.slide-right-enter,
+.slide-right-leave-to {
+    opacity: 0;
+    transform: translateX(-30px);
+}
