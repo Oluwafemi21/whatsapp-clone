@@ -31,7 +31,7 @@
 
     <section class="h-screen overflow-y-scroll">
         <button
-            class="hover:bg-neutral-800 w-full flex items-center py-2.5 rounded-md pl-6 gap-6 mb-1"
+            class="hover:bg-neutral-800 focus:outline-none focus:bg-neutral-800 w-full flex items-center py-2.5 rounded-md pl-6 gap-6 mb-1"
             @click="showArchivedChats"
         >
             <Icon
@@ -46,11 +46,13 @@
                 <span class="text-xs text-green-600">71</span>
             </div>
         </button>
-        <ul class="flex flex-col gap-2">
-            <li v-for="chat in chats" :key="chat.id">
-                <ChatsChatCard :chat="chat" />
-            </li>
-        </ul>
+        <Transition name="slide-top" mode="out-in">
+            <ul class="flex flex-col gap-2">
+                <li v-for="chat in chats" :key="chat.id">
+                    <ChatsChatCard :chat="chat" />
+                </li>
+            </ul>
+        </Transition>
     </section>
 </template>
 

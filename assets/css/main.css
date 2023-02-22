@@ -39,12 +39,13 @@ body {
 /* Layout */
 .layout-enter-active,
 .layout-leave-active {
-    transition: opacity 0.1s;
+    transition: background-color 0.5s;
+    background-color: hsl(0%, 0%, 10%);
 }
 
 .layout-enter,
 .layout-leave-active {
-    opacity: 0;
+    background-color: hsl(0%, 0%, 10%);
 }
 
 .slide-bottom-enter-active,

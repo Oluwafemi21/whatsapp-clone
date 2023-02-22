@@ -20,46 +20,47 @@ const links = [
 
 <template>
     <aside
-        class="sidebar fixed flex flex-col left-0 top-10 h-full w-12 bg-black/90 py-3"
+        class="sidebar fixed flex flex-col justify-between left-0 top-10 h-full w-12 bg-black/90 py-3"
     >
-        <ul class="px-1 pt-1 flex flex-col flex-[0.8] gap-2">
-            <li v-for="link in links" :key="link.name" :title="link.name">
+        <ul class="pt-1 flex flex-col gap-2 mb-3">
+            <li v-for="link in links" :key="link.name" class="relative px-1">
                 <NuxtLink
                     :to="link.route"
-                    class="flex items-center justify-center h-9 hover:bg-gray-800/40 relative rounded"
+                    class="flex items-center justify-center h-9 hover:bg-gray-800/40 focus:outline-none focus:bg-gray-800/40 relative rounded group"
                     exact
                 >
                     <ClientOnly>
                         <Icon :name="link.icon" class="w-5 h-5 text-white" />
                     </ClientOnly>
+                    <Tooltip :text="link.name" />
                 </NuxtLink>
             </li>
         </ul>
-        <div class="bottom-nav flex-[0.2]">
-            <ul class="px-1 pt-1 flex flex-col gap-2">
-                <li
-                    class="flex items-center justify-center h-9 hover:bg-gray-800/40 relative rounded"
-                    title="Settings"
+        <div class="bottom-nav mt-auto sticky bottom-10">
+            <div class="px-1 pt-1 flex flex-col gap-2">
+                <button
+                    class="flex items-center justify-center h-9 hover:bg-gray-800/40 group relative rounded focus:outline-none focus:bg-gray-800/40"
                 >
+                    <Tooltip text="Settings" />
                     <ClientOnly>
                         <Icon
                             name="heroicons:cog-8-tooth"
                             class="w-6 h-6 text-white"
                         />
                     </ClientOnly>
-                </li>
-                <li
-                    class="flex items-center justify-center h-9 hover:bg-gray-800/40 relative rounded"
-                    title="Profile"
+                </button>
+                <button
+                    class="flex items-center justify-center h-9 hover:bg-gray-800/40 group relative rounded focus:outline-none focus:bg-gray-800/40"
                 >
+                    <Tooltip text="Profile" />
                     <ClientOnly>
                         <Icon
                             name="heroicons:user-circle"
                             class="w-6 h-6 text-white"
                         />
                     </ClientOnly>
-                </li>
-            </ul>
+                </button>
+            </div>
         </div>
     </aside>
 </template>
