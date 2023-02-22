@@ -48,35 +48,33 @@ body {
     background-color: hsl(0%, 0%, 10%);
 }
 
-.slide-bottom-enter-active,
-.slide-bottom-leave-active {
-    transition: opacity 0.2s ease-in-out, transform 0.15s ease-in-out;
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 5s ease;
 }
 
-.slide-bottom-enter,
-.slide-bottom-leave-to {
+.fade-enter-from,
+.fade-leave-to {
     opacity: 0;
-    transform: translate3d(0, 15px, 0);
+}
+
+.slide-bottom-enter-active,
+.slide-bottom-leave-active {
+    transition: all 0.5s ease;
+}
+
+.slide-bottom-enter-from,
+.slide-bottom-leave-to {
+    transform: translateY(100%);
 }
 
 .slide-top-enter-active,
 .slide-top-leave-active {
-    transition: opacity 0.1s ease-in-out, transform 0.15s ease-in-out;
+    transition: transform 5s ease-in;
 }
 
-.slide-top-enter,
+.slide-top-enter-from,
 .slide-top-leave-to {
-    opacity: 0;
-    transform: translateY(-15px);
-}
-
-.slide-right-enter-active,
-.slide-right-leave-active {
-    transition: opacity 0.2s ease-in-out, transform 0.15s ease-in-out;
-}
-
-.slide-right-enter,
-.slide-right-leave-to {
-    opacity: 0;
-    transform: translateX(-30px);
+    transform: translate3d(0, -15px, 0);
 }

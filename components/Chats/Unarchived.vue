@@ -6,13 +6,18 @@
             <div class="tools">
                 <ul class="flex">
                     <li
-                        class="flex items-center justify-center px-4 py-2 hover:bg-gray-800/40 relative rounded"
-                        :title="'New Chat(Ctrl+N) New Group(Ctrl+Shift+N)'"
+                        class="group flex items-center justify-center px-4 py-2 hover:bg-neutral-800/40 relative rounded"
                     >
                         <Icon name="lucide:edit" class="text-white" />
+                        <Tooltip
+                            text="New Chat(Ctrl+N)"
+                            :multiline="true"
+                            text2="New Group(Ctrl+Shift+N)"
+                            class="w-40 left-auto right-2"
+                        />
                     </li>
                     <li
-                        class="flex items-center justify-center px-3 py-2 hover:bg-gray-800/40 relative rounded"
+                        class="flex items-center justify-center px-3 py-2 hover:bg-neutral-800/40 relative rounded"
                     >
                         <Icon
                             name="heroicons:ellipsis-horizontal-20-solid"

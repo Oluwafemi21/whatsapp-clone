@@ -3,7 +3,6 @@
         <TheHeader />
         <main class="bg-black/90 flex-1 mt-10">
             <section class="chat w-full bg-transparent border border-black/25">
-                <NuxtLoadingIndicator />
                 <slot />
             </section>
         </main>

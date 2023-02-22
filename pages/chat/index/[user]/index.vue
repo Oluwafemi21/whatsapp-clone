@@ -1,5 +1,7 @@
 <template>
-    <empty-state />
+    <div>
+        <empty-state />
+    </div>
 </template>
 
 <script>
