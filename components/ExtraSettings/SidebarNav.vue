@@ -1,6 +1,6 @@
 <template>
     <aside
-        class="col-span-1 flex flex-col justify-between bg-neutral-800 border-r border-r-black/40 rounded-bl-md rounded-tl-md py-1 px-1"
+        class="fixed h-[75%] w-[150px] flex flex-col justify-between bg-neutral-800 border-r border-r-black/40 rounded-bl-md rounded-tl-md py-1 px-1"
     >
         <ul class="pt-1 flex flex-col gap-1 mb-3">
             <li v-for="tab in tabs" :key="tab.name" class="relative">
@@ -24,7 +24,10 @@
             :class="{ active: activeTab === 'profile' }"
         >
             <ClientOnly>
-                <Icon name="mingcute:user-3-line" class="w-5 h-5 text-white" />
+                <Icon
+                    name="fluent:person-28-regular"
+                    class="w-5 h-5 text-white"
+                />
             </ClientOnly>
             <span class="text-white">Profile</span>
         </button>
@@ -37,6 +40,7 @@ const activeTab = useState("tab-opened");
 const changeTab = (tab) => {
     activeTab.value = tab;
 };
+
 const tabs = [
     {
         name: "general",

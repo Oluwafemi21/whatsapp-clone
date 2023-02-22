@@ -48,7 +48,6 @@ body {
     background-color: hsl(0%, 0%, 10%);
 }
 
-
 .fade-enter-active,
 .fade-leave-active {
     transition: opacity 5s ease;

@@ -1,5 +1,5 @@
 <template>
-    <section class="flex flex-col gap-4">
+    <section class="flex flex-col gap-4 p-4">
         <h3 class="text-xl text-white font-medium">General</h3>
         <div>
             <h4 class="text-white text-lg">Login</h4>
@@ -31,7 +31,7 @@
                 <span class="font-bold">autocorrect</span> and
                 <span class="font-bold">misspelt higlight</span> from
                 <span
-                    class="text-green-800 underline cursor-pointer hover:text-white"
+                    class="text-emerald-500 underline cursor-pointer hover:text-white"
                     >Windows Settings</span
                 >
             </p>

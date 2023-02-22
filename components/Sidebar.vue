@@ -19,7 +19,7 @@
         <div class="bottom-nav mt-auto sticky bottom-4">
             <div class="px-1 pt-1 flex flex-col gap-2">
                 <button
-                    @click="showModal = true"
+                    @click="openModal('general')"
                     class="flex items-center justify-center h-9 hover:bg-gray-800/40 group relative rounded focus:outline-none focus:bg-gray-800/40"
                 >
                     <Tooltip text="Settings" />
@@ -31,7 +31,7 @@
                     </ClientOnly>
                 </button>
                 <button
-                    @click="showModal = true"
+                    @click="openModal('profile')"
                     class="flex items-center justify-center h-9 hover:bg-gray-800/40 group relative rounded focus:outline-none focus:bg-gray-800/40"
                 >
                     <Tooltip text="Profile" />
@@ -53,6 +53,13 @@
 const showModal = useState("modal-opened", () => {
     return false;
 });
+
+const activeTab = useState("tab-opened");
+
+const openModal = (tab) => {
+    activeTab.value = tab;
+    showModal.value = true;
+};
 
 const links = [
     {

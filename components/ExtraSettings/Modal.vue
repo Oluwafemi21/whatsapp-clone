@@ -1,10 +1,13 @@
 <template>
     <Teleport to="body">
-        <div class="absolute bottom-2 left-2 w-1/3 h-[80%]" ref="modal">
+        <div
+            class="absolute overflow-y-scroll bottom-2 left-2 w-1/3 h-[75%]"
+            ref="modal"
+        >
             <div class="grid grid-cols-3 h-full">
                 <ExtraSettingsSidebarNav />
                 <section
-                    class="col-span-2 bg-neutral-800 rounded-tr-md rounded-br-md p-4"
+                    class="ml-[150px] w-full col-span-2 bg-neutral-800 rounded-tr-md rounded-br-md"
                 >
                     <KeepAlive>
                         <component :is="showTab"></component>
@@ -26,7 +29,10 @@ const currentTabOpened = useState("tab-opened", () => {
 });
 
 // functions
-onClickOutside(modal, () => (open.value = false));
+onClickOutside(modal, () => {
+    open.value = false;
+    currentTabOpened.value = "general";
+});
 defineEmits("close");
 
 //  components

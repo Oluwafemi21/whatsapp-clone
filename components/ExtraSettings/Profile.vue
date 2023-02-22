@@ -1,5 +1,31 @@
 <template>
-    <h1>Profile</h1>
+    <section class="flex flex-col gap-3 p-4">
+        <Avatar class="h-16 w-16" />
+        <div class="flex items-center justify-between">
+            <p class="text-white font-medium text-xl">~fex</p>
+            <button
+                class="hover:bg-neutral-700 p-2 flex items-center justify-center rounded"
+            >
+                <Icon name="clarity:edit-line" class="w-4 h-4 text-white" />
+            </button>
+        </div>
+
+        <div>
+            <p class="text-neutral-400 text-sm">About</p>
+            <div class="flex items-center justify-between">
+                <p class="text-white text-sm">Available</p>
+                <button
+                    class="hover:bg-neutral-700 p-2 flex items-center justify-center rounded"
+                >
+                    <Icon name="clarity:edit-line" class="w-4 h-4 text-white" />
+                </button>
+            </div>
+        </div>
+        <div>
+            <p class="text-neutral-400 text-sm">Phone Number</p>
+            <p class="text-white text-sm">+234 809 555 6534</p>
+        </div>
+    </section>
 </template>
 
 <script setup></script>
