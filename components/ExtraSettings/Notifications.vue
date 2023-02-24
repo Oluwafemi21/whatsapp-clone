@@ -8,7 +8,7 @@
                     Continue to show notifications when Whatsapp is not open
                 </p>
                 <div class="flex items-center gap-2">
-                    <Icon name="ic:outline-toggle-off" class="w-5 text-white" />
+                    <ToggleButton />
                     <span class="text-sm text-white">Off</span>
                 </div>
             </div>
@@ -17,14 +17,14 @@
             <div class="flex items-center justify-between">
                 <p class="text-neutral-400">Messages</p>
                 <div class="flex items-center gap-2">
-                    <Icon name="ic:outline-toggle-off" class="w-5 text-white" />
+                    <ToggleButton />
                     <span class="text-sm text-white">Off</span>
                 </div>
             </div>
             <div class="flex items-center justify-between">
                 <p class="text-neutral-400">Calls</p>
                 <div class="flex items-center gap-2">
-                    <Icon name="ic:outline-toggle-off" class="w-5 text-white" />
+                    <ToggleButton />
                     <span class="text-sm text-white">Off</span>
                 </div>
             </div>
@@ -36,7 +36,7 @@
                     Show message preview text inside new message notifications
                 </p>
                 <div class="flex items-center gap-2">
-                    <Icon name="ic:outline-toggle-off" class="w-5 text-white" />
+                    <ToggleButton />
                     <span class="text-sm text-white">Off</span>
                 </div>
             </div>

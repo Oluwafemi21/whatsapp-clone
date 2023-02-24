@@ -5,8 +5,8 @@
             <h4 class="text-white text-lg">Login</h4>
             <div class="flex items-center justify-between mt-1">
                 <p class="text-neutral-500 text-sm">Start Whatsapp at login</p>
-                <div class="flex items-center gap-2">
-                    <Icon name="ic:outline-toggle-off" class="w-5 text-white" />
+                <div class="flex items-center gap-4">
+                    <ToggleButton />
                     <span class="text-sm text-white">Off</span>
                 </div>
             </div>

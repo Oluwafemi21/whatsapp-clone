@@ -57,12 +57,12 @@
                     >Learn More</span
                 >
             </p>
-            <div class="flex items-center justify-between">
+            <div class="flex items-center justify-between gap-4">
                 <p class="text-neutral-500 text-sm">
                     Show security notifications on this computer
                 </p>
-                <div class="flex items-center gap-2">
-                    <Icon name="ic:outline-toggle-off" class="w-5 text-white" />
+                <div class="flex items-center gap-4">
+                    <ToggleButton />
                     <span class="text-sm text-white">Off</span>
                 </div>
             </div>

@@ -1,6 +1,6 @@
 <template>
     <aside
-        class="fixed h-[75%] w-[190px] flex flex-col justify-between bg-neutral-800 border-r border-r-black/40 rounded-bl-md rounded-tl-md py-1 px-1"
+        class="fixed h-[75%] w-[165px] flex flex-col justify-between bg-neutral-800 border-r border-r-black/40 rounded-bl-md rounded-tl-md py-1 px-1"
     >
         <ul class="pt-1 flex flex-col gap-1 mb-3">
             <li v-for="tab in tabs" :key="tab.name" class="relative">
