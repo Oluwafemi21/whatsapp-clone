@@ -1,6 +1,11 @@
 <template>
     <section class="flex flex-col gap-3 p-4">
-        <Avatar class="h-16 w-16" />
+        <!-- <img
+            src="https://via.placeholder.com/150/0000FF/808080?text=Digital.com"
+            class="rounded-full w-24 h-24 object-cover"
+            alt="Profile Image"
+        /> -->
+        <Avatar class="w-24 h-24" />
         <div class="flex items-center justify-between">
             <p class="text-white font-medium text-xl">~fex</p>
             <button
