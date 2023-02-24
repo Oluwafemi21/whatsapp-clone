@@ -1,13 +1,13 @@
 <template>
     <Teleport to="body">
         <div
-            class="absolute overflow-y-scroll bottom-2 left-2 w-1/3 h-[75%]"
+            class="absolute overflow-y-scroll bottom-2 left-2 w-[550px] h-[75%]"
             ref="modal"
         >
             <div class="grid grid-cols-3 h-full">
                 <ExtraSettingsSidebarNav />
                 <section
-                    class="ml-[150px] w-full col-span-2 bg-neutral-800 rounded-tr-md rounded-br-md"
+                    class="ml-[190px] w-full col-span-2 bg-neutral-800 rounded-tr-md rounded-br-md"
                 >
                     <KeepAlive>
                         <component :is="showTab"></component>
