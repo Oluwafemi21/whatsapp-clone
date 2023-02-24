@@ -3,13 +3,12 @@
         <h3 class="text-xl text-white font-medium">Notifications</h3>
         <div class="mt-3">
             <p class="text-neutral-300">When Whatsapp is closed</p>
-            <div class="flex items-center justify-between">
+            <div class="flex items-center justify-between gap-4">
                 <p class="text-neutral-400 text-sm">
                     Continue to show notifications when Whatsapp is not open
                 </p>
                 <div class="flex items-center gap-2">
-                    <ToggleButton />
-                    <span class="text-sm text-white">Off</span>
+                    <ToggleButton v-model:checked="showMessagesWhenNotOpen" />
                 </div>
             </div>
         </div>
@@ -17,15 +16,13 @@
             <div class="flex items-center justify-between">
                 <p class="text-neutral-400">Messages</p>
                 <div class="flex items-center gap-2">
-                    <ToggleButton />
-                    <span class="text-sm text-white">Off</span>
+                    <ToggleButton v-model:checked="showMessages" />
                 </div>
             </div>
             <div class="flex items-center justify-between">
                 <p class="text-neutral-400">Calls</p>
                 <div class="flex items-center gap-2">
-                    <ToggleButton />
-                    <span class="text-sm text-white">Off</span>
+                    <ToggleButton v-model:checked="showCalls" />
                 </div>
             </div>
         </div>
@@ -36,8 +33,7 @@
                     Show message preview text inside new message notifications
                 </p>
                 <div class="flex items-center gap-2">
-                    <ToggleButton />
-                    <span class="text-sm text-white">Off</span>
+                    <ToggleButton v-model:checked="showMessagePreview" />
                 </div>
             </div>
         </div>
@@ -90,4 +86,11 @@
     </section>
 </template>
 
-<script setup></script>
+<script setup>
+import { ref } from "vue";
+
+const showCalls = ref(true);
+const showMessagePreview = ref(true);
+const showMessages = ref(true);
+const showMessagesWhenNotOpen = ref(true);
+</script>

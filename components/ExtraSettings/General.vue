@@ -6,8 +6,7 @@
             <div class="flex items-center justify-between mt-1">
                 <p class="text-neutral-500 text-sm">Start Whatsapp at login</p>
                 <div class="flex items-center gap-4">
-                    <ToggleButton />
-                    <span class="text-sm text-white">Off</span>
+                    <ToggleButton v-model:checked="showWhatsappAtLogin" />
                 </div>
             </div>
         </div>
@@ -50,4 +49,8 @@
     </section>
 </template>
 
-<script setup></script>
+<script setup>
+import { ref } from "vue";
+
+const showWhatsappAtLogin = ref(false);
+</script>

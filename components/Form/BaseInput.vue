@@ -32,26 +32,4 @@ defineProps({
         default: false,
     },
 });
-
-// instantiate the input
-const input = ref(null);
-const isPasswordShown = ref(false);
-
-const showPassword = () => {
-    // if the input type is password
-    if (input.value.type === "password") {
-        // change the input type to text
-        input.value.type = "text";
-        isPasswordShown.value = true;
-    }
-};
-
-const hidePassword = () => {
-    // if the input type is text
-    if (input.value.type === "text") {
-        // change the input type to password
-        input.value.type = "password";
-        isPasswordShown.value = false;
-    }
-};
 </script>

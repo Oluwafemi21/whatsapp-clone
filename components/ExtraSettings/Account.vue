@@ -62,8 +62,7 @@
                     Show security notifications on this computer
                 </p>
                 <div class="flex items-center gap-4">
-                    <ToggleButton />
-                    <span class="text-sm text-white">Off</span>
+                    <ToggleButton v-model:checked="showSecurityNotifications" />
                 </div>
             </div>
             <p class="text-xs text-neutral-500">
@@ -79,4 +78,8 @@
     </section>
 </template>
 
-<script setup></script>
+<script setup>
+import { ref } from "vue";
+
+const showSecurityNotifications = ref(false);
+</script>
