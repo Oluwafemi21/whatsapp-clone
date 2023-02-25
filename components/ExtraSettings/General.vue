@@ -16,7 +16,7 @@
             <select
                 name="theme"
                 id="id"
-                class="bg-transparent text-white text-sm rounded-md mt-1 w-2/3"
+                class="bg-neutral-800 text-white text-sm rounded-md mt-1 w-2/3"
             >
                 <option value="system">System default</option>
                 <option value="light">Light</option>

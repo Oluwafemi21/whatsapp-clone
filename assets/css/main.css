@@ -50,7 +50,7 @@ body {
 
 .fade-enter-active,
 .fade-leave-active {
-    transition: opacity 5s ease;
+    transition: opacity 0.2s ease;
 }
 
 .fade-enter-from,
@@ -70,10 +70,10 @@ body {
 
 .slide-top-enter-active,
 .slide-top-leave-active {
-    transition: transform 5s ease-in;
+    transition: transform 0.2s ease-in;
 }
 
 .slide-top-enter-from,
 .slide-top-leave-to {
-    transform: translate3d(0, -15px, 0);
+    transform: translate3d(0, -20px, 0);
 }

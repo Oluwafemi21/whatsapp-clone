@@ -1,6 +1,6 @@
 <template>
     <div
-        class="h-screen grid gap-5 place-content-center justify-items-center w-full"
+        class="h-screen grid gap-5 place-content-center text-center justify-items-center w-full"
     >
         <Icon name="logos:whatsapp-icon" class="w-20 h-20" />
         <h2 class="text-white text-lg">Whatsapp Clone 1.0</h2>
@@ -22,7 +22,7 @@
         </p>
         <div class="flex items-center gap-5">
             <NuxtLink
-                to="/chat"
+                to="/auth/login"
                 class="bg-green-600 text-white px-5 py-2 rounded-full font-medium hover:bg-green-500"
                 >Get Started</NuxtLink
             >

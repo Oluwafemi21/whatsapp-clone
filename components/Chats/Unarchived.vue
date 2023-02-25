@@ -16,13 +16,19 @@
                             class="w-40 left-auto right-2"
                         />
                     </li>
-                    <li
-                        class="flex items-center justify-center px-3 py-2 hover:bg-neutral-800/40 relative rounded"
-                    >
-                        <Icon
-                            name="heroicons:ellipsis-horizontal-20-solid"
-                            class="w-6 h-6 text-white"
-                        />
+                    <li class="relative">
+                        <button
+                            @click="showDropdown = !showDropdown"
+                            class="flex items-center justify-center px-3 py-2 hover:bg-neutral-800/40 focus:bg-neutral-800/40 border border-transparent focus:border-black/40 relative rounded"
+                        >
+                            <Icon
+                                name="heroicons:ellipsis-horizontal-20-solid"
+                                class="w-6 h-6 text-white"
+                            />
+                        </button>
+                        <Transition name="slide-top" mode="out-in">
+                            <FormDropdown v-if="showDropdown" />
+                        </Transition>
                     </li>
                 </ul>
             </div>
@@ -68,6 +74,8 @@ const currentTab = useState("active-component");
 const showArchivedChats = () => {
     currentTab.value = "ChatsArchived";
 };
+
+const showDropdown = ref(false);
 
 const searchTerm = ref("");
 

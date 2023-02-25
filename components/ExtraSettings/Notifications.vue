@@ -54,7 +54,7 @@
                     <select
                         name="theme"
                         id="id"
-                        class="bg-transparent text-white text-sm rounded-md mt-1 w-32"
+                        class="bg-neutral-800 text-white text-sm rounded-md mt-1 w-32"
                     >
                         <option>Default</option>
                         <option v-for="i in 10" :key="i">Alert {{ i }}</option>
@@ -75,7 +75,7 @@
                     <select
                         name="theme"
                         id="id"
-                        class="bg-transparent text-white text-sm rounded-md mt-1 w-32"
+                        class="bg-neutral-800 text-white text-sm rounded-md mt-1 w-32"
                     >
                         <option>Default</option>
                         <option v-for="i in 10" :key="i">Alert {{ i }}</option>
