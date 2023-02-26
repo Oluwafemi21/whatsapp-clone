@@ -28,7 +28,7 @@ body {
 
 .page-enter-active,
 .page-leave-active {
-    transition: opacity 0.5s;
+    transition: opacity 0.15s;
 }
 
 .page-enter,
@@ -50,7 +50,7 @@ body {
 
 .fade-enter-active,
 .fade-leave-active {
-    transition: opacity 0.2s ease;
+    transition: opacity 0.15s ease;
 }
 
 .fade-enter-from,
@@ -60,7 +60,7 @@ body {
 
 .slide-bottom-enter-active,
 .slide-bottom-leave-active {
-    transition: all 0.5s ease;
+    transition: all 0.15s ease;
 }
 
 .slide-bottom-enter-from,
@@ -70,7 +70,7 @@ body {
 
 .slide-top-enter-active,
 .slide-top-leave-active {
-    transition: transform 0.2s ease-in;
+    transition: transform 0.15s ease-in;
 }
 
 .slide-top-enter-from,

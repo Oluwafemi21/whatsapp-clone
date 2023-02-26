@@ -18,17 +18,26 @@
                     </li>
                     <li class="relative">
                         <button
-                            @click="showDropdown = !showDropdown"
-                            class="flex items-center justify-center px-3 py-2 hover:bg-neutral-800/40 focus:bg-neutral-800/40 border border-transparent focus:border-black/40 relative rounded"
+                            class="peer flex items-center justify-center px-3 py-2 hover:bg-neutral-800/40 focus:bg-neutral-800/40 border border-transparent focus:border-black/40 relative rounded"
                         >
                             <Icon
                                 name="heroicons:ellipsis-horizontal-20-solid"
                                 class="w-6 h-6 text-white"
                             />
                         </button>
-                        <Transition name="slide-top" mode="out-in">
-                            <FormDropdown v-if="showDropdown" />
-                        </Transition>
+                        <FormDropdown position="bottom">
+                            <template #items>
+                                <FormDropdownItem
+                                    title="Filter chats by"
+                                    icon="bi:filter"
+                                    :nested="true"
+                                />
+                                <FormDropdownItem
+                                    title="Starred messages"
+                                    icon="ph:star"
+                                />
+                            </template>
+                        </FormDropdown>
                     </li>
                 </ul>
             </div>
@@ -40,7 +49,7 @@
         />
     </header>
 
-    <section class="h-screen overflow-y-scroll">
+    <section class="h-screen overflow-y-scroll snap-always">
         <button
             class="hover:bg-neutral-800 focus:outline-none focus:bg-neutral-800 w-full flex items-center py-2.5 rounded-md pl-6 gap-6 mb-1"
             @click="showArchivedChats"
