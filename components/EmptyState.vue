@@ -1,17 +1,29 @@
 <script lang="ts" setup></script>
 
 <template>
-    <div class="h-screen grid place-content-center text-center relative w-full">
-        <h3 class="text-2xl text-white mb-2">Whatsapp for Windows</h3>
-        <article class="max-w-xl text-neutral-500">
-            <p>Send and receive messages without keeping your phone online.</p>
-            <p>
-                Use Whatsapp on up to 4 linked devices and 1 phone at the same
-                time.
-            </p>
-        </article>
+    <div
+        class="h-full flex flex-col items-center justify-center text-center relative w-full pb-12"
+    >
+        <div
+            class="flex-1 grid place-content-center justify-items-center gap-1"
+        >
+            <Icon
+                name="ic:twotone-whatsapp"
+                class="w-20 h-20 text-neutral-700"
+            />
+            <h3 class="text-xl text-white mb-2">Whatsapp for Windows</h3>
+            <article class="max-w-xl text-sm text-neutral-400">
+                <p>
+                    Send and receive messages without keeping your phone online.
+                </p>
+                <p>
+                    Use Whatsapp on up to 4 linked devices and 1 phone at the
+                    same time.
+                </p>
+            </article>
+        </div>
         <footer
-            class="flex items-center justify-center text-center text-neutral-600 gap-1"
+            class="flex items-center justify-center text-center text-neutral-500 gap-2"
         >
             <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -28,7 +40,7 @@
                 />
             </svg>
 
-            <p class="text-xs">End-to-end encrypted</p>
+            <p class="text-sm">End-to-end encrypted</p>
         </footer>
     </div>
 </template>
