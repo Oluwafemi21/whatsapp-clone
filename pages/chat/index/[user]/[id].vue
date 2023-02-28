@@ -2,6 +2,30 @@
     <section class="relative h-full w-full flex flex-col text-white">
         <ChatsContactHeader :contact="`${$route.params.user}`" />
         <div class="flex-1 overflow-y-auto px-5">
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
             <p>User - {{ $route.params.user }}</p>
             <p>Id - {{ $route.params.id }}</p>
             <Icon name="ant-design:audio-outlined" />
