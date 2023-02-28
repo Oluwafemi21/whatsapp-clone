@@ -8,7 +8,7 @@
             </div>
         </header>
 
-        <section class="h-screen overflow-y-scroll">
+        <section class="h-screen overflow-y-scroll scroll-p-0">
             <StatusCard :status="statuses[0]" :active="true" />
             <p
                 class="pl-2 text-sm py-1 sticky top-0 text-neutral-400 border-none bg-[hsl(0,0%,10%)]"

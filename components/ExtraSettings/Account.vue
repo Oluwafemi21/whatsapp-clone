@@ -1,5 +1,7 @@
 <template>
-    <section class="flex flex-col gap-4 overflow-y-scroll h-full p-4">
+    <section
+        class="flex flex-col gap-4 overflow-y-scroll h-full p-4 scroll-p-0"
+    >
         <h3 class="text-xl text-white font-medium">Account</h3>
         <div>
             <h4 class="text-white text-lg">Blocked contacts</h4>

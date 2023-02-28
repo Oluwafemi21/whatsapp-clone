@@ -1,5 +1,7 @@
 <template>
-    <section class="flex flex-col gap-4 p-4 h-full overflow-y-scroll">
+    <section
+        class="flex flex-col gap-4 p-4 h-full overflow-y-scroll scroll-p-0"
+    >
         <h3 class="text-xl text-white font-medium">Notifications</h3>
         <div class="mt-3">
             <p class="text-neutral-300">When Whatsapp is closed</p>

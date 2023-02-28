@@ -2,10 +2,13 @@
     <header class="flex flex-col justify-between gap-3 mb-5 px-2">
         <div class="flex items-center gap-4">
             <button
-                class="hover:bg-neutral-800 py-2 px-3 rounded-md"
+                class="hover:bg-neutral-800 py-2 px-3 rounded-md peer"
                 @click="showUnarchivedChats"
             >
-                <Icon name="heroicons:arrow-left" class="w-4 h-4 text-white" />
+                <Icon
+                    name="heroicons:arrow-left"
+                    class="w-4 h-4 text-white peer-focus:w-3 peer-focus:transition-width ease-in-out duration-150"
+                />
             </button>
             <h3 class="text-xl font-medium text-white">Archived</h3>
         </div>
@@ -14,10 +17,13 @@
             :placeholder="'Search archived chats'"
         />
     </header>
-    <section class="h-screen overflow-y-scroll">
+    <section class="h-screen overflow-y-scroll scroll-p-0">
         <ul class="flex flex-col gap-2">
             <li v-for="chat in chats" :key="chat.id">
-                <ChatsChatCard :chat="chat" />
+                <ChatsChatCard
+                    :chat="chat"
+                    :receivedMessage="chat.recepient === 'user'"
+                />
             </li>
         </ul>
     </section>
@@ -41,6 +47,7 @@ const chats = [
         message: "Next week",
         status: "archived",
         messageCount: 1,
+        recepient: "user",
     },
     {
         id: 2,
@@ -49,6 +56,7 @@ const chats = [
         message: "No issues",
         status: "archived",
         messageCount: 2,
+        recepient: "user",
     },
 
     {
@@ -58,6 +66,7 @@ const chats = [
         message: "No issues",
         status: "archived",
         messageCount: 0,
+        recepient: "user",
     },
 
     {
@@ -67,6 +76,7 @@ const chats = [
         message: "No issues",
         status: "archived",
         messageCount: 2,
+        recepient: "not-user",
     },
     {
         id: 5,
@@ -75,6 +85,7 @@ const chats = [
         message: "No issues",
         status: "archived",
         messageCount: 3,
+        recepient: "user",
     },
     {
         id: 6,
@@ -83,6 +94,7 @@ const chats = [
         message: "No issues",
         status: "archived",
         messageCount: 0,
+        recepient: "not-user",
     },
     {
         id: 7,
@@ -91,6 +103,7 @@ const chats = [
         message: "No issues",
         status: "archived",
         messageCount: 0,
+        recepient: "not-user",
     },
     {
         id: 8,
@@ -99,6 +112,7 @@ const chats = [
         message: "No issues",
         status: "archived",
         messageCount: 0,
+        recepient: "not-user",
     },
     {
         id: 9,
@@ -107,6 +121,7 @@ const chats = [
         message: "No issues",
         status: "archived",
         messageCount: 0,
+        recepient: "not-user",
     },
     {
         id: 10,
@@ -115,6 +130,7 @@ const chats = [
         message: "No issues",
         status: "archived",
         messageCount: 0,
+        recepient: "not-user",
     },
     {
         id: 11,
@@ -123,6 +139,7 @@ const chats = [
         message: "Big: Helloooo",
         status: "archived",
         messageCount: 0,
+        recepient: "not-user",
     },
 ];
 </script>

@@ -5,7 +5,7 @@
             class="rounded-full w-24 h-24 object-cover"
             alt="Profile Image"
         /> -->
-        <Avatar class="w-24 h-24" />
+        <Avatar size="large" />
         <div class="flex items-center justify-between">
             <p class="text-white font-medium text-xl">~fex</p>
             <button

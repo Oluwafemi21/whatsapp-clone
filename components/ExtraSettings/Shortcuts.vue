@@ -1,5 +1,7 @@
 <template>
-    <section class="flex flex-col gap-4 p-4 overflow-y-scroll h-full">
+    <section
+        class="flex flex-col gap-4 p-4 overflow-y-scroll scroll-p-0 h-full"
+    >
         <h3 class="text-xl text-white font-medium">Shortcuts</h3>
 
         <h4 class="text-white text-lg">Keyboard shortcuts</h4>

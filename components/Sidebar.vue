@@ -20,7 +20,7 @@
             <div class="px-1 pt-1 flex flex-col gap-2">
                 <button
                     @click="openModal('general')"
-                    class="flex items-center justify-center h-9 hover:bg-gray-800/40 group relative rounded focus:outline-none focus:bg-gray-800/40"
+                    class="flex items-center justify-center h-9 hover:bg-neutral-800/40 group relative rounded focus:outline-none focus:bg-neutral-800/40"
                 >
                     <Tooltip text="Settings" />
                     <ClientOnly>
@@ -32,7 +32,7 @@
                 </button>
                 <button
                     @click="openModal('profile')"
-                    class="flex items-center justify-center h-9 hover:bg-gray-800/40 group relative rounded focus:outline-none focus:bg-gray-800/40"
+                    class="flex items-center justify-center h-9 hover:bg-neutral-800/40 group relative rounded focus:outline-none focus:bg-neutral-800/40"
                 >
                     <Tooltip text="Profile" />
                     <ClientOnly>

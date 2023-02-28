@@ -1,7 +1,7 @@
 <template>
     <Teleport to="body">
         <div
-            class="absolute overflow-y-scroll bottom-2 left-2 w-[500px] h-[75%]"
+            class="absolute overflow-y-scroll scroll-p-0 bottom-2 left-2 w-[500px] h-[75%]"
             ref="modal"
         >
             <div class="grid grid-cols-3 h-full">
@@ -45,27 +45,19 @@ const shortcuts = resolveComponent("ExtraSettingsShortcuts");
 const profile = resolveComponent("ExtraSettingsProfile");
 const help = resolveComponent("ExtraSettingsHelp");
 
+const tabSettings = {
+    general,
+    chats,
+    account,
+    notifications,
+    storage,
+    shortcuts,
+    profile,
+    help,
+};
+
 // computed
 const showTab = computed(() => {
-    switch (currentTabOpened.value) {
-        case "general":
-            return general;
-        case "chats":
-            return chats;
-        case "account":
-            return account;
-        case "notifications":
-            return notifications;
-        case "storage":
-            return storage;
-        case "shortcuts":
-            return shortcuts;
-        case "profile":
-            return profile;
-        case "help":
-            return help;
-        default:
-            return general;
-    }
+    return tabSettings[currentTabOpened.value];
 });
 </script>

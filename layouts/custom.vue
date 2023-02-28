@@ -15,7 +15,7 @@
                 ></component>
             </KeepAlive>
             <section
-                class="chat h-[calc(100vh_-_2.5rem)] w-full bg-transparent col-span-7 border border-black/25"
+                class="chat h-[calc(100vh_-_2.5rem)] w-full bg-transparent col-span-7 border-x border-t border-black/25"
             >
                 <slot />
             </section>

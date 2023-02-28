@@ -1,7 +1,7 @@
 <template>
     <div
         v-bind="$attrs"
-        class="invisible group-hover:visible -top-9 transition duration-150 ease-in absolute left-0 min-w-full bg-neutral-800 text-white rounded-md border border-black/40 p-2 shadow-md flex flex-col"
+        class="invisible group-hover:visible group-hover:opacity-100 duration-150 delay-1000 opacity-0 -top-9 transition-opacity ease-in absolute left-0 min-w-full bg-neutral-800 text-white rounded-md border border-black/40 p-2 shadow-md flex flex-col"
     >
         <span class="block text-xs">{{ text }}</span>
         <span v-if="multiline" class="block text-xs">{{ text2 }}</span>

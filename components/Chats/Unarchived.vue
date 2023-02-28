@@ -31,7 +31,26 @@
                                     title="Filter chats by"
                                     icon="bi:filter"
                                     :nested="true"
-                                />
+                                >
+                                    <template #nested>
+                                        <FormDropdown>
+                                            <template #items>
+                                                <FormDropdownItem
+                                                    title="All chats"
+                                                    icon="ph:chat"
+                                                />
+                                                <FormDropdownItem
+                                                    title="Unread chats"
+                                                    icon="ph:chat"
+                                                />
+                                                <FormDropdownItem
+                                                    title="Starred chats"
+                                                    icon="ph:star"
+                                                />
+                                            </template>
+                                        </FormDropdown>
+                                    </template>
+                                </FormDropdownItem>
                                 <FormDropdownItem
                                     title="Starred messages"
                                     icon="ph:star"
@@ -49,7 +68,9 @@
         />
     </header>
 
-    <section class="h-screen overflow-y-scroll snap-always">
+    <section
+        class="h-screen overflow-y-scroll scroll-p-0 snap-mandatory snap-y"
+    >
         <button
             class="hover:bg-neutral-800 focus:outline-none focus:bg-neutral-800 w-full flex items-center py-2.5 rounded-md pl-6 gap-6 mb-1"
             @click="showArchivedChats"
@@ -69,7 +90,10 @@
         <Transition name="slide-top" mode="out-in">
             <ul class="flex flex-col gap-2">
                 <li v-for="chat in chats" :key="chat.id">
-                    <ChatsChatCard :chat="chat" />
+                    <ChatsChatCard
+                        :chat="chat"
+                        :receivedMessage="chat.recepient === 'user'"
+                    />
                 </li>
             </ul>
         </Transition>
@@ -96,6 +120,7 @@ const chats = [
         message: "Next week",
         status: "unarchived",
         messageCount: 1,
+        recepient: "user",
     },
     {
         id: 2,
@@ -104,6 +129,7 @@ const chats = [
         message: "No issues",
         status: "unarchived",
         messageCount: 2,
+        recepient: "user",
     },
 
     {
@@ -113,6 +139,7 @@ const chats = [
         message: "No issues",
         status: "unarchived",
         messageCount: 0,
+        recepient: "not-user",
     },
 
     {
@@ -122,6 +149,7 @@ const chats = [
         message: "No issues",
         status: "unarchived",
         messageCount: 2,
+        recepient: "user",
     },
     {
         id: 5,
@@ -130,6 +158,7 @@ const chats = [
         message: "No issues",
         status: "unarchived",
         messageCount: 3,
+        recepient: "user",
     },
     {
         id: 6,
@@ -138,6 +167,7 @@ const chats = [
         message: "No issues",
         status: "unarchived",
         messageCount: 0,
+        recepient: "not-user",
     },
     {
         id: 7,
@@ -146,6 +176,7 @@ const chats = [
         message: "No issues",
         status: "unarchived",
         messageCount: 0,
+        recepient: "not-user",
     },
     {
         id: 8,
@@ -154,6 +185,7 @@ const chats = [
         message: "No issues",
         status: "unarchived",
         messageCount: 0,
+        recepient: "not-user",
     },
     {
         id: 9,
@@ -162,6 +194,7 @@ const chats = [
         message: "No issues",
         status: "unarchived",
         messageCount: 0,
+        recepient: "not-user",
     },
     {
         id: 10,
@@ -170,6 +203,7 @@ const chats = [
         message: "No issues",
         status: "unarchived",
         messageCount: 0,
+        recepient: "not-user",
     },
     {
         id: 11,
@@ -178,6 +212,7 @@ const chats = [
         message: "Big: Helloooo",
         status: "unarchived",
         messageCount: 0,
+        recepient: "not-user",
     },
 ];
 </script>
