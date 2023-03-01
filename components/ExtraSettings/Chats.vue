@@ -1,20 +1,22 @@
 <template>
     <section class="flex flex-col gap-4 p-4">
-        <h3 class="text-xl text-white font-medium">Chats</h3>
+        <h3 class="text-xl dark:text-white font-medium">Chats</h3>
         <div>
-            <h4 class="text-white text-lg">Chat history</h4>
+            <h4 class="dark:text-white text-lg">Chat history</h4>
 
             <div class="flex items-center mt-1 gap-3">
                 <Icon
                     name="fluent:cloud-sync-16-regular"
-                    class="h-4 w-4 text-white"
+                    class="h-4 w-4 dark:text-white"
                 />
-                <p class="text-sm italic text-white">Synced from your phone</p>
+                <p class="text-sm italic dark:text-white">
+                    Synced from your phone
+                </p>
             </div>
         </div>
         <div>
             <button
-                class="py-1 px-2 text-sm rounded text-white bg-neutral-700/90 border border-neutral-600"
+                class="py-1 px-2 text-sm rounded shadow-sm dark:text-white dark:bg-neutral-700/90 border dark:border-neutral-600"
             >
                 Archive all chats
             </button>
@@ -24,7 +26,7 @@
         </div>
         <div>
             <button
-                class="py-1.5 px-2 text-sm rounded text-red-300 bg-neutral-700/90"
+                class="py-1.5 px-2 text-sm rounded text-red-500 dark:bg-neutral-700/90 border dark:border-none shadow-sm"
             >
                 Clear all messages
             </button>
@@ -34,7 +36,7 @@
         </div>
         <div>
             <button
-                class="py-1.5 px-2 text-sm rounded text-red-300 bg-neutral-700/90"
+                class="py-1.5 px-2 text-sm rounded text-red-500 dark:bg-neutral-700/90 border dark:border-none shadow-sm"
             >
                 Delete all chats
             </button>

@@ -7,7 +7,7 @@
             <div class="grid grid-cols-3 h-full">
                 <ExtraSettingsSidebarNav />
                 <section
-                    class="ml-[165px] w-full col-span-2 bg-neutral-800 rounded-tr-md rounded-br-md"
+                    class="shadow-xl ml-[165px] w-full col-span-2 bg-gray-50 dark:bg-neutral-800 rounded-tr-md rounded-br-md border border-l-0 dark:border-none"
                 >
                     <KeepAlive>
                         <component :is="showTab"></component>

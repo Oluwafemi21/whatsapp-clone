@@ -1,9 +1,9 @@
 <template>
     <section
-        class="chats bg-transparent col-span-3 rounded-tl-lg border-black/25 border border-r-0 px-2 py-2"
+        class="chats bg-white/50 dark:bg-neutral-800/50 col-span-3 rounded-tl-lg border-black/25 border border-r-0 px-2 py-2"
     >
         <header class="flex flex-col justify-between gap-3 mb-5 px-2">
-            <h3 class="text-xl font-medium text-white">Calls</h3>
+            <h3 class="text-xl font-medium dark:text-white">Calls</h3>
 
             <FormBaseInput
                 v-model="searchTerm"

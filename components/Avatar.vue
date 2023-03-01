@@ -1,11 +1,11 @@
 <template>
     <div
-        class="bg-neutral-700 grid place-content-center rounded-full flex-shrink-0"
+        class="bg-neutral-300 dark:bg-neutral-700 grid place-content-center rounded-full flex-shrink-0"
         :class="avatarSize"
     >
         <Icon
             name="fluent:person-28-filled"
-            class="text-neutral-500"
+            class="dark:text-neutral-500 text-neutral-400"
             :class="{
                 'w-5 h-5': size === 'small',
                 'w-6 h-6': size === 'normal',

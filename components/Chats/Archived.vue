@@ -2,15 +2,15 @@
     <header class="flex flex-col justify-between gap-3 mb-5 px-2">
         <div class="flex items-center gap-4">
             <button
-                class="hover:bg-neutral-800 py-2 px-3 rounded-md peer"
+                class="hover:bg-neutral-200 dark:hover:bg-neutral-800 py-2 px-3 rounded-md peer"
                 @click="showUnarchivedChats"
             >
                 <Icon
                     name="heroicons:arrow-left"
-                    class="w-4 h-4 text-white peer-focus:w-3 peer-focus:transition-width ease-in-out duration-150"
+                    class="w-4 h-4 text-neutral-800 dark:text-white peer-focus:w-3 peer-focus:transition-width ease-in-out duration-150"
                 />
             </button>
-            <h3 class="text-xl font-medium text-white">Archived</h3>
+            <h3 class="text-xl font-medium dark:text-white">Archived</h3>
         </div>
         <FormBaseInput
             v-model="searchTerm"
@@ -46,7 +46,7 @@ const chats = [
         time: "1:43 PM",
         message: "Next week",
         status: "archived",
-        messageCount: 1,
+        messageCount: 18,
         recepient: "user",
     },
     {

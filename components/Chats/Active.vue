@@ -1,6 +1,6 @@
 <template>
     <section
-        class="chats bg-neutral-800/50 col-span-3 rounded-tl-lg border-black/25 border border-r-0 px-2 py-2"
+        class="chats bg-white/50 dark:bg-neutral-800/50 col-span-3 rounded-tl-lg border-black/25 border border-r-0 px-2 py-2"
     >
         <KeepAlive>
             <component :is="sharedState"></component>

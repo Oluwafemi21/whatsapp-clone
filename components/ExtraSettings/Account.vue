@@ -2,54 +2,74 @@
     <section
         class="flex flex-col gap-4 overflow-y-scroll h-full p-4 scroll-p-0"
     >
-        <h3 class="text-xl text-white font-medium">Account</h3>
+        <h3 class="text-xl dark:text-white font-medium">Account</h3>
         <div>
-            <h4 class="text-white text-lg">Blocked contacts</h4>
+            <h4 class="dark:text-white text-lg">Blocked contacts</h4>
             <div class="flex items-center mt-2 gap-3 max-w-[185px]">
                 <Icon
                     name="system-uicons:phone-portrait"
-                    class="h-8 w-8 text-white"
+                    class="h-8 w-8 dark:text-white"
                 />
-                <p class="text-sm italic text-white">
+                <p class="text-sm italic dark:text-white">
                     Managed on your phone 14 blocked contacts
                 </p>
             </div>
         </div>
         <div>
-            <h4 class="text-white text-lg">Privacy</h4>
+            <h4 class="dark:text-white text-lg">Privacy</h4>
             <div class="flex items-center justify-between mt-3">
-                <p class="text-sm text-neutral-400">Last seen and online</p>
-                <p class="text-sm text-neutral-400">Nobody</p>
+                <p class="text-sm text-neutral-600 dark:text-neutral-400">
+                    Last seen and online
+                </p>
+                <p class="text-sm text-neutral-600 dark:text-neutral-400">
+                    Nobody
+                </p>
             </div>
-            <p class="text-xs my-3 text-neutral-400">
+            <p class="text-xs my-3 text-neutral-600 dark:text-neutral-400">
                 If you don't share your Last Seen, you won't be able to see
                 other people's Last Seen.
             </p>
             <div class="flex flex-col gap-4">
                 <div class="flex items-center justify-between">
-                    <p class="text-sm text-neutral-400">Profile photo</p>
-                    <p class="text-sm text-neutral-400">Everyone</p>
+                    <p class="text-sm dark:text-neutral-400 text-neutral-600">
+                        Profile photo
+                    </p>
+                    <p class="text-sm dark:text-neutral-400 text-neutral-600">
+                        Everyone
+                    </p>
                 </div>
                 <div class="flex items-center justify-between">
-                    <p class="text-sm text-neutral-400">About</p>
-                    <p class="text-sm text-neutral-400">My contacts</p>
+                    <p class="text-sm dark:text-neutral-400 text-neutral-600">
+                        About
+                    </p>
+                    <p class="text-sm dark:text-neutral-400 text-neutral-600">
+                        My contacts
+                    </p>
                 </div>
                 <div class="flex items-center justify-between">
-                    <p class="text-sm text-neutral-400">Add to groups</p>
-                    <p class="text-sm text-neutral-400">My contacts</p>
+                    <p class="text-sm dark:text-neutral-400 text-neutral-600">
+                        Add to groups
+                    </p>
+                    <p class="text-sm dark:text-neutral-400 text-neutral-600">
+                        My contacts
+                    </p>
                 </div>
                 <div class="flex items-center justify-between">
-                    <p class="text-sm text-neutral-400">Read receipts</p>
-                    <p class="text-sm text-neutral-400">Off</p>
+                    <p class="text-sm dark:text-neutral-400 text-neutral-600">
+                        Read receipts
+                    </p>
+                    <p class="text-sm dark:text-neutral-400 text-neutral-600">
+                        Off
+                    </p>
                 </div>
             </div>
-            <p class="text-xs mt-1 text-neutral-400">
+            <p class="text-xs mt-1 text-neutral-600 dark:text-neutral-400">
                 Read receipts are always sent for group chats
             </p>
         </div>
 
         <div class="border-t flex flex-col gap-1.5 border-neutral-600 pt-4">
-            <h4 class="text-white text-lg">Security</h4>
+            <h4 class="dark:text-white text-lg">Security</h4>
             <p class="text-sm text-neutral-500">
                 Messagess and calls in end-to-end encrypted chats stay between
                 you and the people you choose. Not even Whatsapp can read or

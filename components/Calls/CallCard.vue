@@ -7,18 +7,20 @@
                 id: call.id,
             },
         }"
-        class="hover:bg-neutral-800 flex space-x-3 w-full rounded-md py-2.5 px-3"
+        class="hover:bg-gray-200 focus:bg-gray-200 dark:hover:bg-neutral-800 flex space-x-3 w-full rounded-md py-2.5 px-3"
     >
         <Avatar />
         <div class="w-full flex flex-col gap-2">
-            <div class="flex items-center justify-between text-white">
+            <div class="flex items-center justify-between dark:text-white">
                 <p class="font-medium text-xs">{{ call.name }}</p>
-                <span class="text-xs text-gray-500">{{ call.time }}</span>
+                <span class="text-xs dark:text-neutral-400 text-neutral-500">{{
+                    call.time
+                }}</span>
             </div>
             <div class="flex items-center gap-2">
                 <Icon
                     v-if="call.status === 'missed'"
-                    class="text-red-400"
+                    class="text-red-600"
                     :name="
                         call.type === 'phone'
                             ? 'uil:missed-call'
@@ -27,7 +29,7 @@
                 />
                 <Icon
                     v-else
-                    class="text-white"
+                    class="dark:text-white"
                     :name="
                         call.type === 'phone'
                             ? 'ph:phone-light'
@@ -37,8 +39,8 @@
                 <span
                     class="text-xs capitalize"
                     :class="{
-                        'text-red-400': call.status === 'missed',
-                        'text-white': call.status !== 'missed',
+                        'text-red-600': call.status === 'missed',
+                        'dark:text-white': call.status !== 'missed',
                     }"
                     >{{ call.status }}
                     {{ call.callCount > 0 ? `(${call.callCount})` : null }}

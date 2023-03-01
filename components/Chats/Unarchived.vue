@@ -1,14 +1,14 @@
 <template>
     <header class="flex flex-col justify-between gap-3 mb-5 px-2">
         <div class="flex items-center justify-between">
-            <h3 class="text-xl font-medium text-white">Chats</h3>
+            <h3 class="text-xl font-medium dark:text-white">Chats</h3>
 
             <div class="tools">
                 <ul class="flex">
                     <li
-                        class="group flex items-center justify-center px-4 py-2 hover:bg-neutral-800/40 relative rounded"
+                        class="group flex items-center justify-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-neutral-800/40 relative rounded"
                     >
-                        <Icon name="lucide:edit" class="text-white" />
+                        <Icon name="lucide:edit" class="dark:text-white" />
                         <Tooltip
                             text="New Chat(Ctrl+N)"
                             :multiline="true"
@@ -18,11 +18,11 @@
                     </li>
                     <li class="relative">
                         <button
-                            class="peer flex items-center justify-center px-3 py-2 hover:bg-neutral-800/40 focus:bg-neutral-800/40 border border-transparent focus:border-black/40 relative rounded"
+                            class="peer flex items-center justify-center px-3 py-2 hover:bg-gray-100 dark:hover:bg-neutral-800/40 focus:bg-neutral-800/40 border border-transparent focus:border-black/40 relative rounded"
                         >
                             <Icon
                                 name="heroicons:ellipsis-horizontal-20-solid"
-                                class="w-6 h-6 text-white"
+                                class="w-6 h-6 dark:text-white"
                             />
                         </button>
                         <FormDropdown position="bottom">
@@ -72,18 +72,18 @@
         class="h-screen overflow-y-scroll scroll-p-0 snap-mandatory snap-y"
     >
         <button
-            class="hover:bg-neutral-800 focus:outline-none focus:bg-neutral-800 w-full flex items-center py-2.5 rounded-md pl-6 gap-6 mb-1"
+            class="hover:bg-gray-100 dark:hover:bg-neutral-800 focus:outline-none focus:bg-gray-100 dark:focus:bg-neutral-800 w-full flex items-center py-2.5 rounded-md pl-6 gap-6 mb-1"
             @click="showArchivedChats"
         >
             <Icon
                 name="heroicons:archive-box"
-                class="text-lg text-white flex-shrink-0"
+                class="text-lg dark:text-white flex-shrink-0"
             />
 
             <div
                 class="flex flex-1 items-center justify-between font-medium pr-3"
             >
-                <p class="text-white text-sm">Archived</p>
+                <p class="dark:text-white text-sm">Archived</p>
                 <span class="text-xs text-green-600">71</span>
             </div>
         </button>

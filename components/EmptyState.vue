@@ -9,9 +9,9 @@
         >
             <Icon
                 name="ic:twotone-whatsapp"
-                class="w-20 h-20 text-neutral-700"
+                class="w-20 h-20 text-neutral-300 dark:text-neutral-700"
             />
-            <h3 class="text-xl text-white mb-2">Whatsapp for Windows</h3>
+            <h3 class="text-xl dark:text-white mb-2">Whatsapp for Windows</h3>
             <article class="max-w-xl text-sm text-neutral-400">
                 <p>
                     Send and receive messages without keeping your phone online.

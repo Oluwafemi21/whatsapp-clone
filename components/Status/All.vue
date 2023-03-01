@@ -1,17 +1,17 @@
 <template>
     <section
-        class="chats bg-transparent col-span-3 rounded-tl-lg border-black/25 border border-r-0 px-2 py-2"
+        class="chats bg-white/50 dark:bg-neutral-800/50 col-span-3 rounded-tl-lg border-black/25 border border-r-0 px-2 py-2"
     >
         <header class="flex flex-col justify-between gap-3 mb-1 px-2">
             <div class="flex items-center justify-between">
-                <h3 class="text-xl font-medium text-white">Status</h3>
+                <h3 class="text-xl font-medium dark:text-white">Status</h3>
             </div>
         </header>
 
         <section class="h-screen overflow-y-scroll scroll-p-0">
             <StatusCard :status="statuses[0]" :active="true" />
             <p
-                class="pl-2 text-sm py-1 sticky top-0 text-neutral-400 border-none bg-[hsl(0,0%,10%)]"
+                class="pl-2 text-sm py-1 sticky top-0 bg-neutral-50 dark:text-neutral-400 border-none dark:bg-[hsl(0,0%,10%)]"
             >
                 Recent updates
             </p>

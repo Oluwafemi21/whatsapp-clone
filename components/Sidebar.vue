@@ -1,16 +1,19 @@
 <template>
     <aside
-        class="sidebar fixed flex flex-col justify-between left-0 top-10 h-full w-12 bg-black/90 py-3"
+        class="sidebar fixed flex flex-col justify-between left-0 top-10 h-full w-12 bg-gray-100 dark:bg-black/90 py-3"
     >
         <ul class="pt-1 flex flex-col gap-2 mb-3">
             <li v-for="link in links" :key="link.name" class="relative px-1">
                 <NuxtLink
                     :to="link.route"
-                    class="flex items-center justify-center h-9 hover:bg-neutral-800/40 focus:outline-none focus:bg-neutral-800/40 relative rounded group"
+                    class="flex items-center justify-center h-9 hover:bg-gray-200 dark:hover:bg-neutral-800/40 focus:outline-none focus:bg-gray-200 dark:focus:bg-neutral-800/40 relative rounded group"
                     exact
                 >
                     <ClientOnly>
-                        <Icon :name="link.icon" class="w-5 h-5 text-white" />
+                        <Icon
+                            :name="link.icon"
+                            class="w-5 h-5 dark:text-white text-neutral-800"
+                        />
                     </ClientOnly>
                     <Tooltip :text="link.name" />
                 </NuxtLink>
@@ -20,25 +23,25 @@
             <div class="px-1 pt-1 flex flex-col gap-2">
                 <button
                     @click="openModal('general')"
-                    class="flex items-center justify-center h-9 hover:bg-neutral-800/40 group relative rounded focus:outline-none focus:bg-neutral-800/40"
+                    class="flex items-center justify-center h-9 hover:bg-gray-200 dark:hover:bg-neutral-800/40 group relative rounded focus:outline-none focus:bg-gray-200 dark:focus:bg-neutral-800/40"
                 >
                     <Tooltip text="Settings" />
                     <ClientOnly>
                         <Icon
                             name="heroicons:cog-8-tooth"
-                            class="w-6 h-6 text-white"
+                            class="w-6 h-6 dark:text-white text-neutral-800"
                         />
                     </ClientOnly>
                 </button>
                 <button
                     @click="openModal('profile')"
-                    class="flex items-center justify-center h-9 hover:bg-neutral-800/40 group relative rounded focus:outline-none focus:bg-neutral-800/40"
+                    class="flex items-center justify-center h-9 hover:bg-gray-200 dark:hover:bg-neutral-800/40 group relative rounded focus:outline-none focus:bg-gray-200 dark:focus:bg-neutral-800/40"
                 >
                     <Tooltip text="Profile" />
                     <ClientOnly>
                         <Icon
-                            name="heroicons:user-circle"
-                            class="w-6 h-6 text-white"
+                            name="ph:user-circle-duotone"
+                            class="w-6 h-6 dark:text-white text-neutral-800"
                         />
                     </ClientOnly>
                 </button>
@@ -82,6 +85,6 @@ const links = [
 
 <style scoped>
 .router-link-active {
-    @apply bg-neutral-800/40 before:block before:absolute before:h-4 before:w-[3px] before:bg-green-600 before:left-0 before:rounded;
+    @apply bg-gray-200 dark:bg-neutral-800/40 before:block before:absolute before:h-4 before:w-[3px] before:bg-green-600 before:left-0 before:rounded;
 }
 </style>
