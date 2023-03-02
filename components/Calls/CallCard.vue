@@ -7,7 +7,7 @@
                 id: call.id,
             },
         }"
-        class="hover:bg-gray-200 focus:bg-gray-200 dark:hover:bg-neutral-800 flex space-x-3 w-full rounded-md py-2.5 px-3"
+        class="hover:bg-gray-200 focus:bg-gray-200 dark:focus:bg-neutral-800 dark:hover:bg-neutral-800 flex space-x-3 w-full rounded-md py-2.5 px-3"
     >
         <Avatar />
         <div class="w-full flex flex-col gap-2">

@@ -9,7 +9,7 @@
                 v-bind="$attrs"
             />
             <div
-                class="w-11 p-1 h-5 bg-transparent ring-2 ring-neutral-400 rounded-full peer after:absolute dark:after:bg-white after:bg-neutral-500 after:rounded-full after:h-3 after:w-3 after:transition-transform after:duration-300 after:ease-in-out peer-checked:after:translate-x-6 after:content-[''] peer-checked:dark:after:bg-black peer-checked:after:bg-white peer-checked:bg-emerald-600 peer-checked:ring-emerald-600"
+                class="w-11 p-1 h-5 bg-transparent ring-2 ring-neutral-400 rounded-full peer after:absolute dark:after:bg-white after:bg-neutral-500 after:rounded-full after:h-3 after:w-3 after:transition-transform after:duration-300 after:ease-in-out peer-checked:after:translate-x-6 after:content-[''] dark:peer-checked:after:bg-black peer-checked:after:bg-white peer-checked:bg-emerald-600 peer-checked:ring-emerald-600"
             ></div>
         </label>
         <span class="text-sm dark:text-white capitalize">{{

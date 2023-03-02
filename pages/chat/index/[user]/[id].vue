@@ -30,7 +30,7 @@
             </div>
             <textarea
                 rows="1"
-                class="resize-none dark:bg-neutral-800/50 hover:bg-gray-100 h-10 w-full dark:hover:bg-neutral-700/60 dark:focus:hover:bg-transparent placeholder:text-neutral-500 placeholder:text-sm text-sm focus:outline-none focus:border-none focus:bg-transparent focus:ring-0 ring-0 border-none"
+                class="resize-none dark:bg-neutral-800/50 hover:bg-gray-100 h-10 w-full dark:hover:bg-neutral-700/60 dark:focus:bg-transparent placeholder:text-neutral-500 placeholder:text-sm text-sm focus:outline-none focus:border-none focus:bg-transparent focus:ring-0 ring-0 border-none"
                 placeholder="Type a message"
                 v-model="textMessage"
             />

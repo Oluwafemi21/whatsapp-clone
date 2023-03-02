@@ -1,6 +1,6 @@
 <template>
     <div
-        class="bg-neutral-300 dark:bg-neutral-700 grid place-content-center rounded-full flex-shrink-0"
+        class="bg-neutral-300 dark:bg-neutral-700 grid place-content-center rounded-full flex-shrink-0 border border-neutral-600/10"
         :class="avatarSize"
     >
         <Icon

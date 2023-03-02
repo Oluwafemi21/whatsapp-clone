@@ -46,7 +46,16 @@
                     </ClientOnly>
                 </button>
 
-                <ExtraSettingsModal v-if="showModal" />
+                <Modal v-if="showModal">
+                    <template #sidebar>
+                        <ExtraSettingsSidebarNav />
+                    </template>
+                    <template #view>
+                        <KeepAlive>
+                            <component :is="showTab"></component>
+                        </KeepAlive>
+                    </template>
+                </Modal>
             </div>
         </div>
     </aside>
@@ -57,10 +66,10 @@ const showModal = useState("modal-opened", () => {
     return false;
 });
 
-const activeTab = useState("tab-opened");
+const currentTabOpened = ref("general");
 
 const openModal = (tab) => {
-    activeTab.value = tab;
+    currentTabOpened.value = tab;
     showModal.value = true;
 };
 
@@ -81,6 +90,32 @@ const links = [
         route: "/status",
     },
 ];
+
+//  components
+const general = resolveComponent("ExtraSettingsGeneral");
+const chats = resolveComponent("ExtraSettingsChats");
+const account = resolveComponent("ExtraSettingsAccount");
+const notifications = resolveComponent("ExtraSettingsNotifications");
+const storage = resolveComponent("ExtraSettingsStorage");
+const shortcuts = resolveComponent("ExtraSettingsShortcuts");
+const profile = resolveComponent("ExtraSettingsProfile");
+const help = resolveComponent("ExtraSettingsHelp");
+
+const tabSettings = {
+    general,
+    chats,
+    account,
+    notifications,
+    storage,
+    shortcuts,
+    profile,
+    help,
+};
+
+// computed
+const showTab = computed(() => {
+    return tabSettings[currentTabOpened.value];
+});
 </script>
 
 <style scoped>
