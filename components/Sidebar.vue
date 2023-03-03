@@ -62,11 +62,14 @@
 </template>
 
 <script setup>
+import { ref, computed } from "vue";
 const showModal = useState("modal-opened", () => {
     return false;
 });
 
-const currentTabOpened = ref("general");
+const currentTabOpened = useState("tab-opened", () => {
+    return "general";
+});
 
 const openModal = (tab) => {
     currentTabOpened.value = tab;
