@@ -52,11 +52,10 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { useDark } from "@vueuse/core";
 
 const isDark = useDark();
-
 const showWhatsappAtLogin = ref(false);
 const themes = {
     auto: "auto",
@@ -66,9 +65,18 @@ const themes = {
 const theme = ref("auto");
 
 const changeTheme = (event) => {
-    themes[event.target.value];
     event.target.value === "auto"
         ? (isDark.value = null)
         : (isDark.value = event.target.value === "dark" ? true : false);
+    localStorage.setItem("theme", event.target.value);
+    theme.value = event.target.value;
 };
+
+onMounted(() => {
+    let global_theme = localStorage.getItem("theme");
+    theme.value = global_theme;
+    global_theme === "auto"
+        ? (isDark.value = null)
+        : (isDark.value = global_theme === "dark" ? true : false);
+});
 </script>

@@ -12,7 +12,9 @@
 <script setup>
 import { useDark } from "@vueuse/core";
 
-const dark = useDark();
+const dark = useDark({
+    storageKey: "theme",
+});
 </script>
 
 <style scoped></style>

@@ -3,7 +3,7 @@
         class="w-full h-screen grid place-content-center justify-items-center"
     >
         <section
-            class="flex flex-col items-center gap-5 bg-white p-4 rounded-lg border max-w-sm w-screen"
+            class="flex flex-col items-center gap-5 bg-white shadow-lg p-4 rounded-lg border max-w-sm w-screen"
         >
             <h1 class="text-2xl font-medium">Login To Whatsapp</h1>
             <p class="">To get started, login with your google account.</p>

@@ -26,9 +26,13 @@
 </template>
 
 <script setup>
+import { useDark } from "@vueuse/core";
+
 const chat = resolveComponent("ChatsActive");
 const call = resolveComponent("CallsAll");
 const status = resolveComponent("StatusAll");
+
+const dark = useDark();
 </script>
 
 <style scoped></style>
