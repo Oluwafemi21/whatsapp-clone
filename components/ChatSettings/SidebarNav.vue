@@ -22,19 +22,6 @@
                 </button>
             </li>
         </ul>
-        <button
-            @click="changeTab('profile')"
-            class="w-full flex items-center gap-3 pl-3 h-9 hover:bg-neutral-200 dark:hover:bg-neutral-700/40 focus:outline-none focus:bg-neutral-700/40 relative rounded"
-            :class="{ active: activeTab === 'profile' }"
-        >
-            <ClientOnly>
-                <Icon
-                    name="fluent:person-28-regular"
-                    class="w-5 h-5 dark:text-white"
-                />
-            </ClientOnly>
-            <span class="dark:text-white">Profile</span>
-        </button>
     </aside>
 </template>
 
@@ -46,32 +33,28 @@ const changeTab = (tab) => {
 
 const tabs = [
     {
-        name: "general",
-        icon: "material-symbols:computer-outline",
-    },
-    {
-        name: "account",
-        icon: "ph:key",
-    },
-    {
-        name: "chats",
-        icon: "humbleicons:chats",
-    },
-    {
-        name: "notifications",
-        icon: "system-uicons:bell",
-    },
-    {
-        name: "storage",
-        icon: "fluent:storage-20-regular",
-    },
-    {
-        name: "shortcuts",
-        icon: "material-symbols:keyboard-outline",
-    },
-    {
-        name: "help",
+        name: "overview",
         icon: "fluent:info-20-regular",
+    },
+    {
+        name: "media",
+        icon: "fluent-mdl2:media",
+    },
+    {
+        name: "files",
+        icon: "ph:file",
+    },
+    {
+        name: "links",
+        icon: "ph:link-simple-horizontal",
+    },
+    {
+        name: "encryption",
+        icon: "material-symbols:lock-outline",
+    },
+    {
+        name: "groups",
+        icon: "heroicons:users",
     },
 ];
 </script>

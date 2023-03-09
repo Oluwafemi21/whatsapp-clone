@@ -9,7 +9,6 @@
 </template>
 
 <script>
-import { ref } from "vue";
 import ChatsUnarchived from "@/components/Chats/Unarchived.vue";
 import ChatsArchived from "@/components/Chats/Archived.vue";
 

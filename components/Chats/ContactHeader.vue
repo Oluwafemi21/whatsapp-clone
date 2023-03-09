@@ -1,8 +1,12 @@
 <template>
     <header
         class="absolute top-0 w-full flex items-center border-b bg-neutral-50 dark:border-black/25 dark:bg-neutral-800"
+        ref="modalBtn"
     >
-        <button class="flex items-center gap-4 p-3 w-full group">
+        <button
+            @click="openModal"
+            class="flex items-center gap-4 p-3 w-full group"
+        >
             <Avatar size="small" class="group-hover:opacity-60" />
             <div class="space-y-0.5">
                 <span
@@ -59,6 +63,16 @@
                 </button>
             </div>
         </div>
+        <Modal v-if="showModal" position="top-left">
+            <template #sidebar>
+                <ChatSettingsSidebarNav />
+            </template>
+            <template #view>
+                <KeepAlive>
+                    <component :is="showTab"></component>
+                </KeepAlive>
+            </template>
+        </Modal>
     </header>
 </template>
 
@@ -69,6 +83,40 @@ defineProps({
         required: true,
         default: "",
     },
+});
+
+const showModal = ref(false);
+
+const currentTabOpened = useState("tab-opened", () => {
+    return "overview";
+});
+
+// functions
+const openModal = () => {
+    currentTabOpened.value = "overview";
+    showModal.value = true;
+};
+
+//  components
+const overview = resolveComponent("ChatSettingsOverview");
+const files = resolveComponent("ChatSettingsFiles");
+const media = resolveComponent("ChatSettingsMedia");
+const links = resolveComponent("ChatSettingsLinks");
+const encryption = resolveComponent("ChatSettingsEncryption");
+const groups = resolveComponent("ChatSettingsGroups");
+
+const tabSettings = {
+    overview,
+    files,
+    media,
+    links,
+    encryption,
+    groups,
+};
+
+// computed
+const showTab = computed(() => {
+    return tabSettings[currentTabOpened.value];
 });
 </script>
 

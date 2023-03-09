@@ -30,7 +30,6 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
 const currentTab = useState("active-component");
 
 const showUnarchivedChats = () => {

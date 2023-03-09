@@ -61,9 +61,13 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+const route = useRoute();
 
 const textMessage = ref("");
+
+useHead({
+    title: `Whatsapp Chat | ${route.params.user}`,
+});
 </script>
 
 <style></style>

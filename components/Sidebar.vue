@@ -46,7 +46,7 @@
                     </ClientOnly>
                 </button>
 
-                <Modal v-if="showModal">
+                <Modal v-if="showModal" position="bottom-left">
                     <template #sidebar>
                         <ExtraSettingsSidebarNav />
                     </template>
@@ -62,7 +62,6 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
 const showModal = useState("modal-opened", () => {
     return false;
 });

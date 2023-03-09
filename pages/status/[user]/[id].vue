@@ -15,6 +15,10 @@
     </section>
 </template>
 
-<script setup></script>
+<script setup>
+useHead({
+    title: `Whatsapp Status | ${route.params.user}`,
+});
+</script>
 
 <style></style>

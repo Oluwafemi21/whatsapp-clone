@@ -70,6 +70,9 @@
 definePageMeta({
     layout: "custom",
 });
+useHead({
+    title: `Whatsapp Call | ${route.params.user}`,
+});
 </script>
 
 <style></style>
