@@ -1,5 +1,5 @@
 <template>
-    <empty-state />
+    <NuxtPage />
 </template>
 
 <script setup>
@@ -7,3 +7,5 @@ definePageMeta({
     layout: "custom",
 });
 </script>
+
+<style></style>

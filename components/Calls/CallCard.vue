@@ -1,7 +1,7 @@
 <template>
     <NuxtLink
         :to="{
-            name: 'calls-user-id',
+            name: 'calls-index-user-id',
             params: {
                 user: call.name,
                 id: call.id,

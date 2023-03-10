@@ -7,7 +7,6 @@
                 <NuxtLink
                     :to="link.route"
                     class="flex items-center justify-center h-9 hover:bg-gray-200 dark:hover:bg-neutral-800/40 focus:outline-none focus:bg-gray-200 dark:focus:bg-neutral-800/40 relative rounded group"
-                    exact
                 >
                     <ClientOnly>
                         <Icon
@@ -15,6 +14,7 @@
                             class="w-5 h-5 dark:text-white text-neutral-800"
                         />
                     </ClientOnly>
+
                     <Tooltip :text="link.name" />
                 </NuxtLink>
             </li>

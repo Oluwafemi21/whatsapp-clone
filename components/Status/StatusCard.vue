@@ -1,13 +1,13 @@
 <template>
     <NuxtLink
         :to="{
-            name: 'status-user-id',
+            name: 'status-index-user-id',
             params: {
                 user: status.name,
                 id: status.id,
             },
         }"
-        class="hover:bg-gray-200 focus:bg-gray-200 dark:hover:bg-neutral-800 flex space-x-3 w-full rounded-md py-2.5 px-3"
+        class="hover:bg-gray-200 dark:hover:bg-neutral-800 flex space-x-3 w-full rounded-md py-2.5 px-3"
         :class="active ? ' dark:bg-neutral-800' : null"
     >
         <Avatar />
