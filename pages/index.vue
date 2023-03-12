@@ -22,7 +22,7 @@
         </p>
         <div class="flex items-center gap-5">
             <NuxtLink
-                to="/auth/login"
+                to="/auth/signup"
                 class="bg-green-600 ring-1 ring-green-600 hover:ring-green-500 text-white px-5 py-2 rounded-full font-medium hover:bg-green-500"
                 >Get Started</NuxtLink
             >

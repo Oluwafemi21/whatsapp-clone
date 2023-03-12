@@ -1,12 +1,11 @@
 <template>
     <section class="relative h-full w-full flex flex-col dark:text-white">
         <ChatsContactHeader :contact="`${$route.params.user}`" />
-        <div class="flex-1 overflow-y-auto h-full px-5">
-            <p>User - {{ $route.params.user }}</p>
-            <p>Id - {{ $route.params.id }}</p>
-            <Icon name="ant-design:audio-outlined" />
-            <Icon name="ph:phone-light" />
-        </div>
+
+        <!-- Message Area -->
+        <ChatsMessages :messages="messages" />
+
+        <!-- Message Box Input -->
         <div
             class="sticky bottom-0 left-0 flex items-center border-t border-black/25 bg-neutral-50 dark:bg-neutral-800/50 px-2 py-1 gap-4"
         >
@@ -64,6 +63,22 @@
 const route = useRoute();
 
 const textMessage = ref("");
+const messages = ref([
+    {
+        id: "2392094fhbdh",
+        text: "Hey",
+        time: "10:00am",
+        sender: "user",
+        read: false,
+    },
+    {
+        id: "4232309sdrfsh",
+        text: "Hello",
+        time: "10:04am",
+        sender: "recepient",
+        read: false,
+    },
+]);
 
 useHead({
     title: `Whatsapp Chat | ${route.params.user}`,

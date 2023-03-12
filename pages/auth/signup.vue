@@ -5,13 +5,13 @@
         <section
             class="flex flex-col items-center gap-5 bg-white shadow-lg p-4 rounded-lg border max-w-sm w-screen"
         >
-            <h1 class="text-2xl font-medium">Login To Whatsapp</h1>
-            <p class="">To get started, login with your google account.</p>
+            <h1 class="text-2xl font-medium">SignUp To Whatsapp</h1>
+            <p class="">To get started, signup with your google account.</p>
             <button
                 @click="login"
                 class="bg-green-600 text-lg grid h-10 text-center place-content-center text-white w-full rounded font-medium hover:bg-green-500"
             >
-                <span v-if="!loggingIn">Login</span>
+                <span v-if="!loggingIn">Create an account</span>
                 <Icon
                     v-else
                     name="svg-spinners:270-ring-with-bg"
@@ -20,9 +20,9 @@
             </button>
 
             <p class="border-t border-gray-400 w-full pt-3 text-center text-sm">
-                Don't have an account?
-                <NuxtLink to="/auth/signup" class="underline text-green-400"
-                    >Create one here.</NuxtLink
+                Already have an account?
+                <NuxtLink to="/auth/login" class="underline text-green-400"
+                    >Login.</NuxtLink
                 >
             </p>
         </section>
