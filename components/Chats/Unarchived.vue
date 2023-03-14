@@ -123,7 +123,7 @@ const chats = [
     },
     {
         id: 2,
-        name: "Mr Marv",
+        name: "Cynthia",
         time: "10:33 AM",
         message: "No issues",
         status: "unarchived",
@@ -133,7 +133,7 @@ const chats = [
 
     {
         id: 3,
-        name: "Mr Marv",
+        name: "Jessica",
         time: "10:33 AM",
         message: "No issues",
         status: "unarchived",

@@ -65,18 +65,136 @@ const route = useRoute();
 const textMessage = ref("");
 const messages = ref([
     {
-        id: "2392094fhbdh",
-        text: "Hey",
-        time: "10:00am",
-        sender: "user",
+        userId: "12d34e",
         read: false,
+        text_messages: [
+            {
+                id: "2392094fhbdh",
+                text: "Hey",
+                time: "10:04am",
+            },
+        ],
     },
     {
-        id: "4232309sdrfsh",
-        text: "Hello",
-        time: "10:04am",
-        sender: "recepient",
+        userId: "12d34f",
         read: false,
+        text_messages: [
+            {
+                id: "2ffurfbf234ri",
+                text: "Hello",
+                time: "10:04am",
+            },
+        ],
+    },
+    {
+        userId: "12d34e",
+        read: false,
+        text_messages: [
+            {
+                id: "2392094fhbdh",
+                text: "Hey",
+                time: "10:04am",
+            },
+            {
+                id: "2r7gfnfewejw",
+                text: "Hello",
+                time: "10:04am",
+            },
+            {
+                id: "2ruf8ofwlifw",
+                text: "Reply me",
+                time: "10:04am",
+            },
+        ],
+    },
+    {
+        userId: "12d34f",
+        read: false,
+        text_messages: [
+            {
+                id: "2ffurfaf234ri",
+                text: "Hey",
+                time: "10:04am",
+            },
+            {
+                id: "3eucsbicuwebu",
+                text: "Hey",
+                time: "10:05am",
+            },
+            {
+                id: "64fwfbcfkwjskfu",
+                text: "Hey",
+                time: "10:06am",
+            },
+        ],
+    },
+    {
+        userId: "12d34e",
+        read: false,
+        text_messages: [
+            {
+                id: "2392094fhbdh",
+                text: "Hey baddie",
+                time: "10:06pm",
+            },
+            {
+                id: "2392094fhbdh",
+                text: "Just got your text now",
+                time: "10:06pm",
+            },
+            {
+                id: "2392094fhbdh",
+                text: "I was coding, I completely forgot I had a phone",
+                time: "10:06pm",
+            },
+        ],
+    },
+    {
+        userId: "12d34f",
+        read: false,
+        text_messages: [
+            {
+                id: "2ffurfaf234ri",
+                text: "Hmmm, Femi",
+                time: "10:07pm",
+            },
+            {
+                id: "3eucsbicuwebu",
+                text: "Okay no problem",
+                time: "10:07pm",
+            },
+            {
+                id: "64fwfbcfkwjskfu",
+                text: "How are you??",
+                time: "10:07pm",
+            },
+        ],
+    },
+    {
+        userId: "12d34e",
+        read: false,
+        text_messages: [
+            {
+                id: "2392094fhbdh",
+                text: "You don't believe me??",
+                time: "10:08pm",
+            },
+            {
+                id: "2392094fhbdh",
+                text: "Why are women like this?",
+                time: "10:08pm",
+            },
+            {
+                id: "2392094fhbdh",
+                text: "I'm good anyways, I was thinking about you while I was coding",
+                time: "10:08pm",
+            },
+            {
+                id: "2392094fhbdh",
+                text: "That's why I am even online rn",
+                time: "10:08pm",
+            },
+        ],
     },
 ]);
 

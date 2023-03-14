@@ -1,27 +1,27 @@
 <template>
     <div
-        class="flex-1 overflow-y-auto h-full mt-20 px-3"
+        class="flex-1 overflow-y-auto h-full mt-20 pb-1 px-3"
         :class="{
             'grid place-content-center': !messages.length,
         }"
     >
         <div v-if="!messages.length">
-            <span class="bg-neutral-600 text-white rounded text-sm px-3 py-1"
-                >Today</span
-            >
+            <ChatsNoMessage />
         </div>
-        <div v-else>
-            <p>Welcome to your first texts</p>
-            <ul class="text-white space-y-1">
-                <li
-                    v-for="message in messages"
-                    :key="message.id"
-                    class="bg-emerald-500 p-2 rounded"
+        <template v-else>
+            <section class="text-white">
+                <div
+                    v-for="(message, index) in messages"
+                    :key="index"
+                    class="space-y-1 flex flex-col w-full"
+                    :class="{
+                        'items-end': message.userId === '12d34e',
+                    }"
                 >
-                  <ChatsMessageBox :message="message" />
-                </li>
-            </ul>
-        </div>
+                    <ChatsMessageBox :message="message" />
+                </div>
+            </section>
+        </template>
     </div>
 </template>
 
