@@ -63,7 +63,7 @@
                 </button>
             </div>
         </div>
-        <Modal v-if="showModal" position="top-left">
+        <Modal v-if="showModal" position="top-right">
             <template #sidebar>
                 <ChatSettingsSidebarNav />
             </template>

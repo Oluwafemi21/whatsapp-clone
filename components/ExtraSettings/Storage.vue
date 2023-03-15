@@ -16,7 +16,7 @@
             <input
                 type="checkbox"
                 :id="media"
-                class="w-5 h-5 rounded bg-neutral-800 text-green-500 focus:outline-none focus:ring-transparent focus:border-none"
+                class="w-5 h-5 rounded bg-neutral-800 text-green-500 focus:outline-none focus:ring-offset-0 focus:ring-transparent"
                 checked
             />
             <label
