@@ -11,10 +11,7 @@
                     type="checkbox"
                     :name="`Image ${i + 1}`"
                     :id="`Image ${i + 1}`"
-                    class="absolute top-0.5 z-10 h-5 w-5 right-0.5 focus:outline-none focus:outline-offset-0 focus:ring-transparent focus:ring-0 focus:ring-offset-0 bg-black border-neutral-700 border-2 peer"
-                    :class="{
-                        'checked:bg-green-700': selectImages[index].selected,
-                    }"
+                    class="check absolute top-0.5 z-10 h-5 w-5 right-0.5 focus:outline-none focus:outline-offset-0 focus:ring-transparent focus:ring-0 focus:ring-offset-0 bg-black border-neutral-700 border-2 checked:text-green-700 peer"
                     @change="selectImage(index)"
                 />
                 <img
@@ -51,7 +48,6 @@ const selectImages = computed(() => {
         };
     });
 });
-
 const selectImage = (index) => {
     selectImages.value[index].selected = !selectImages.value[index].selected;
 };
