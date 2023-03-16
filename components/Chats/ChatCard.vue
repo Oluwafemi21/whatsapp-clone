@@ -18,7 +18,7 @@
                 <span
                     class="text-xs"
                     :class="{
-                        'text-green-500': chat.recepient === 'user',
+                        'text-emerald-600 font-bold': chat.recepient === 'user',
                         'dark:text-neutral-400 text-neutral-500':
                             chat.recepient === 'not-user',
                     }"
@@ -61,7 +61,7 @@
                                 chat.recepient === 'user' &&
                                 chat.messageCount > 0
                             "
-                            class="text-[11px] bg-green-600 h-4 w-4 rounded-full font-bold grid place-content-center text-white dark:text-black p-1"
+                            class="text-[11px] bg-emerald-600 h-4 w-4 rounded-full font-bold grid place-content-center text-white dark:text-black p-1"
                             >{{ chat.messageCount }}</span
                         >
                     </div>

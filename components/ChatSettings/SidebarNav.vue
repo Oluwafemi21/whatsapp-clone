@@ -61,6 +61,6 @@ const tabs = [
 
 <style scoped>
 .active {
-    @apply bg-neutral-200 dark:bg-neutral-700/40 before:block before:absolute before:h-4 before:w-[3px] before:bg-green-600 before:left-0 before:rounded;
+    @apply bg-neutral-200 dark:bg-neutral-700/40 before:block before:absolute before:h-4 before:w-[3px] before:bg-emerald-700 before:left-0 before:rounded;
 }
 </style>

@@ -122,6 +122,6 @@ const showTab = computed(() => {
 
 <style scoped>
 .router-link-active {
-    @apply bg-gray-200 dark:bg-neutral-800/40 before:block before:absolute before:h-4 before:w-[3px] before:bg-green-600 before:left-0 before:rounded;
+    @apply bg-gray-200 dark:bg-neutral-800/40 before:block before:absolute before:h-4 before:w-[3px] before:bg-emerald-700 before:left-0 before:rounded;
 }
 </style>

@@ -9,7 +9,7 @@
             <ChatsNoMessage />
         </div>
         <template v-else>
-            <section class="text-white">
+            <section class="text-white space-y-1">
                 <div
                     v-for="(message, index) in messages"
                     :key="index"

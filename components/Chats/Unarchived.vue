@@ -84,7 +84,7 @@
                 class="flex flex-1 items-center justify-between font-medium pr-3"
             >
                 <p class="dark:text-white text-sm">Archived</p>
-                <span class="text-xs text-green-600">71</span>
+                <span class="text-xs font-bold text-emerald-600">71</span>
             </div>
         </button>
         <Transition name="slide-top" mode="out-in">

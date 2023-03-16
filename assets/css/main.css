@@ -79,3 +79,14 @@ body {
 .slide-top-leave-to {
     transform: scale(0);
 }
+
+.slide-left-enter-active,
+.slide-left-leave-active {
+    transition: all 100ms ease-in-out;
+}
+
+.slide-left-enter-from,
+.slide-left-leave-to {
+    transform: translateX(0%);
+    opacity:0;
+}

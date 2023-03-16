@@ -1,22 +1,29 @@
 <template>
-    <section class="relative flex flex-col overflow-y-scroll h-full">
-        <h3 class="text-xl dark:text-white font-medium p-4">Media</h3>
-        <div class="flex-1 p-4">
+    <section class="relative">
+        <h3
+            class="sticky top-0 bg-neutral-800 z-30 text-xl dark:text-white font-medium p-4"
+        >
+            Media
+        </h3>
+        <div class="px-4 pb-4">
             <div class="grid grid-cols-3 gap-3">
                 <div
-                    v-for="({ image }, index) in imageState"
+                    v-for="({ id, image }, index) in imageState"
                     :key="index"
                     class="relative image h-[5.5rem]"
                 >
                     <input
                         type="checkbox"
-                        :name="`Image ${index + 1}`"
-                        :id="`Image ${index + 1}`"
-                        class="check absolute top-0.5 z-10 h-5 w-5 right-0.5 focus:outline-none focus:outline-offset-0 focus:ring-transparent focus:ring-0 focus:ring-offset-0 bg-black border-neutral-700 border-2 checked:text-green-700 checked:block peer"
+                        :name="id"
+                        :value="id"
+                        :id="id"
+                        class="check absolute top-0.5 z-10 h-5 w-5 right-0.5 focus:outline-none focus:outline-offset-0 focus:ring-transparent focus:ring-0 focus:ring-offset-0 bg-neutral-900 border-neutral-700 border-2 checked:text-green-700 checked:block peer"
                         :class="{
                             hidden: !imageState[index].checkBoxVisible,
                         }"
+                        :checked="imageState[index].selected"
                         @change="selectImage(index)"
+                        v-model="selected"
                     />
 
                     <img
@@ -27,43 +34,88 @@
                 </div>
             </div>
         </div>
-        <div class="bg-neutral-900/20 backdrop-blur-sm flex" v-if="showActions">
-            <button
-                class="flex items-center gap-2 dark:text-white text-xs px-2 py-2.5 hover:bg-neutral-700/90 rounded-md"
+        <transition name="slide-left" mode="in-out">
+            <div
+                class="sticky bottom-0 w-full bg-neutral-900/60 z-30 backdrop-blur-xl flex"
+                v-if="showActions"
             >
-                <Icon name="fluent:delete-24-regular" class="h-5 w-5" />
-                <span>Delete</span>
-            </button>
-            <button
-                class="flex items-center gap-2 dark:text-white text-xs px-2 py-2.5 hover:bg-neutral-700/90 rounded-md"
-            >
-                <Icon name="akar-icons:arrow-forward" class="h-5 w-5" />
-                <span>Forward</span>
-            </button>
-            <button
-                class="flex items-center gap-2 dark:text-white text-xs px-2 py-2.5 hover:bg-neutral-700/90 rounded-md ml-auto"
-            >
-                <Icon name="fluent-mdl2:select-all" class="h-5 w-5" />
-                <!-- <Icon name="fluent-mdl2:clear-selection" class="h-5 w-5" /> -->
-                <span>Select all</span>
-            </button>
-        </div>
+                <button
+                    class="flex items-center gap-2 dark:text-white text-xs px-2 py-2.5 hover:bg-neutral-400 dark:hover:bg-neutral-700/90 rounded-md"
+                >
+                    <Icon name="fluent:delete-24-regular" class="h-5 w-5" />
+                    <span>Delete</span>
+                </button>
+                <button
+                    class="flex items-center gap-2 dark:text-white text-xs px-2 py-2.5 hover:bg-neutral-400 dark:hover:bg-neutral-700/90 rounded-md"
+                >
+                    <Icon name="akar-icons:arrow-forward" class="h-5 w-5" />
+                    <span>Forward</span>
+                </button>
+                <button
+                    v-if="!allImagesSelected"
+                    @click="selectAll"
+                    class="flex items-center gap-2 dark:text-white text-xs px-2 py-2.5 hover:bg-neutral-400 dark:hover:bg-neutral-700/90 rounded-md ml-auto"
+                >
+                    <Icon name="fluent-mdl2:select-all" class="h-5 w-5" />
+                    <!-- <Icon name="fluent-mdl2:clear-selection" class="h-5 w-5" /> -->
+                    <span> Select all</span>
+                </button>
+                <button
+                    v-else
+                    @click="selectAll"
+                    class="flex items-center gap-2 dark:text-white text-xs px-2 py-2.5 hover:bg-neutral-400 dark:hover:bg-neutral-700/90 rounded-md ml-auto"
+                >
+                    <Icon name="fluent-mdl2:clear-selection" class="h-5 w-5" />
+                    <span>Clear selection</span>
+                </button>
+            </div>
+        </transition>
     </section>
 </template>
 
 <script setup>
 const showActions = ref(false);
+const allImagesSelected = ref(false);
+const selected = ref([]);
 const media = ref([
     {
+        id: "21er2",
         image: "https://picsum.photos/100",
     },
     {
+        id: "21fr2",
         image: "https://picsum.photos/100",
     },
     {
+        id: "21gr2",
         image: "https://picsum.photos/100",
     },
     {
+        id: "21er3",
+        image: "https://picsum.photos/100",
+    },
+    {
+        id: "21er5",
+        image: "https://picsum.photos/100",
+    },
+    {
+        id: "21ee2",
+        image: "https://picsum.photos/100",
+    },
+    {
+        id: "21ew2",
+        image: "https://picsum.photos/100",
+    },
+    {
+        id: "21wr2",
+        image: "https://picsum.photos/100",
+    },
+    {
+        id: "25er2",
+        image: "https://picsum.photos/100",
+    },
+    {
+        id: "21er9",
         image: "https://picsum.photos/100",
     },
 ]);
@@ -100,7 +152,25 @@ const selectImage = (index) => {
         imageState.value.map((item) => (item.checkBoxVisible = false));
         showActions.value = false;
     }
-    console.log(imageState.value);
+
+    console.log(selected.value);
+};
+
+// create a function to select all images
+// in this function all the images are checked
+// and the button selectAll is changed to clear selection
+
+const selectAll = () => {
+    if (selected.value.length === imageState.value.length) {
+        selected.value = [];
+        console.log("emptied the array");
+        allImagesSelected.value = false;
+        showActions.value = false;
+    } else {
+        selected.value = imageState.value.map((image) => image.id);
+        allImagesSelected.value = true;
+        console.log("something is happening here, adding everybody");
+    }
 };
 </script>
 
