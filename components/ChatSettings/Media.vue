@@ -29,7 +29,7 @@
                     <img
                         :src="image"
                         alt="Image not found"
-                        class="object-cover brightness-75 hover:brightness-100 w-full z-20 rounded-md peer-checked:border-2 peer-checked:border-green-700 peer-checked:brightness-100"
+                        class="object-cover brightness-90 hover:brightness-100 w-full z-20 rounded-md peer-checked:border-2 peer-checked:border-green-700 peer-checked:brightness-100"
                     />
                 </div>
             </div>
@@ -121,7 +121,7 @@ const media = ref([
 ]);
 
 // computed property not updating
-// const selectImages = computed(() => {
+// const imageState = computed(() => {
 //     return media.value.map((image) => {
 //         return {
 //             ...image,
@@ -143,33 +143,26 @@ const imageState = useState("images", () => {
 const selectImage = (index) => {
     imageState.value[index].selected = !imageState.value[index].selected;
 
-    if (imageState.value.some((image) => image.selected)) {
-        imageState.value.map((item) => (item.checkBoxVisible = true));
-        showActions.value = true;
+    if (
+        imageState.value.some((image) => image.selected) ||
+        !imageState.value.some((image) => image.selected)
+    ) {
+        imageState.value.map(
+            (item) => (item.checkBoxVisible = !item.checkBoxVisible)
+        );
+        showActions.value = !showActions.value;
     }
-
-    if (!imageState.value.some((image) => image.selected)) {
-        imageState.value.map((item) => (item.checkBoxVisible = false));
-        showActions.value = false;
-    }
-
-    console.log(selected.value);
 };
-
-// create a function to select all images
-// in this function all the images are checked
-// and the button selectAll is changed to clear selection
 
 const selectAll = () => {
     if (selected.value.length === imageState.value.length) {
         selected.value = [];
-        console.log("emptied the array");
         allImagesSelected.value = false;
         showActions.value = false;
+        imageState.value.map((image) => (image.checkBoxVisible = false));
     } else {
         selected.value = imageState.value.map((image) => image.id);
         allImagesSelected.value = true;
-        console.log("something is happening here, adding everybody");
     }
 };
 </script>

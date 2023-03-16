@@ -88,5 +88,5 @@ body {
 .slide-left-enter-from,
 .slide-left-leave-to {
     transform: translateX(0%);
-    opacity:0;
+    opacity: 0;
 }

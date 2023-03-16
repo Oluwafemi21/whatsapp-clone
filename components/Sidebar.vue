@@ -46,16 +46,20 @@
                     </ClientOnly>
                 </button>
 
-                <Modal v-if="showModal" position="bottom-left">
-                    <template #sidebar>
-                        <ExtraSettingsSidebarNav />
-                    </template>
-                    <template #view>
-                        <KeepAlive>
-                            <component :is="showTab"></component>
-                        </KeepAlive>
-                    </template>
-                </Modal>
+                <transition name="slide-left" mode="in-out">
+                    <div v-if="showModal">
+                        <Modal position="bottom-left">
+                            <template #sidebar>
+                                <ExtraSettingsSidebarNav />
+                            </template>
+                            <template #view>
+                                <KeepAlive>
+                                    <component :is="showTab"></component>
+                                </KeepAlive>
+                            </template>
+                        </Modal>
+                    </div>
+                </transition>
             </div>
         </div>
     </aside>
