@@ -143,14 +143,14 @@ const imageState = useState("images", () => {
 const selectImage = (index) => {
     imageState.value[index].selected = !imageState.value[index].selected;
 
-    if (
-        imageState.value.some((image) => image.selected) ||
-        !imageState.value.some((image) => image.selected)
-    ) {
-        imageState.value.map(
-            (item) => (item.checkBoxVisible = !item.checkBoxVisible)
-        );
-        showActions.value = !showActions.value;
+    if (imageState.value.some((image) => image.selected)) {
+        imageState.value.map((item) => (item.checkBoxVisible = true));
+        showActions.value = true;
+    }
+
+    if (!imageState.value.some((image) => image.selected)) {
+        imageState.value.map((item) => (item.checkBoxVisible = false));
+        showActions.value = false;
     }
 };
 
