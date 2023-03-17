@@ -17,7 +17,7 @@
                         :name="id"
                         :value="id"
                         :id="id"
-                        class="check absolute top-0.5 z-10 h-5 w-5 right-0.5 focus:outline-none focus:outline-offset-0 focus:ring-transparent focus:ring-0 focus:ring-offset-0 bg-neutral-900 border-neutral-700 border-2 checked:text-green-700 checked:block peer"
+                        class="check cursor-pointer absolute top-0.5 z-10 h-5 w-5 right-0.5 focus:outline-none focus:outline-offset-0 focus:ring-transparent focus:ring-0 focus:ring-offset-0 bg-neutral-900 border-neutral-700 border-2 checked:text-green-700 checked:block peer"
                         :class="{
                             hidden: !imageState[index].checkBoxVisible,
                         }"
@@ -159,10 +159,23 @@ const selectAll = () => {
         selected.value = [];
         allImagesSelected.value = false;
         showActions.value = false;
-        imageState.value.map((image) => (image.checkBoxVisible = false));
+        imageState.value = imageState.value.map((image) => {
+            return {
+                ...image,
+                selected: false,
+                checkBoxVisible: false,
+            };
+        });
     } else {
         selected.value = imageState.value.map((image) => image.id);
         allImagesSelected.value = true;
+        imageState.value = imageState.value.map((image) => {
+            return {
+                ...image,
+                selected: true,
+                checkBoxVisible: true,
+            };
+        });
     }
 };
 </script>
