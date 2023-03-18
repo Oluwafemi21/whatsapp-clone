@@ -1,16 +1,13 @@
 <template>
     <Teleport to="body">
-        <div
-            class="absolute overflow-y-scroll scroll-p-0 w-[500px] h-[75%]"
-            :class="position"
-            ref="modal"
-        >
-            <div class="grid grid-cols-3 h-full">
-                <slot name="sidebar" />
-                <section
-                    class="shadow-xl ml-[165px] w-full col-span-2 bg-gray-50 dark:bg-neutral-800 rounded-tr-md rounded-br-md border border-l-0 dark:border-none"
-                >
-                    <slot name="view" />
+        <div class="modal-backdrop" @click.stop="close">
+            <div class="modal" ref="modal_bg">
+                <header class="modal-header">
+                    <slot name="header"> This is the default title! </slot>
+                </header>
+
+                <section class="modal-body">
+                    <slot name="body"> This is the default body! </slot>
                 </section>
             </div>
         </div>
@@ -20,34 +17,50 @@
 <script setup>
 import { onClickOutside } from "@vueuse/core";
 
-const props = defineProps({
-    position: {
-        type: String,
-        default: "bottom-left",
-    },
-});
+const emit = defineEmits(["close"]);
 
-defineEmits("close");
-
-const modal = ref(null);
-const open = useState("modal-opened");
-const activeTab = useState("tab-opened");
+const modal_bg = ref(null);
 
 // functions
-onClickOutside(modal, () => {
-    open.value = false;
-    activeTab.value = "";
-});
+// onClickOutside(modal_bg, () => {
+//     emit("close");
+// });
 
-// positions for modal
-const positions = {
-    "bottom-right": "bottom-2 right-2",
-    "bottom-left": "bottom-2 left-2",
-    "top-right": "top-2 right-2",
-    "top-left": "top-2 left-2",
+const close = () => {
+    emit("close");
+    console.log("prevent event bubbling");
 };
-
-const position = computed(() => {
-    return positions[props.position];
-});
 </script>
+
+<style scoped>
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 50;
+}
+
+.modal {
+    @apply border border-neutral-500 rounded-lg text-white max-w-lg;
+}
+
+.modal-header,
+.modal-footer {
+    padding: 15px;
+    display: flex;
+}
+
+.modal-header {
+    @apply px-5 py-6 bg-neutral-800 rounded-t-lg;
+}
+
+.modal-body {
+    @apply p-5 bg-neutral-900 rounded-b-lg;
+}
+</style>
