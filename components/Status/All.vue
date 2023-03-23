@@ -11,7 +11,7 @@
         <section class="h-screen overflow-y-scroll scroll-p-0">
             <StatusCard :status="statuses[0]" :active="true" />
             <p
-                class="pl-2 text-sm py-1 sticky top-0 bg-neutral-50 dark:text-neutral-400 border-none dark:bg-[hsl(0,0%,10%)]"
+                class="pl-2 text-sm py-1 sticky top-0 z-10 bg-neutral-50 dark:text-neutral-400 border-none dark:bg-[#1f1f1f]"
             >
                 Recent updates
             </p>

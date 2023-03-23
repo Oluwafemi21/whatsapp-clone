@@ -77,7 +77,7 @@ body {
 
 .slide-top-enter-from,
 .slide-top-leave-to {
-    transform: scale(0);
+    transform: translateY(0%);
 }
 
 .slide-left-enter-active,

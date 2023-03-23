@@ -1,11 +1,11 @@
 <template>
-    <section class="relative">
+    <section class="relative h-full">
         <h3
             class="sticky top-0 bg-neutral-800 z-30 text-xl dark:text-white font-medium p-4"
         >
             Media
         </h3>
-        <div class="px-4 pb-4">
+        <div class="px-4 pb-4" v-if="media.length">
             <div class="grid grid-cols-3 gap-3">
                 <div
                     v-for="({ id, image }, index) in imageState"
@@ -33,6 +33,9 @@
                     />
                 </div>
             </div>
+        </div>
+        <div class="grid place-content-center h-[400px]" v-else>
+            <p class="text-sm font-light">No Media to display</p>
         </div>
         <transition name="slide-left" mode="in-out">
             <div
@@ -115,21 +118,25 @@ const media = ref([
         image: "https://picsum.photos/100",
     },
     {
-        id: "21er9",
+        id: "21fr9",
+        image: "https://picsum.photos/100",
+    },
+    {
+        id: "21ep9",
+        image: "https://picsum.photos/100",
+    },
+    {
+        id: "20er9",
+        image: "https://picsum.photos/100",
+    },
+    {
+        id: "21er7",
         image: "https://picsum.photos/100",
     },
 ]);
+const isModalVisible = ref(false);
 
-// computed property not updating
-// const imageState = computed(() => {
-//     return media.value.map((image) => {
-//         return {
-//             ...image,
-//             selected: false,
-//         };
-//     });
-// });
-
+// functions
 const imageState = useState("images", () => {
     return media.value.map((image) => {
         return {
@@ -177,6 +184,10 @@ const selectAll = () => {
             };
         });
     }
+};
+
+const toggleModal = () => {
+    isModalVisible.value = !isModalVisible.value;
 };
 </script>
 

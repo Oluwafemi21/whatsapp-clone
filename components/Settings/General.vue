@@ -17,7 +17,7 @@
                 @change="changeTheme($event)"
                 name="theme"
                 id="id"
-                class="dark:bg-neutral-800 dark:text-white text-sm shadow border-neutral-300 dark:border-neutral-500 rounded-md mt-1 w-2/3"
+                class="dark:bg-neutral-700/90 dark:text-white text-sm shadow border-neutral-300 dark:border-none rounded-md mt-1 w-2/3"
                 v-model="theme"
             >
                 <option value="auto">System default</option>

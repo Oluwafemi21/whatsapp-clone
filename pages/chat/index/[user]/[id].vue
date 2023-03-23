@@ -1,13 +1,11 @@
 <template>
-    <section class="relative h-full w-full flex flex-col dark:text-white">
+    <section class="h-full w-full flex flex-col dark:text-white">
         <ChatsContactHeader :contact="`${$route.params.user}`" />
 
-        <!-- Message Area -->
         <ChatsMessages :messages="messages" />
 
-        <!-- Message Box Input -->
         <div
-            class="sticky bottom-0 left-0 flex items-center border-t border-black/25 bg-neutral-50 dark:bg-neutral-800/50 px-2 py-1 gap-4"
+            class="flex items-center border-t border-black/25 bg-neutral-50 dark:bg-neutral-800 px-2 py-1 gap-4"
         >
             <div class="flex items-center">
                 <button

@@ -14,7 +14,7 @@
         <div class="w-full">
             <div class="flex flex-col gap-2 dark:text-white">
                 <p class="font-medium text-xs">{{ status.name }}</p>
-                <span class="text-gray-500 text-sm"
+                <span class="text-neutral-500 text-sm"
                     >Today, {{ status.time }}</span
                 >
             </div>

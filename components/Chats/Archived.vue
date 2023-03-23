@@ -64,7 +64,7 @@ const chats = [
         time: "10:33 AM",
         message: "No issues",
         status: "archived",
-        messageCount: 0,
+        messageCount: 1,
         recepient: "user",
     },
 

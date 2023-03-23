@@ -1,6 +1,6 @@
 <template>
     <div
-        class="flex-1 overflow-y-auto h-full mt-20 pb-1 px-3"
+        class="flex-1 overflow-y-auto h-full px-3 py-2"
         :class="{
             'grid place-content-center': !messages.length,
         }"
@@ -9,7 +9,7 @@
             <ChatsNoMessage />
         </div>
         <template v-else>
-            <section class="text-white space-y-1">
+            <section class="text-white space-y-1 relative">
                 <div
                     v-for="(message, index) in messages"
                     :key="index"

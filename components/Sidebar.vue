@@ -1,6 +1,6 @@
 <template>
     <aside
-        class="sidebar fixed flex flex-col justify-between left-0 top-10 h-full w-12 bg-gray-100 dark:bg-black/90 py-3"
+        class="sidebar fixed flex flex-col justify-between left-0 bottom-0 top-10 h-full w-12 bg-gray-100 dark:bg-black/90 py-3"
     >
         <ul class="pt-1 flex flex-col gap-2 mb-3">
             <li v-for="link in links" :key="link.name" class="relative px-1">
@@ -45,38 +45,41 @@
                         />
                     </ClientOnly>
                 </button>
-
-                <transition name="slide-left" mode="in-out">
-                    <div v-if="showModal">
-                        <Modal position="bottom-left">
-                            <template #sidebar>
-                                <ExtraSettingsSidebarNav />
-                            </template>
-                            <template #view>
-                                <KeepAlive>
-                                    <component :is="showTab"></component>
-                                </KeepAlive>
-                            </template>
-                        </Modal>
-                    </div>
-                </transition>
             </div>
         </div>
+
+        <SettingsModal
+            position="bottom-left"
+            v-if="showModal"
+            @close="closeModal"
+        >
+            <template #sidebar>
+                <SettingsSidebarNav />
+            </template>
+            <template #view>
+                <KeepAlive>
+                    <component :is="showTab"></component>
+                </KeepAlive>
+            </template>
+        </SettingsModal>
     </aside>
 </template>
 
 <script setup>
-const showModal = useState("modal-opened", () => {
-    return false;
-});
+const showModal = ref(false);
 
-const currentTabOpened = useState("tab-opened", () => {
+const currentTabOpened = useState("settings", () => {
     return "general";
 });
 
 const openModal = (tab) => {
     currentTabOpened.value = tab;
     showModal.value = true;
+};
+
+const closeModal = () => {
+    currentTabOpened.value = "general";
+    showModal.value = false;
 };
 
 const links = [
@@ -98,14 +101,14 @@ const links = [
 ];
 
 //  components
-const general = resolveComponent("ExtraSettingsGeneral");
-const chats = resolveComponent("ExtraSettingsChats");
-const account = resolveComponent("ExtraSettingsAccount");
-const notifications = resolveComponent("ExtraSettingsNotifications");
-const storage = resolveComponent("ExtraSettingsStorage");
-const shortcuts = resolveComponent("ExtraSettingsShortcuts");
-const profile = resolveComponent("ExtraSettingsProfile");
-const help = resolveComponent("ExtraSettingsHelp");
+const general = resolveComponent("SettingsGeneral");
+const chats = resolveComponent("SettingsChats");
+const account = resolveComponent("SettingsAccount");
+const notifications = resolveComponent("SettingsNotifications");
+const storage = resolveComponent("SettingsStorage");
+const shortcuts = resolveComponent("SettingsShortcuts");
+const profile = resolveComponent("SettingsProfile");
+const help = resolveComponent("SettingsHelp");
 
 const tabSettings = {
     general,

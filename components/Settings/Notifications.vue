@@ -54,17 +54,17 @@
                 </p>
                 <div class="flex items-center gap-2">
                     <button
-                        class="p-1.5 rounded dark:text-white dark:bg-neutral-700/90 border dark:border-neutral-700 grid place-content-center border-neutral-300 shadow"
+                        class="py-1.5 px-2 rounded dark:text-white dark:bg-neutral-700/90 border dark:border-neutral-700 grid place-content-center border-neutral-300 shadow"
                     >
                         <Icon
                             name="material-symbols:play-arrow-outline-rounded"
-                            class="w-6 h-6 text-neutral-500"
+                            class="w-6 h-6 text-white"
                         />
                     </button>
                     <select
                         name="theme"
                         id="id"
-                        class="dark:bg-neutral-800 border border-neutral-300 shadow dark:text-white text-sm rounded-md mt-1 w-32"
+                        class="py-2.5 dark:bg-neutral-700/90 dark:border-none border border-neutral-300 shadow dark:text-white text-sm rounded-md w-32"
                     >
                         <option>Default</option>
                         <option v-for="i in 10" :key="i">Alert {{ i }}</option>
@@ -77,17 +77,17 @@
                 </p>
                 <div class="flex items-center gap-2">
                     <button
-                        class="p-1.5 rounded dark:text-white dark:bg-neutral-700/90 border dark:border-neutral-700 grid place-content-center border-neutral-300 shadow"
+                        class="py-1.5 px-2 rounded dark:text-white dark:bg-neutral-700/90 border dark:border-neutral-700 grid place-content-center border-neutral-300 shadow"
                     >
                         <Icon
                             name="material-symbols:play-arrow-outline-rounded"
-                            class="w-6 h-6 text-neutral-500"
+                            class="w-6 h-6 text-white"
                         />
                     </button>
                     <select
                         name="theme"
                         id="id"
-                        class="dark:bg-neutral-800 border border-neutral-300 shadow dark:text-white text-sm rounded-md mt-1 w-32"
+                        class="py-2.5 dark:bg-neutral-700/90 dark:border-none border border-neutral-300 shadow dark:text-white text-sm rounded-md w-32"
                     >
                         <option>Default</option>
                         <option v-for="i in 10" :key="i">Alert {{ i }}</option>

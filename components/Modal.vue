@@ -1,7 +1,7 @@
 <template>
     <Teleport to="body">
-        <div class="modal-backdrop" @click.stop="close">
-            <div class="modal" ref="modal_bg">
+        <div class="modal-backdrop" @click="close">
+            <div class="modal" ref="modal_bg" @click.stop>
                 <header class="modal-header">
                     <slot name="header"> This is the default title! </slot>
                 </header>

@@ -1,6 +1,6 @@
 <template>
     <aside
-        class="fixed h-[75%] w-[165px] flex flex-col justify-between bg-gray-100 dark:bg-neutral-800 dark:border-l-0 dark:border-t-0 border-x border-t dark:border-r-black/40 rounded-bl-md rounded-tl-md py-1 px-1"
+        class="fixed h-[489px] w-[165px] flex flex-col justify-between bg-gray-100 dark:bg-neutral-800 dark:border-l-0 dark:border-t-0 border-x border-t dark:border-r-black/40 rounded-bl-md rounded-tl-md py-1 px-1"
     >
         <ul class="pt-1 flex flex-col gap-1 mb-3">
             <li v-for="tab in tabs" :key="tab.name" class="relative">
@@ -26,7 +26,7 @@
 </template>
 
 <script setup>
-const activeTab = useState("tab-opened");
+const activeTab = useState("chat-settings");
 const changeTab = (tab) => {
     activeTab.value = tab;
 };

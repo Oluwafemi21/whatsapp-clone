@@ -34,5 +34,3 @@ const status = resolveComponent("StatusAll");
 
 const dark = useDark();
 </script>
-
-<style scoped></style>

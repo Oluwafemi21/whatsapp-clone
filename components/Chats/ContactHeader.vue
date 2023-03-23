@@ -1,6 +1,6 @@
 <template>
     <header
-        class="absolute top-0 w-full flex items-center border-b bg-neutral-50 dark:border-black/25 dark:bg-neutral-800"
+        class="relative w-full flex items-center border-b bg-neutral-50 dark:border-black/25 dark:bg-neutral-800/50"
         ref="modalBtn"
     >
         <button
@@ -63,7 +63,7 @@
                 </button>
             </div>
         </div>
-        <Modal v-if="showModal" position="top-right">
+        <SettingsModal v-if="showModal" position="top-left" @close="closeModal">
             <template #sidebar>
                 <ChatSettingsSidebarNav />
             </template>
@@ -72,7 +72,7 @@
                     <component :is="showTab"></component>
                 </KeepAlive>
             </template>
-        </Modal>
+        </SettingsModal>
     </header>
 </template>
 
@@ -87,7 +87,7 @@ defineProps({
 
 const showModal = ref(false);
 
-const currentTabOpened = useState("tab-opened", () => {
+const currentTabOpened = useState("chat-settings", () => {
     return "overview";
 });
 
@@ -95,6 +95,9 @@ const currentTabOpened = useState("tab-opened", () => {
 const openModal = () => {
     currentTabOpened.value = "overview";
     showModal.value = true;
+};
+const closeModal = () => {
+    showModal.value = false;
 };
 
 //  components

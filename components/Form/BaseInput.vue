@@ -3,7 +3,7 @@
         <div class="search-box w-full relative">
             <input
                 type="text"
-                class="text-sm w-full pr-8 h-9 rounded-md focus:border-b-2 dark:border-b-2 text-neutral-500 placeholder:text-neutral-500 border-neutral-300 border-b-neutral-500 bg-gray-50 focus:outline-none focus:bg-white focus:border-neutral-300 dark:bg-neutral-800 dark:text-white dark:border-neutral-800 dark:border-b-white dark:focus:border-neutral-600 focus:ring-transparent focus:placeholder:text-gray-500 dark:focus:bg-black/40 focus:border-b-emerald-600 dark:focus:border-b-green-600 dark:placeholder:text-white"
+                class="text-sm w-full pr-8 h-9 rounded-md focus:border-b-1.5 dark:border-b-1.5 text-neutral-500 placeholder:text-neutral-500 border-neutral-300 border-b-neutral-500 bg-gray-50 focus:outline-none focus:bg-white focus:border-neutral-300 dark:bg-neutral-700/60 dark:text-white dark:border-neutral-800 dark:border-b-white dark:focus:border-neutral-600 focus:ring-transparent focus:placeholder:text-gray-500 dark:focus:bg-black/40 focus:border-b-emerald-600 dark:focus:border-b-green-600 dark:placeholder:text-white"
                 :placeholder="placeholder"
                 title="Ctrl+F"
                 :value="modelValue"
