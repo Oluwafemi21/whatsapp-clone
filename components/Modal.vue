@@ -1,17 +1,15 @@
 <template>
-    <Teleport to="body">
-        <div class="modal-backdrop" @click="close">
-            <div class="modal" ref="modal_bg" @click.stop>
-                <header class="modal-header">
-                    <slot name="header"> This is the default title! </slot>
-                </header>
+    <div class="modal-backdrop" @click="close">
+        <div class="modal" ref="modal_bg">
+            <header class="modal-header">
+                <slot name="header"> This is the default title! </slot>
+            </header>
 
-                <section class="modal-body">
-                    <slot name="body"> This is the default body! </slot>
-                </section>
-            </div>
+            <section class="modal-body">
+                <slot name="body"> This is the default body! </slot>
+            </section>
         </div>
-    </Teleport>
+    </div>
 </template>
 
 <script setup>
@@ -28,7 +26,6 @@ const modal_bg = ref(null);
 
 const close = () => {
     emit("close");
-    console.log("prevent event bubbling");
 };
 </script>
 

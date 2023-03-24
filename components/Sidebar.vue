@@ -47,21 +47,22 @@
                 </button>
             </div>
         </div>
-
-        <SettingsModal
-            position="bottom-left"
-            v-if="showModal"
-            @close="closeModal"
-        >
-            <template #sidebar>
-                <SettingsSidebarNav />
-            </template>
-            <template #view>
-                <KeepAlive>
-                    <component :is="showTab"></component>
-                </KeepAlive>
-            </template>
-        </SettingsModal>
+        <Teleport to="body">
+            <SettingsModal
+                position="bottom-left"
+                v-if="showModal"
+                @close="closeModal"
+            >
+                <template #sidebar>
+                    <SettingsSidebarNav />
+                </template>
+                <template #view>
+                    <KeepAlive>
+                        <component :is="showTab"></component>
+                    </KeepAlive>
+                </template>
+            </SettingsModal>
+        </Teleport>
     </aside>
 </template>
 

@@ -2,9 +2,9 @@
     <div
         class="absolute overflow-y-scroll scroll-p-0 w-[500px] h-[489px] z-40"
         :class="position"
-        ref="settings_modal"
+        v-on-click-outside="closeModal"
     >
-        <div class="grid grid-cols-3 h-full" click.stop>
+        <div class="grid grid-cols-3 h-full">
             <slot name="sidebar" />
             <section
                 class="shadow-xl h-full ml-[165px] w-full col-span-2 bg-gray-50 dark:bg-neutral-800 rounded-tr-md rounded-br-md border border-l-0 dark:border-none"
@@ -16,7 +16,7 @@
 </template>
 
 <script setup>
-import { onClickOutside } from "@vueuse/core";
+import { vOnClickOutside } from "@vueuse/components";
 
 const props = defineProps({
     position: {
@@ -28,13 +28,17 @@ const props = defineProps({
 const emit = defineEmits(["close"]);
 
 const settings_modal = ref(null);
-onClickOutside(settings_modal, () => {
+// onClickOutside(settings_modal, () => {
+//     emit("close");
+// });
+
+const closeModal = () => {
     emit("close");
-});
+};
 
 // positions for modal
 const positions = {
-    "bottom-left": "left-2 bottom-12",
+    "bottom-left": "left-2 bottom-2",
     "top-left": "top-2 left-2",
 };
 

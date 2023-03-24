@@ -89,7 +89,7 @@
                         Report and block
                     </button>
                     <button
-                        @click="toggleModal('block')"
+                        @click.stop="toggleModal('block')"
                         class="px-3 py-1.5 text-sm dark:text-white rounded bg-neutral-800 min-w-[100px]"
                     >
                         Cancel
@@ -116,7 +116,7 @@
                     </button>
 
                     <button
-                        @click="toggleModal('report_and_block')"
+                        @click.stop="toggleModal('report_and_block')"
                         class="px-3 py-1.5 text-sm dark:text-white rounded bg-neutral-800 min-w-[100px]"
                     >
                         Cancel
@@ -134,7 +134,6 @@ const modals = reactive({
 });
 const toggleModal = (modal) => {
     modals[modal] = !modals[modal];
-    console.log(modals);
 };
 
 // when opening one modal

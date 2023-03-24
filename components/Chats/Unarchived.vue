@@ -25,7 +25,7 @@
                                 class="w-6 h-6 dark:text-white"
                             />
                         </button>
-                        <FormDropdown position="bottom">
+                        <FormDropdown position="top">
                             <template #items>
                                 <FormDropdownItem
                                     title="Filter chats by"
