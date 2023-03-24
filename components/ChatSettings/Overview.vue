@@ -5,7 +5,7 @@
         <h3 class="text-xl font-medium dark:text-white my-4">
             {{ $route.params.user }}
         </h3>
-        <div class="mb-2 border-b border-neutral-600 pb-4 space-y-3">
+        <div class="mb-2 border-b dark:border-neutral-600 pb-4 space-y-3">
             <div class="space-y-1 text-sm">
                 <p class="text-neutral-400">About</p>
                 <p class="dark:text-white">Hi</p>
@@ -38,17 +38,17 @@
                 </p>
                 <div class="flex items-center gap-2">
                     <button
-                        class="py-1.5 px-2 rounded dark:text-white dark:bg-neutral-700/90 border dark:border-neutral-700 grid place-content-center border-neutral-300 shadow"
+                        class="py-1.5 px-2 rounded dark:text-white dark:bg-neutral-700/90 border dark:border-neutral-700 grid place-content-center border-transparent shadow"
                     >
                         <Icon
                             name="material-symbols:play-arrow-outline-rounded"
-                            class="w-6 h-6 text-white"
+                            class="w-6 h-6 dark:text-white"
                         />
                     </button>
                     <select
                         name="theme"
                         id="id"
-                        class="dark:bg-neutral-700/90 border-none py-2.5 bg-blend-color-dodge shadow dark:text-white text-sm rounded-md w-32"
+                        class="dark:bg-neutral-700/90 border-none py-2.5 dark:bg-blend-color-dodge shadow dark:text-white text-sm rounded-md w-32"
                     >
                         <option>Default</option>
                         <option v-for="i in 10" :key="i">Alert {{ i }}</option>
@@ -59,38 +59,38 @@
         <div class="grid grid-cols-2 gap-2 pt-3">
             <button
                 @click="toggleModal('block')"
-                class="py-1.5 px-2 text-sm rounded shadow-sm dark:text-white dark:bg-neutral-700/90"
+                class="py-1.5 px-2 text-sm text-black rounded shadow-sm dark:text-white dark:bg-neutral-700/90 border border-gray-300 dark:border-none"
             >
                 Block
             </button>
             <button
                 @click="toggleModal('report_and_block')"
-                class="py-1.5 px-2 text-sm rounded text-rose-400 dark:bg-neutral-700/90 shadow-sm"
+                class="py-1.5 px-2 text-sm rounded text-red-500 dark:bg-neutral-700/90 shadow-sm border border-gray-300 dark:border-none"
             >
                 Report contact
             </button>
         </div>
         <Modal v-if="modals.block" @close="toggleModal('block')">
             <template #header>
-                <p class="text-sm">
+                <p class="text-sm text-black dark:text-white">
                     Are you sure you want to block {{ $route.params.user }}?
                 </p>
             </template>
             <template #body>
                 <div class="flex items-center gap-3">
                     <button
-                        class="px-3 py-1.5 dark:text-black text-sm bg-emerald-600 rounded min-w-[100px]"
+                        class="px-3 py-1.5 dark:text-black text-sm bg-emerald-700 rounded min-w-[100px]"
                     >
                         Block
                     </button>
                     <button
-                        class="px-3 py-1.5 text-sm dark:text-white rounded bg-neutral-800 min-w-[100px]"
+                        class="px-3 py-1.5 text-sm dark:text-white rounded bg-white border border-gray-200 text-black dark:border-none dark:bg-neutral-800 min-w-[100px]"
                     >
                         Report and block
                     </button>
                     <button
                         @click.stop="toggleModal('block')"
-                        class="px-3 py-1.5 text-sm dark:text-white rounded bg-neutral-800 min-w-[100px]"
+                        class="px-3 py-1.5 text-sm dark:text-white rounded bg-white border border-gray-200 text-black dark:border-none dark:bg-neutral-800 min-w-[100px]"
                     >
                         Cancel
                     </button>
@@ -102,7 +102,7 @@
             @close="toggleModal('report_and_block')"
         >
             <template #header>
-                <p class="text-sm">
+                <p class="text-sm text-black dark:text-white">
                     Report spam and block {{ $route.params.user }}? If you
                     report and block, this chat's history will also be deleted.
                 </p>
@@ -110,14 +110,14 @@
             <template #body>
                 <div class="grid grid-cols-2 gap-3">
                     <button
-                        class="px-3 py-1.5 dark:text-black text-sm bg-emerald-600 rounded min-w-[100px]"
+                        class="px-3 py-1.5 dark:text-black text-sm bg-emerald-700 rounded min-w-[100px]"
                     >
                         Report and block
                     </button>
 
                     <button
                         @click.stop="toggleModal('report_and_block')"
-                        class="px-3 py-1.5 text-sm dark:text-white rounded bg-neutral-800 min-w-[100px]"
+                        class="px-3 py-1.5 text-sm dark:text-white rounded bg-white border border-gray-200 text-black dark:bg-neutral-800 min-w-[100px]"
                     >
                         Cancel
                     </button>

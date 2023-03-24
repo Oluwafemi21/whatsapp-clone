@@ -19,7 +19,10 @@
                     <button
                         class="group flex items-center justify-center px-3 py-4 hover:bg-gray-200/50 dark:hover:bg-neutral-700/50 relative rounded"
                     >
-                        <Tooltip text="Messages" />
+                        <Tooltip
+                            text="Messages"
+                            class="-top-9 right-0 left-auto"
+                        />
 
                         <Icon
                             class="w-5 h-5 text-black dark:text-white"
@@ -35,7 +38,7 @@
                         />
                         <Tooltip
                             text="Video Call"
-                            class="min-w-max right-0 left-auto"
+                            class="min-w-max left-auto -top-9"
                         />
                     </button>
                     <button
@@ -43,7 +46,7 @@
                     >
                         <Tooltip
                             text="Audio Call"
-                            class="min-w-max right-0 left-0"
+                            class="min-w-max -right-4 left-auto -top-9"
                         />
                         <Icon
                             name="ph:phone-light"

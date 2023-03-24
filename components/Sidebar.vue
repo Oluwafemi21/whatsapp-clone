@@ -15,7 +15,7 @@
                         />
                     </ClientOnly>
 
-                    <Tooltip :text="link.name" />
+                    <Tooltip :text="link.name" class="-top-9" />
                 </NuxtLink>
             </li>
         </ul>
@@ -25,7 +25,7 @@
                     @click="openModal('general')"
                     class="flex items-center justify-center h-9 hover:bg-gray-200 dark:hover:bg-neutral-800/40 group relative rounded focus:outline-none focus:bg-gray-200 dark:focus:bg-neutral-800/40"
                 >
-                    <Tooltip text="Settings" />
+                    <Tooltip text="Settings" class="-top-9" />
                     <ClientOnly>
                         <Icon
                             name="heroicons:cog-8-tooth"
@@ -37,7 +37,7 @@
                     @click="openModal('profile')"
                     class="flex items-center justify-center h-9 hover:bg-gray-200 dark:hover:bg-neutral-800/40 group relative rounded focus:outline-none focus:bg-gray-200 dark:focus:bg-neutral-800/40"
                 >
-                    <Tooltip text="Profile" />
+                    <Tooltip text="Profile" class="-top-9" />
                     <ClientOnly>
                         <Icon
                             name="ph:user-circle-duotone"

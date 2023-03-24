@@ -41,7 +41,7 @@
                 />
                 <Tooltip
                     :text="textMessage"
-                    class="min-w-max left-auto right-0"
+                    class="min-w-max left-auto right-0 -top-9"
                 />
             </button>
             <button

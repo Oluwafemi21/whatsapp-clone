@@ -58,7 +58,7 @@
                     >
                         <Icon
                             name="material-symbols:play-arrow-outline-rounded"
-                            class="w-6 h-6 text-white"
+                            class="w-6 h-6 dark:text-white"
                         />
                     </button>
                     <select
@@ -81,7 +81,7 @@
                     >
                         <Icon
                             name="material-symbols:play-arrow-outline-rounded"
-                            class="w-6 h-6 text-white"
+                            class="w-6 h-6 dark:text-white"
                         />
                     </button>
                     <select

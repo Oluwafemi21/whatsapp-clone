@@ -7,7 +7,7 @@
         <div class="grid grid-cols-3 h-full">
             <slot name="sidebar" />
             <section
-                class="shadow-xl h-full ml-[165px] w-full col-span-2 bg-gray-50 dark:bg-neutral-800 rounded-tr-md rounded-br-md border border-l-0 dark:border-none"
+                class="shadow-xl h-full ml-[165px] w-full col-span-2 bg-white dark:bg-neutral-800 rounded-tr-md rounded-br-md border border-l-0 dark:border-none"
             >
                 <slot name="view" />
             </section>

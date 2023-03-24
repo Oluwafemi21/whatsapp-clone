@@ -1,7 +1,7 @@
 <template>
     <section class="relative h-full">
         <h3
-            class="sticky top-0 bg-neutral-800 z-30 text-xl dark:text-white font-medium p-4"
+            class="sticky top-0 bg-white text-black dark:bg-neutral-800 z-30 text-xl dark:text-white font-medium p-4"
         >
             Media
         </h3>
@@ -17,7 +17,7 @@
                         :name="id"
                         :value="id"
                         :id="id"
-                        class="check cursor-pointer absolute top-0.5 z-10 h-5 w-5 right-0.5 focus:outline-none focus:outline-offset-0 focus:ring-transparent focus:ring-0 focus:ring-offset-0 bg-neutral-900 border-neutral-700 border-2 checked:text-green-700 checked:block peer"
+                        class="check cursor-pointer absolute top-0.5 z-10 h-5 w-5 right-0.5 focus:outline-none focus:outline-offset-0 focus:ring-transparent focus:ring-0 focus:ring-offset-0 bg-white dark:bg-neutral-800 border-neutral-500 border-2 checked:text-emerald-700 checked:block peer"
                         :class="{
                             hidden: !imageState[index].checkBoxVisible,
                         }"
@@ -29,7 +29,7 @@
                     <img
                         :src="image"
                         alt="Image not found"
-                        class="object-cover brightness-90 hover:brightness-100 w-full z-20 rounded-md peer-checked:border-2 peer-checked:border-green-700 peer-checked:brightness-100"
+                        class="object-cover brightness-70 hover:brightness-100 w-full z-20 rounded-md peer-checked:border-2 peer-checked:border-emerald-700 peer-checked:brightness-100"
                     />
                 </div>
             </div>
@@ -39,17 +39,18 @@
         </div>
         <transition name="slide-left" mode="in-out">
             <div
-                class="sticky bottom-0 w-full bg-neutral-900/60 z-30 backdrop-blur-xl flex"
+                class="sticky bottom-0 w-full bg-neutral-200/60 dark:bg-neutral-900/60 z-30 backdrop-blur-xl flex"
                 v-if="showActions"
             >
                 <button
-                    class="flex items-center gap-2 dark:text-white text-xs px-2 py-2.5 hover:bg-neutral-400 dark:hover:bg-neutral-700/90 rounded-md"
+                    @click="isModalVisible = true"
+                    class="flex items-center gap-2 dark:text-white text-xs px-2 py-2.5 hover:bg-neutral-300 dark:hover:bg-neutral-700/90 rounded-md"
                 >
                     <Icon name="fluent:delete-24-regular" class="h-5 w-5" />
                     <span>Delete</span>
                 </button>
                 <button
-                    class="flex items-center gap-2 dark:text-white text-xs px-2 py-2.5 hover:bg-neutral-400 dark:hover:bg-neutral-700/90 rounded-md"
+                    class="flex items-center gap-2 dark:text-white text-xs px-2 py-2.5 hover:bg-neutral-300 dark:hover:bg-neutral-700/90 rounded-md"
                 >
                     <Icon name="akar-icons:arrow-forward" class="h-5 w-5" />
                     <span>Forward</span>
@@ -57,22 +58,46 @@
                 <button
                     v-if="!allImagesSelected"
                     @click="selectAll"
-                    class="flex items-center gap-2 dark:text-white text-xs px-2 py-2.5 hover:bg-neutral-400 dark:hover:bg-neutral-700/90 rounded-md ml-auto"
+                    class="flex items-center gap-2 dark:text-white text-xs px-2 py-2.5 hover:bg-neutral-300 dark:hover:bg-neutral-700/90 rounded-md ml-auto"
                 >
                     <Icon name="fluent-mdl2:select-all" class="h-5 w-5" />
-                    <!-- <Icon name="fluent-mdl2:clear-selection" class="h-5 w-5" /> -->
                     <span> Select all</span>
                 </button>
                 <button
                     v-else
                     @click="selectAll"
-                    class="flex items-center gap-2 dark:text-white text-xs px-2 py-2.5 hover:bg-neutral-400 dark:hover:bg-neutral-700/90 rounded-md ml-auto"
+                    class="flex items-center gap-2 dark:text-white text-xs px-2 py-2.5 hover:bg-neutral-300 dark:hover:bg-neutral-700/90 rounded-md ml-auto"
                 >
                     <Icon name="fluent-mdl2:clear-selection" class="h-5 w-5" />
                     <span>Clear selection</span>
                 </button>
             </div>
         </transition>
+        <Modal v-if="isModalVisible">
+            <template #header>
+                <p class="text-sm text-black dark:text-white">
+                    Are you sure you want to delete this
+                    {{ selected.length }}
+                    {{ selected.length > 1 ? "messages" : "message" }} ?
+                </p>
+            </template>
+            <template #body>
+                <div class="grid grid-cols-2 gap-3">
+                    <button
+                        class="px-3 py-1.5 dark:text-black text-sm bg-emerald-600 rounded min-w-[100px]"
+                    >
+                        Delete
+                    </button>
+
+                    <button
+                        @click.stop="isModalVisible = false"
+                        class="px-3 py-1.5 text-sm dark:text-white rounded bg-white border border-gray-200 text-black dark:bg-neutral-800 min-w-[100px]"
+                    >
+                        Cancel
+                    </button>
+                </div>
+            </template>
+        </Modal>
     </section>
 </template>
 

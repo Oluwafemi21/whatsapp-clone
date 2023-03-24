@@ -21,7 +21,7 @@
         <div class="flex items-center gap-3 h-5">
             <div class="flex">
                 <button
-                    class="group flex items-center justify-center px-4 py-3 hover:bg-gray-200 dark:hover:bg-neutral-700/50 relative rounded"
+                    class="group flex items-center justify-center px-4 py-3 hover:bg-gray-100 dark:hover:bg-neutral-700/50 relative rounded"
                 >
                     <Icon
                         name="bi:camera-video"
@@ -29,11 +29,11 @@
                     />
                     <Tooltip
                         text="Video Call"
-                        class="min-w-max right-0 left-auto"
+                        class="min-w-max right-0 left-auto -bottom-9"
                     />
                 </button>
                 <button
-                    class="group flex items-center justify-center px-4 py-3 hover:bg-gray-200 dark:hover:bg-neutral-700/50 relative rounded"
+                    class="group flex items-center justify-center px-4 py-3 hover:bg-gray-100 dark:hover:bg-neutral-700/50 relative rounded"
                 >
                     <Icon
                         name="ph:phone-light"
@@ -41,7 +41,7 @@
                     />
                     <Tooltip
                         text="Audio Call"
-                        class="min-w-max right-0 left-auto"
+                        class="min-w-max right-0 left-auto -bottom-9"
                     />
                 </button>
             </div>
@@ -50,7 +50,7 @@
                 class="px-3 relative before:content-[''] before:w-[1px] before:absolute before:bg-neutral-600 before:h-5 before:-ml-3 before:mt-3"
             >
                 <button
-                    class="group flex items-center justify-center px-4 py-3 hover:bg-gray-200 dark:hover:bg-neutral-700/50 relative rounded"
+                    class="group flex items-center justify-center px-4 py-3 hover:bg-gray-100 dark:hover:bg-neutral-700/50 relative rounded"
                 >
                     <Icon
                         name="quill:search"
@@ -58,7 +58,7 @@
                     />
                     <Tooltip
                         text="Search Within Chat (Ctrl+Shift+F)"
-                        class="min-w-max right-0 left-auto"
+                        class="min-w-max right-0 left-auto -bottom-9"
                     />
                 </button>
             </div>

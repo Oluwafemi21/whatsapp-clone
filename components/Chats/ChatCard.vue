@@ -7,7 +7,7 @@
                 id: chat.id,
             },
         }"
-        class="hover:bg-gray-200 focus:bg-gray-200 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800 focus:outline-none flex space-x-3 w-full rounded-md py-2.5 px-3"
+        class="hover:bg-neutral-100 focus:bg-neutral-100 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800 focus:outline-none flex space-x-3 w-full rounded-md py-2.5 px-3"
     >
         <Avatar />
         <div class="w-full flex flex-col gap-2">
@@ -18,7 +18,8 @@
                 <span
                     class="text-xs"
                     :class="{
-                        'text-emerald-600 font-bold': chat.recepient === 'user',
+                        'text-green-500 dark:text-emerald-600 font-bold':
+                            chat.recepient === 'user',
                         'dark:text-neutral-400 text-neutral-500':
                             chat.recepient === 'not-user',
                     }"
@@ -53,17 +54,25 @@
 
                         <span
                             v-if="chat.status === 'archived'"
-                            class="dark:text-white text-[11px] bg-neutral-300 dark:bg-neutral-700 py-0.5 px-1 rounded-md capitalize"
+                            class="dark:text-white text-[11px] bg-neutral-400/40 dark:bg-neutral-700 py-0.5 px-1 rounded-md capitalize font-medium text-neutral-800"
                             >{{ chat.status }}</span
                         >
-                        <span
+                        <div
                             v-if="
                                 chat.recepient === 'user' &&
                                 chat.messageCount > 0
                             "
-                            class="text-[11px] bg-emerald-600 h-4 w-4 rounded-full font-bold grid place-content-center text-white dark:text-black p-1"
-                            >{{ chat.messageCount }}</span
+                            class="text-[11px] bg-green-500 dark:bg-emerald-600 h-4 w-4 rounded-full font-bold grid place-content-center text-white dark:text-black"
+                            :class="{
+                                'min-w-[22px]': chat.messageCount > 9,
+                            }"
                         >
+                            {{
+                                chat.messageCount > 99
+                                    ? 99 + "+"
+                                    : chat.messageCount
+                            }}
+                        </div>
                     </div>
                 </template>
             </div>
@@ -89,4 +98,8 @@ defineProps({
 });
 </script>
 
-<style></style>
+<style scoped>
+.router-link-active {
+    @apply bg-neutral-200 dark:bg-neutral-800;
+}
+</style>

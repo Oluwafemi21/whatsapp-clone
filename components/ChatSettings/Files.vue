@@ -1,7 +1,7 @@
 <template>
     <section class="relative h-full">
         <h3
-            class="sticky top-0 bg-neutral-800 z-30 text-xl dark:text-white font-medium p-4"
+            class="sticky top-0 bg-white text-black dark:bg-neutral-800 z-30 text-xl dark:text-white font-medium p-4"
         >
             Files
         </h3>

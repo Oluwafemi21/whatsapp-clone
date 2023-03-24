@@ -45,7 +45,7 @@ const chats = [
         time: "1:43 PM",
         message: "Next week",
         status: "archived",
-        messageCount: 18,
+        messageCount: 100,
         recepient: "user",
     },
     {
@@ -54,7 +54,7 @@ const chats = [
         time: "10:33 AM",
         message: "No issues",
         status: "archived",
-        messageCount: 2,
+        messageCount: 20,
         recepient: "user",
     },
 

@@ -13,7 +13,7 @@
                             text="New Chat(Ctrl+N)"
                             :multiline="true"
                             text2="New Group(Ctrl+Shift+N)"
-                            class="w-40 left-auto right-2"
+                            class="w-40 left-auto right-2 -top-9"
                         />
                     </li>
                     <li class="relative">
@@ -84,7 +84,10 @@
                 class="flex flex-1 items-center justify-between font-medium pr-3"
             >
                 <p class="dark:text-white text-sm">Archived</p>
-                <span class="text-xs font-bold text-emerald-600">71</span>
+                <span
+                    class="text-xs font-bold text-green-500 dark:text-emerald-600"
+                    >71</span
+                >
             </div>
         </button>
         <Transition name="slide-top" mode="out-in">
