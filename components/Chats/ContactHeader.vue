@@ -68,9 +68,7 @@
                 <ChatSettingsSidebarNav />
             </template>
             <template #view>
-                <KeepAlive>
-                    <component :is="showTab"></component>
-                </KeepAlive>
+                <component :is="showTab"></component>
             </template>
         </SettingsModal>
     </header>

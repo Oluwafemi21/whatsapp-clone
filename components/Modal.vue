@@ -13,16 +13,9 @@
 </template>
 
 <script setup>
-import { onClickOutside } from "@vueuse/core";
-
 const emit = defineEmits(["close"]);
 
 const modal_bg = ref(null);
-
-// functions
-// onClickOutside(modal_bg, () => {
-//     emit("close");
-// });
 
 const close = () => {
     emit("close");

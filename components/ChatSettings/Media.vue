@@ -17,7 +17,7 @@
                         :name="id"
                         :value="id"
                         :id="id"
-                        class="check cursor-pointer absolute top-0.5 z-10 h-5 w-5 right-0.5 focus:outline-none focus:outline-offset-0 focus:ring-transparent focus:ring-0 focus:ring-offset-0 bg-white dark:bg-neutral-800 border-neutral-500 border-2 checked:text-emerald-700 checked:block peer"
+                        class="check cursor-pointer absolute top-0.5 z-10 h-5 w-5 right-0.5 focus:outline-none focus:outline-offset-0 focus:ring-transparent focus:ring-0 focus:ring-offset-0 bg-neutral-800 border-neutral-500 border-2 checked:text-emerald-700 checked:block peer"
                         :class="{
                             hidden: !imageState[index].checkBoxVisible,
                         }"
@@ -91,7 +91,7 @@
 
                     <button
                         @click.stop="isModalVisible = false"
-                        class="px-3 py-1.5 text-sm dark:text-white rounded bg-white border border-gray-200 text-black dark:bg-neutral-800 min-w-[100px]"
+                        class="px-3 py-1.5 text-sm dark:text-white rounded bg-white border border-gray-200 dark:border-transparent text-black dark:bg-neutral-800 min-w-[100px]"
                     >
                         Cancel
                     </button>
@@ -214,6 +214,19 @@ const selectAll = () => {
 const toggleModal = () => {
     isModalVisible.value = !isModalVisible.value;
 };
+
+onUnmounted(() => {
+    selected.value = [];
+    allImagesSelected.value = false;
+    showActions.value = false;
+    imageState.value = imageState.value.map((image) => {
+        return {
+            ...image,
+            selected: false,
+            checkBoxVisible: false,
+        };
+    });
+});
 </script>
 
 <style scoped>

@@ -42,7 +42,7 @@ const tabs = [
     },
     {
         name: "files",
-        icon: "ph:file",
+        icon: "fluent:document-20-regular",
     },
     {
         name: "links",
@@ -54,7 +54,7 @@ const tabs = [
     },
     {
         name: "groups",
-        icon: "heroicons:users",
+        icon: "fluent:people-20-regular",
     },
 ];
 </script>

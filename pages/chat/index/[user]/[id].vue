@@ -16,14 +16,48 @@
                         class="w-5 h-5 text-black dark:text-white"
                     />
                 </button>
-                <button
-                    class="group flex items-center justify-center px-4 py-3 hover:bg-gray-200 dark:hover:bg-neutral-700/50 relative rounded"
-                >
-                    <Icon
-                        name="fluent:attach-16-regular"
-                        class="w-5 h-5 text-black dark:text-white"
-                    />
-                </button>
+                <div class="relative">
+                    <button
+                        class="peer group flex items-center justify-center px-4 py-3 hover:bg-gray-200 dark:hover:bg-neutral-700/50 focus:bg-neutral-700/50 relative rounded"
+                    >
+                        <Icon
+                            name="fluent:attach-16-regular"
+                            class="w-5 h-5 text-black dark:text-white"
+                        />
+                    </button>
+                    <FormDropdown>
+                        <template #items>
+                            <FormDropdownItem
+                                title="Filter chats by"
+                                icon="bi:filter"
+                                :nested="true"
+                            >
+                                <template #nested>
+                                    <FormDropdown>
+                                        <template #items>
+                                            <FormDropdownItem
+                                                title="All chats"
+                                                icon="ph:chat"
+                                            />
+                                            <FormDropdownItem
+                                                title="Unread chats"
+                                                icon="ph:chat"
+                                            />
+                                            <FormDropdownItem
+                                                title="Starred chats"
+                                                icon="ph:star"
+                                            />
+                                        </template>
+                                    </FormDropdown>
+                                </template>
+                            </FormDropdownItem>
+                            <FormDropdownItem
+                                title="Starred messages"
+                                icon="ph:star"
+                            />
+                        </template>
+                    </FormDropdown>
+                </div>
             </div>
             <textarea
                 rows="1"
