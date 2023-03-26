@@ -29,7 +29,6 @@ defineProps({
     },
     onClick: {
         type: Function,
-        required: true,
     },
 });
 

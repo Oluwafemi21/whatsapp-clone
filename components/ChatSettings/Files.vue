@@ -6,7 +6,7 @@
             Files
         </h3>
         <div class="grid place-content-center h-[400px]">
-            <p class="text-sm font-light">No Files to display</p>
+            <p class="text-sm font-light">No files to display</p>
         </div>
     </section>
 </template>

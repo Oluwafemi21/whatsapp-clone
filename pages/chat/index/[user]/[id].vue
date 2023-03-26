@@ -9,7 +9,7 @@
         >
             <div class="flex items-center">
                 <button
-                    class="group flex items-center justify-center px-4 py-3 hover:bg-gray-200 dark:hover:bg-neutral-700/50 relative rounded"
+                    class="group flex items-center justify-center px-4 py-2.5 hover:bg-gray-200 dark:hover:bg-neutral-700/50 relative rounded"
                 >
                     <Icon
                         name="iconoir:emoji"
@@ -18,45 +18,49 @@
                 </button>
                 <div class="relative">
                     <button
-                        class="peer group flex items-center justify-center px-4 py-3 hover:bg-gray-200 dark:hover:bg-neutral-700/50 focus:bg-neutral-700/50 relative rounded"
+                        @click="showDropdown = !showDropdown"
+                        class="peer flex items-center justify-center px-4 py-2.5 hover:bg-gray-200 dark:hover:bg-neutral-700/75 relative rounded"
+                        :class="{
+                            'ring-1 bg-gray-100 ring-neutral-300 dark:bg-neutral-700/75 dark:ring-neutral-900':
+                                showDropdown,
+                        }"
                     >
                         <Icon
                             name="fluent:attach-16-regular"
                             class="w-5 h-5 text-black dark:text-white"
                         />
                     </button>
-                    <FormDropdown>
-                        <template #items>
-                            <FormDropdownItem
-                                title="Filter chats by"
-                                icon="bi:filter"
-                                :nested="true"
-                            >
-                                <template #nested>
-                                    <FormDropdown>
-                                        <template #items>
-                                            <FormDropdownItem
-                                                title="All chats"
-                                                icon="ph:chat"
-                                            />
-                                            <FormDropdownItem
-                                                title="Unread chats"
-                                                icon="ph:chat"
-                                            />
-                                            <FormDropdownItem
-                                                title="Starred chats"
-                                                icon="ph:star"
-                                            />
-                                        </template>
-                                    </FormDropdown>
-                                </template>
-                            </FormDropdownItem>
-                            <FormDropdownItem
-                                title="Starred messages"
-                                icon="ph:star"
-                            />
-                        </template>
-                    </FormDropdown>
+                    <Transition name="dropDownTop">
+                        <FormDropdown
+                            v-if="showDropdown"
+                            @close="hideDropdown"
+                            class="bottom-full -right-full left-auto mb-1.5"
+                        >
+                            <template #items>
+                                <FormDropdownItem
+                                    title="File"
+                                    icon="fluent:document-20-regular"
+                                >
+                                </FormDropdownItem>
+                                <FormDropdownItem
+                                    title="Photos or video"
+                                    icon="fluent:image-16-regular"
+                                />
+                                <FormDropdownItem
+                                    title="Poll"
+                                    icon="fluent:poll-16-regular"
+                                />
+                                <FormDropdownItem
+                                    title="Contact"
+                                    icon="fluent:person-20-regular"
+                                />
+                                <FormDropdownItem
+                                    title="Drawing"
+                                    icon="ic:outline-draw"
+                                />
+                            </template>
+                        </FormDropdown>
+                    </Transition>
                 </div>
             </div>
             <textarea
@@ -93,7 +97,7 @@
 
 <script setup>
 const route = useRoute();
-
+const showDropdown = ref(false);
 const textMessage = ref("");
 const messages = ref([
     {
@@ -228,8 +232,31 @@ const messages = ref([
             },
         ],
     },
+    {
+        userId: "12d34f",
+        read: false,
+        text_messages: [
+            {
+                id: "2392094fhbdh",
+                text: "I believe you",
+                time: "10:08pm",
+            },
+            {
+                id: "2392094fhbdh",
+                text: "I'm good anyways, I was thinking about you too",
+                time: "10:08pm",
+            },
+            {
+                id: "2392094fhbdh",
+                text: "I will call you now baby",
+                time: "10:08pm",
+            },
+        ],
+    },
 ]);
-
+const hideDropdown = () => {
+    showDropdown.value = false;
+};
 useHead({
     title: `Whatsapp Chat | ${route.params.user}`,
 });
