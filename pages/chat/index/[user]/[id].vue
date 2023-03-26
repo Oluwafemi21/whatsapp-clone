@@ -30,7 +30,7 @@
                             class="w-5 h-5 text-black dark:text-white"
                         />
                     </button>
-                    <Transition name="dropDownTop">
+                    <Transition name="dropdownTop">
                         <FormDropdown
                             v-if="showDropdown"
                             @close="hideDropdown"

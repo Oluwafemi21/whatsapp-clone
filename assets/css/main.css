@@ -104,3 +104,16 @@ body {
     opacity: 0;
     transform: translateY(-16px);
 }
+
+.dropdownTop-enter-active,
+.dropdownTop-leave-active {
+    transform: translateY(0);
+    transition: all 200ms ease-in-out;
+
+}
+
+.dropdownTop-enter-from,
+.dropdownTop-leave-to {
+    opacity: 0;
+    transform: translateY(16px);
+}
