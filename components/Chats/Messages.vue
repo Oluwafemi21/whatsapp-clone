@@ -23,7 +23,7 @@
                 </div>
                 <button
                     @click="goToBottom"
-                    class="fixed py-2 px-3 rounded-lg bottom-20 right-5 z-50 text-black dark:text-white bg-gray-100 hover:bg-neutral-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 shadow-md"
+                    class="fixed py-2 px-3 rounded-lg bottom-24 right-5 z-50 text-black dark:text-white bg-gray-100 hover:bg-neutral-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 shadow-md"
                 >
                     <Icon name="fluent:arrow-down-28-regular" class="h-6 w-6" />
                 </button>

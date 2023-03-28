@@ -39,12 +39,13 @@
         </div>
 
         <div class="border-t border-neutral-600 pt-4">
-            <button
-                class="py-1 px-2 text-sm rounded dark:text-white dark:bg-neutral-700/90 border dark:border-neutral-600 border-neutral-300 shadow-sm"
+            <NuxtLink
+                to="/"
+                class="py-1.5 px-2.5 text-sm rounded dark:text-white dark:bg-neutral-700/90 border dark:border-neutral-700 border-neutral-300 shadow-sm"
             >
                 Log out
-            </button>
-            <p class="text-neutral-500 mt-1 text-sm">
+            </NuxtLink>
+            <p class="text-neutral-500 mt-3 text-sm">
                 Your chat history will be cleared when you log out
             </p>
         </div>

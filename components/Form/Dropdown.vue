@@ -1,7 +1,7 @@
 <template>
     <div
         v-bind="$attrs"
-        class="peer absolute left-0 p-1 z-30 mt-2 min-w-max bg-gray-100 dark:bg-neutral-800 border dark:border-black/40 w-40 grid gap-1 rounded-md transition duration-200 ease-in shadow-md"
+        class="peer absolute left-0 p-1 z-20 mt-2 min-w-max bg-gray-100 dark:bg-neutral-800 border dark:border-black/40 w-40 grid gap-1 rounded-md transition duration-200 ease-in shadow-md"
         ref="dropdown"
     >
         <slot name="items" />

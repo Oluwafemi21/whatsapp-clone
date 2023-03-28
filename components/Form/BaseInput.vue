@@ -10,10 +10,20 @@
                 @input="$emit('update:modelValue', $event.target.value)"
                 v-bind="$attrs"
             />
-            <Icon
-                name="quill:search"
-                class="absolute top-2.5 right-2 w-4 h-4 text-neutral-500 dark:text-white"
-            />
+            <template v-if="showSearchButton">
+                <Icon
+                    v-if="!modelValue.length"
+                    name="quill:search"
+                    class="absolute top-2.5 right-2 w-4 h-4 text-neutral-500 dark:text-white"
+                />
+                <button
+                    @click="$emit('update:modelValue', '')"
+                    v-else
+                    class="absolute top-1.5 grid place-content-center right-2 p-1 hover:dark:bg-neutral-700 rounded hover:bg-neutral-300 text-neutral-500 dark:text-white"
+                >
+                    <Icon name="ic:outline-close" class="w-4 h-4" />
+                </button>
+            </template>
         </div>
     </div>
 </template>
@@ -30,6 +40,10 @@ defineProps({
     showIcon: {
         type: Boolean,
         default: false,
+    },
+    showSearchButton: {
+        type: Boolean,
+        default: true,
     },
 });
 </script>
