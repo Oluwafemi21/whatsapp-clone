@@ -62,38 +62,40 @@
                         class="min-w-max right-0 left-auto -bottom-9"
                     />
                 </button>
-                <FormDropdown
-                    v-if="showSearchDropdown"
-                    @close="hideDropdown"
-                    class="left-auto right-2 top-10"
-                >
-                    <template #items>
-                        <div class="flex gap-3 p-0.5">
-                            <FormBaseInput
-                                placeholder="Search within chat"
-                                v-model="search"
-                            />
-                            <button
-                                class="flex items-center justify-center hover:bg-neutral-700 rounded py-1 px-3 hover:disabled:bg-transparent"
-                                :disabled="!search.length"
-                            >
-                                <Icon name="ph:caret-up-light" />
-                            </button>
-                            <button
-                                class="flex items-center justify-center hover:bg-neutral-700 rounded py-1 px-3 hover:disabled:bg-transparent"
-                                :disabled="!search.length"
-                            >
-                                <Icon name="ph:caret-down-thin" />
-                            </button>
-                            <button
-                                @click="hideDropdown"
-                                class="flex items-center justify-center hover:bg-neutral-700 rounded py-1 px-3 relative before:content-[''] before:w-[1px] before:absolute before:bg-neutral-600 before:h-5 before:-left-2.5 ml-2"
-                            >
-                                <Icon name="ic:outline-close" />
-                            </button>
-                        </div>
-                    </template>
-                </FormDropdown>
+                <Transition name="dropdownBottom">
+                    <FormDropdown
+                        v-if="showSearchDropdown"
+                        @close="hideDropdown"
+                        class="left-auto right-2 top-10"
+                    >
+                        <template #items>
+                            <div class="flex gap-3 p-0.5">
+                                <FormBaseInput
+                                    placeholder="Search within chat"
+                                    v-model="search"
+                                />
+                                <button
+                                    class="flex items-center justify-center hover:bg-neutral-700 rounded py-1 px-3 hover:disabled:bg-transparent"
+                                    :disabled="!search.length"
+                                >
+                                    <Icon name="ph:caret-up-light" />
+                                </button>
+                                <button
+                                    class="flex items-center justify-center hover:bg-neutral-700 rounded py-1 px-3 hover:disabled:bg-transparent"
+                                    :disabled="!search.length"
+                                >
+                                    <Icon name="ph:caret-down-thin" />
+                                </button>
+                                <button
+                                    @click="hideDropdown"
+                                    class="flex items-center justify-center hover:bg-neutral-700 rounded py-1 px-3 relative before:content-[''] before:w-[1px] before:absolute before:bg-neutral-600 before:h-5 before:-left-2.5 ml-2"
+                                >
+                                    <Icon name="ic:outline-close" />
+                                </button>
+                            </div>
+                        </template>
+                    </FormDropdown>
+                </Transition>
             </div>
         </div>
         <SettingsModal v-if="showModal" position="top-left" @close="closeModal">
