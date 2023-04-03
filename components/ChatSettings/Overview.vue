@@ -84,7 +84,7 @@
                         Block
                     </button>
                     <button
-                        class="px-3 py-1.5 text-sm dark:text-white rounded bg-white border border-gray-200 text-black dark:border-none dark:bg-neutral-800 min-w-[100px]"
+                        class="flex-1 px-3 py-1.5 text-sm dark:text-white rounded bg-white border border-gray-200 text-black dark:border-none dark:bg-neutral-800 min-w-[100px]"
                     >
                         Report and block
                     </button>
@@ -117,7 +117,7 @@
 
                     <button
                         @click.stop="toggleModal('report_and_block')"
-                        class="px-3 py-1.5 text-sm dark:text-white rounded bg-white border border-gray-200 text-black dark:bg-neutral-800 min-w-[100px]"
+                        class="px-3 py-1.5 text-sm dark:text-white rounded bg-white border border-gray-200 text-black dark:border-neutral-700 dark:bg-neutral-800 min-w-[100px]"
                     >
                         Cancel
                     </button>
