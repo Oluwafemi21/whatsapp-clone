@@ -14,13 +14,12 @@
             <h4 class="dark:text-white text-lg">Theme</h4>
             <p class="text-neutral-500 text-sm mt-1">App color theme</p>
             <select
-                @change="changeTheme($event)"
                 name="theme"
-                id="id"
+                id="theme"
                 class="dark:bg-neutral-700/90 dark:text-white text-sm shadow border-neutral-300 dark:border-none rounded-md mt-1 w-2/3"
-                v-model="theme"
+                v-model="$colorMode.preference"
             >
-                <option value="auto">System default</option>
+                <option value="system">System default</option>
                 <option value="light">Light</option>
                 <option value="dark">Dark</option>
             </select>
@@ -39,12 +38,12 @@
         </div>
 
         <div class="border-t border-neutral-600 pt-4">
-            <NuxtLink
-                to="/"
+            <button
+                @click="logout"
                 class="py-1.5 px-2.5 text-sm rounded dark:text-white dark:bg-neutral-700/90 border dark:border-neutral-700 border-neutral-300 shadow-sm"
             >
                 Log out
-            </NuxtLink>
+            </button>
             <p class="text-neutral-500 mt-3 text-sm">
                 Your chat history will be cleared when you log out
             </p>
@@ -54,30 +53,16 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
-import { useDark } from "@vueuse/core";
 
-const isDark = useDark();
+const supabase = useSupabaseClient();
+const router = useRouter();
+
 const showWhatsappAtLogin = ref(false);
-const themes = {
-    auto: "auto",
-    light: "light",
-    dark: "dark",
-};
-const theme = ref("auto");
 
-const changeTheme = (event) => {
-    event.target.value === "auto"
-        ? (isDark.value = null)
-        : (isDark.value = event.target.value === "dark" ? true : false);
-    localStorage.setItem("theme", event.target.value);
-    theme.value = event.target.value;
-};
-
-onMounted(() => {
-    let global_theme = localStorage.getItem("theme");
-    theme.value = global_theme;
-    global_theme === "auto"
-        ? (isDark.value = null)
-        : (isDark.value = global_theme === "dark" ? true : false);
-});
+async function logout() {
+    const { error } = await supabase.auth.signOut().then(() => {
+        router.push("/auth/login");
+        console.log(error);
+    });
+}
 </script>

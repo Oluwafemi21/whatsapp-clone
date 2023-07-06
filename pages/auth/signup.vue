@@ -2,7 +2,7 @@
     <section
         class="w-full h-screen grid place-content-center justify-items-center"
     >
-        <section
+        <div
             class="flex flex-col items-center gap-5 bg-white shadow-lg p-4 rounded-lg border max-w-sm w-screen"
         >
             <h1 class="text-2xl font-medium">SignUp To Whatsapp</h1>
@@ -25,7 +25,7 @@
                     >Login.</NuxtLink
                 >
             </p>
-        </section>
+        </div>
     </section>
 </template>
 
@@ -41,5 +41,3 @@ const login = () => {
     }, 1000);
 };
 </script>
-
-<style></style>

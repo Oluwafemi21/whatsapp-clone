@@ -11,7 +11,7 @@
                 @click="login"
                 class="bg-green-600 text-lg grid h-10 text-center place-content-center text-white w-full rounded font-medium hover:bg-green-500"
             >
-                <span v-if="!loggingIn">Login</span>
+                <p v-if="!loggingIn">Login</p>
                 <Icon
                     v-else
                     name="svg-spinners:270-ring-with-bg"
@@ -34,12 +34,20 @@ import { ref } from "vue";
 import { useRouter } from "vue-router";
 const loggingIn = ref(false);
 const router = useRouter();
-const login = () => {
-    loggingIn.value = !loggingIn.value;
-    setTimeout(() => {
-        router.push("/chat");
-    }, 1000);
-};
+
+const supabase = useSupabaseClient();
+
+async function login() {
+    loggingIn.value = true;
+    const { data } = await supabase.auth
+        .signInWithOAuth({
+            provider: "google",
+        })
+        .then(() => {
+            loggingIn.value = false;
+            router.push("/chat");
+        });
+}
 </script>
 
 <style></style>

@@ -5,9 +5,16 @@ export default defineNuxtConfig({
         "nuxt-icon",
         "@vueuse/nuxt",
         "@nuxtjs/supabase",
+        "@pinia/nuxt",
+        "@nuxtjs/color-mode",
     ],
     css: ["@/assets/css/main.css"],
     app: {
         layoutTransition: { name: "layout", mode: "out-in" },
+    },
+    colorMode: {
+        preference: "system", // default value of $colorMode.preference
+        fallback: "light",
+        classSuffix: "",
     },
 });

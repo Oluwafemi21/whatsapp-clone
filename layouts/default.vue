@@ -9,12 +9,6 @@
     </div>
 </template>
 
-<script setup>
-import { useDark } from "@vueuse/core";
-
-const dark = useDark({
-    storageKey: "theme",
-});
-</script>
+<script setup></script>
 
 <style scoped></style>
