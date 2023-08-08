@@ -30,21 +30,18 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
-import { useRouter } from "vue-router";
+const config = useRuntimeConfig();
 const loggingIn = ref(false);
 const supabase = useSupabaseClient();
+// get the url from the runtimeConfig in the nuxt.config.ts file
+const url = config.public.frontendUrl;
 
 async function login() {
     loggingIn.value = true;
     await supabase.auth.signInWithOAuth({
         provider: "google",
         options: {
-            redirectTo: getUrl(),
-            queryParams: {
-                access_type: "offline",
-                prompt: "consent",
-            },
+            redirectTo: `${url}/auth/confirm`,
         },
     });
 }

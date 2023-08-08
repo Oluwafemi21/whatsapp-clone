@@ -17,4 +17,9 @@ export default defineNuxtConfig({
         fallback: "light",
         classSuffix: "",
     },
+    runtimeConfig: {
+        public: {
+            frontendUrl: process.env.NUXT_ENV_VERCEL_ENV,
+        },
+    },
 });

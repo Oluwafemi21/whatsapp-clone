@@ -9,7 +9,7 @@
             <p class="">To get started, signup with your google account.</p>
             <button
                 @click="login"
-                class="bg-green-600 text-lg grid h-10 text-center place-content-center text-white w-full rounded font-medium hover:bg-green-500"
+                class="bg-green-700 text-lg grid h-10 text-center place-content-center text-white w-full rounded font-medium hover:bg-green-800"
             >
                 <span v-if="!loggingIn">Create an account</span>
                 <Icon
