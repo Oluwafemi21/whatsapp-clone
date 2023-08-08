@@ -51,7 +51,7 @@
     </section>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, onMounted } from "vue";
 
 const supabase = useSupabaseClient();
@@ -60,9 +60,8 @@ const router = useRouter();
 const showWhatsappAtLogin = ref(false);
 
 async function logout() {
-    const { error } = await supabase.auth.signOut().then(() => {
+    await supabase.auth.signOut().then(() => {
         router.push("/auth/login");
-        console.log(error);
     });
 }
 </script>

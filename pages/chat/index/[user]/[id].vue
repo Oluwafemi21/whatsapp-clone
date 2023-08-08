@@ -95,7 +95,7 @@
     </section>
 </template>
 
-<script setup>
+<script setup lang="ts">
 const route = useRoute();
 const showDropdown = ref(false);
 const textMessage = ref("");
@@ -248,8 +248,18 @@ const messages = ref([
             },
             {
                 id: "2392094fhbdh",
-                text: "I will call you now baby",
+                text: "Can I call you now baby?",
                 time: "10:08pm",
+            },
+            {
+                id: "2392095fhbdh",
+                text: "I know you have missed me",
+                time: "10:09pm",
+            },
+            {
+                id: "2392194fhbdh",
+                text: "I have missed you too",
+                time: "10:09pm",
             },
         ],
     },

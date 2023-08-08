@@ -5,6 +5,7 @@
             'grid place-content-center': !messages.length,
         }"
         ref="chat_section"
+        @scroll="getScrollPosition"
     >
         <div v-if="!messages.length">
             <ChatsNoMessage />
@@ -22,7 +23,8 @@
                     <ChatsMessageBox :message="message" />
                 </div>
                 <button
-                    @click="goToBottom"
+                    ref="scrollToBottomButton"
+                    @click="scrollToBottom"
                     class="fixed py-2 px-3 rounded-lg bottom-24 right-5 z-50 text-black dark:text-white bg-gray-100 hover:bg-neutral-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 shadow-md"
                 >
                     <Icon name="fluent:arrow-down-28-regular" class="h-6 w-6" />
@@ -32,34 +34,42 @@
     </div>
 </template>
 
-<script setup>
-defineProps({
+<script setup lang="ts">
+interface Props {
     messages: {
-        type: Array,
-        required: true,
-        default: () => [],
-    },
-});
+        userId: string;
+        read: boolean;
+        text_messages: {
+            id: string;
+            text: string;
+            time: string;
+        }[];
+    }[];
+}
 
-const bottom = ref(0);
-const chat_section = ref();
+const { messages } = defineProps<Props>();
 
-// const scrollToBottom = (event) => {
-// get the height of the section
-// bottom.value = event.target.scrollHeight;
-// console.log(event.target.scrollTop);
-// };
+const chat_section = ref<HTMLDivElement>();
+const scrollToBottomButton = ref<HTMLButtonElement>();
+let scrollPosition: number | undefined = 0;
 
-const goToBottom = () => {
-    chat_section.value.scrollTop = chat_section.value.scrollHeight;
+const getScrollPosition = () => {
+    scrollPosition = chat_section.value?.scrollTop;
+    chat_section.value!.scrollHeight - chat_section.value!.clientHeight !=
+    scrollPosition
+        ? (scrollToBottomButton.value!.style.display = "block")
+        : (scrollToBottomButton.value!.style.display = "none");
+};
+
+const scrollToBottom = () => {
+    chat_section.value?.scrollTo({
+        top: chat_section.value?.scrollHeight,
+        behavior: "smooth",
+    });
 };
 
 onMounted(() => {
-    goToBottom();
-});
-
-const heightOfSection = computed(() => {
-    return chat_section.value.scrollHeight;
+    scrollToBottom();
 });
 </script>
 

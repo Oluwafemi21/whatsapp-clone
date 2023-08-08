@@ -9,7 +9,7 @@
             <p class="">To get started, login with your google account.</p>
             <button
                 @click="login"
-                class="bg-green-600 text-lg grid h-10 text-center place-content-center text-white w-full rounded font-medium hover:bg-green-500"
+                class="bg-green-700 text-lg grid h-10 text-center place-content-center text-white w-full rounded-sm font-medium hover:bg-green-800"
             >
                 <p v-if="!loggingIn">Login</p>
                 <Icon
@@ -29,24 +29,24 @@
     </section>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 const loggingIn = ref(false);
-const router = useRouter();
-
 const supabase = useSupabaseClient();
 
 async function login() {
     loggingIn.value = true;
-    const { data } = await supabase.auth
-        .signInWithOAuth({
-            provider: "google",
-        })
-        .then(() => {
-            loggingIn.value = false;
-            router.push("/chat");
-        });
+    await supabase.auth.signInWithOAuth({
+        provider: "google",
+        options: {
+            redirectTo: getUrl(),
+            queryParams: {
+                access_type: "offline",
+                prompt: "consent",
+            },
+        },
+    });
 }
 </script>
 
