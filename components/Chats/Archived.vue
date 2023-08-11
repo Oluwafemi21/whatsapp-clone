@@ -1,17 +1,7 @@
 <template>
     <header class="flex flex-col justify-between gap-3 mb-5 px-2">
-        <div class="flex items-center gap-4">
-            <button
-                class="hover:bg-neutral-200 dark:hover:bg-neutral-800 py-2 px-3 rounded-md peer"
-                @click="showUnarchivedChats"
-            >
-                <Icon
-                    name="heroicons:arrow-left"
-                    class="w-4 h-4 text-neutral-800 dark:text-white peer-focus:w-3 peer-focus:transition-width ease-in-out duration-150"
-                />
-            </button>
-            <h3 class="text-xl font-medium dark:text-white">Archived</h3>
-        </div>
+        <h3 class="text-xl font-medium dark:text-white">Archived</h3>
+
         <FormBaseInput
             v-model="searchTerm"
             :placeholder="'Search archived chats'"
@@ -22,6 +12,7 @@
             <li v-for="chat in chats" :key="chat.id">
                 <ChatsChatCard
                     :chat="chat"
+                    :chatRoute="'archived-chat'"
                     :receivedMessage="chat.recepient === 'user'"
                 />
             </li>
@@ -30,12 +21,6 @@
 </template>
 
 <script setup>
-const currentTab = useState("active-component");
-
-const showUnarchivedChats = () => {
-    currentTab.value = "ChatsUnarchived";
-};
-
 const searchTerm = ref("");
 
 const chats = [

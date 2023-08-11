@@ -21,6 +21,24 @@
         </ul>
         <div class="bottom-nav mt-auto sticky bottom-4">
             <div class="px-1 pt-1 flex flex-col gap-2">
+                <NuxtLink
+                    to="/archived-chat"
+                    class="flex items-center justify-center h-9 hover:bg-gray-200 dark:hover:bg-neutral-800/40 focus:outline-none focus:bg-gray-200 dark:focus:bg-neutral-800/40 relative rounded group"
+                >
+                    <span
+                        class="absolute top-0 right-0 grid place-content-center bg-emerald-600 text-black h-4 w-4 font-bold rounded-full text-[10px]"
+                        >72</span
+                    >
+                    <ClientOnly>
+                        <Icon
+                            name="heroicons:archive-box"
+                            class="w-6 h-6 dark:text-white text-neutral-800"
+                        />
+                    </ClientOnly>
+
+                    <Tooltip text="Archived Chats" class="-top-9 w-[100px]" />
+                </NuxtLink>
+
                 <button
                     @click="openModal('general')"
                     class="flex items-center justify-center h-9 hover:bg-gray-200 dark:hover:bg-neutral-800/40 group relative rounded focus:outline-none focus:bg-gray-200 dark:focus:bg-neutral-800/40"

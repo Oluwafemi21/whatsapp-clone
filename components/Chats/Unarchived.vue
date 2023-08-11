@@ -19,14 +19,18 @@
                     <li class="relative">
                         <button
                             @click="showDropdown = !showDropdown"
-                            class="peer flex items-center justify-center px-3 py-2 hover:bg-gray-100/50 dark:hover:bg-neutral-800/40 relative rounded"
+                            class="group peer flex items-center justify-center px-3 py-2 hover:bg-gray-100/50 dark:hover:bg-neutral-800/40 relative rounded"
                             :class="{
                                 'ring-1 bg-gray-100 ring-neutral-300 dark:bg-neutral-800/40 dark:ring-neutral-900':
                                     showDropdown,
                             }"
                         >
+                            <Tooltip
+                                text="Filter chats by"
+                                class="-top-9 w-24"
+                            />
                             <Icon
-                                name="heroicons:ellipsis-horizontal-20-solid"
+                                name="ic:round-filter-list"
                                 class="w-6 h-6 dark:text-white"
                             />
                         </button>
@@ -37,48 +41,24 @@
                             >
                                 <template #items>
                                     <FormDropdownItem
-                                        title="Filter chats by"
-                                        icon="bi:filter"
-                                        :nested="true"
-                                        :onClick="showNestedDropdown"
-                                    >
-                                        <template #nested v-if="nestedDropdown">
-                                            <FormDropdown
-                                                class="left-full top-0 mt-auto"
-                                            >
-                                                <template #items>
-                                                    <FormDropdownItem
-                                                        title="Unread"
-                                                        icon="mdi:message-badge-outline"
-                                                        :onClick="
-                                                            showUnreadChat
-                                                        "
-                                                    />
-                                                    <FormDropdownItem
-                                                        title="Contacts"
-                                                        icon="fluent:person-20-regular"
-                                                        :onClick="showContacts"
-                                                    />
-                                                    <FormDropdownItem
-                                                        title="Non-contacts"
-                                                        icon="fluent:person-prohibited-20-regular"
-                                                        :onClick="
-                                                            showNonContacts
-                                                        "
-                                                    />
-                                                    <FormDropdownItem
-                                                        title="Groups"
-                                                        icon="fluent:people-20-regular"
-                                                        :onClick="showGroups"
-                                                    />
-                                                </template>
-                                            </FormDropdown>
-                                        </template>
-                                    </FormDropdownItem>
+                                        title="Unread"
+                                        icon="mdi:message-badge-outline"
+                                        :onClick="showUnreadChat"
+                                    />
                                     <FormDropdownItem
-                                        title="Starred messages"
-                                        icon="ph:star"
-                                        :onClick="showStarred"
+                                        title="Contacts"
+                                        icon="fluent:person-20-regular"
+                                        :onClick="showContacts"
+                                    />
+                                    <FormDropdownItem
+                                        title="Non-contacts"
+                                        icon="fluent:person-prohibited-20-regular"
+                                        :onClick="showNonContacts"
+                                    />
+                                    <FormDropdownItem
+                                        title="Groups"
+                                        icon="fluent:people-20-regular"
+                                        :onClick="showGroups"
                                     />
                                 </template>
                             </FormDropdown>
@@ -97,30 +77,12 @@
     <section
         class="h-screen overflow-y-scroll scroll-p-0 snap-mandatory snap-y"
     >
-        <button
-            class="hover:bg-gray-100 dark:hover:bg-neutral-800 focus:outline-none focus:bg-gray-100 dark:focus:bg-neutral-800 w-full flex items-center py-2.5 rounded-md pl-6 gap-6 mb-1"
-            @click="showArchivedChats"
-        >
-            <Icon
-                name="heroicons:archive-box"
-                class="text-lg dark:text-white flex-shrink-0"
-            />
-
-            <div
-                class="flex flex-1 items-center justify-between font-medium pr-3"
-            >
-                <p class="dark:text-white text-sm">Archived</p>
-                <span
-                    class="text-xs font-bold text-green-500 dark:text-emerald-600"
-                    >71</span
-                >
-            </div>
-        </button>
         <Transition name="slide-top" mode="out-in">
             <ul class="flex flex-col gap-2">
                 <li v-for="chat in chats" :key="chat.id">
                     <ChatsChatCard
                         :chat="chat"
+                        :chatRoute="'chat'"
                         :receivedMessage="chat.recepient === 'user'"
                     />
                 </li>
@@ -130,8 +92,6 @@
 </template>
 
 <script setup>
-const currentTab = useState("active-component");
-
 // dropdown functions
 const hideDropdown = () => {
     showDropdown.value = false;
@@ -160,10 +120,6 @@ const showNonContacts = () => {
 
 const showGroups = () => {
     console.log("display all groups");
-};
-
-const showArchivedChats = () => {
-    currentTab.value = "ChatsArchived";
 };
 
 const showDropdown = ref(false);

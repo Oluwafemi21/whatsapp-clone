@@ -1,18 +1,12 @@
 <template>
     <NuxtLink
-        :to="{
-            name: 'chat-index-user-id',
-            params: {
-                user: chat.name,
-                id: chat.id,
-            },
-        }"
+        :to="`/${chatRoute}/${chat.id}`"
         class="hover:bg-neutral-100 focus:bg-neutral-100 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800 focus:outline-none flex space-x-3 w-full rounded-md py-2.5 px-3"
     >
         <Avatar />
         <div class="w-full flex flex-col gap-2">
             <div class="flex items-center justify-between">
-                <p class="font-medium text-xs dark:text-white">
+                <p class="font-medium text-sm dark:text-white">
                     {{ chat.name }}
                 </p>
                 <span
@@ -94,6 +88,11 @@ defineProps({
     receivedMessage: {
         type: Boolean,
         default: false,
+    },
+    chatRoute: {
+        type: String,
+        required: true,
+        default: "chat",
     },
 });
 </script>

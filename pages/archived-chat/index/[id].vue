@@ -1,6 +1,6 @@
 <template>
     <section class="h-full w-full flex flex-col dark:text-white">
-        <ChatsContactHeader :contact="`${$route.params.user}`" />
+        <ChatsContactHeader :contact="`username`" />
 
         <ChatsMessages :messages="messages" />
 
@@ -268,7 +268,7 @@ const hideDropdown = () => {
     showDropdown.value = false;
 };
 useHead({
-    title: `Whatsapp Chat | ${route.params.user}`,
+    title: `User | Whatsapp Chat`,
 });
 </script>
 
