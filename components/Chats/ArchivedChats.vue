@@ -12,7 +12,7 @@
       <li v-for="chat in chats" :key="chat.id">
         <ChatsChatCard
           :chat="chat"
-          :chat-route="'archived-chat'"
+          :chat-route="'chat'"
           :received-message="chat.recepient === 'user'"
         />
       </li>

@@ -26,7 +26,7 @@
 </template>
 
 <script setup>
-const chat = resolveComponent("ChatsActive");
+const chat = resolveComponent("ChatsActiveChat");
 const call = resolveComponent("CallsAllCalls");
-const status = resolveComponent("StatusAll");
+const status = resolveComponent("StatusAllStatus");
 </script>

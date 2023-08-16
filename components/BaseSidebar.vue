@@ -23,8 +23,8 @@
       <div class="px-1 pt-1 flex flex-col gap-2">
         <NuxtLink
           :to="{
-            path: `/chat/${chat.id}`,
-            query: { filter: product.id },
+            path: `/chat`,
+            query: { filter: 'archived' },
           }"
           class="flex items-center justify-center h-9 hover:bg-gray-200 dark:hover:bg-neutral-800/40 focus:outline-none focus:bg-gray-200 dark:focus:bg-neutral-800/40 relative rounded group"
         >
@@ -150,7 +150,8 @@ const showTab = computed(() => {
 </script>
 
 <style scoped>
-.router-link-active {
+.router-link-active,
+.router-link-exact-active {
   @apply bg-gray-200 dark:bg-neutral-800/40 before:block before:absolute before:h-4 before:w-[3px] before:bg-emerald-700 before:left-0 before:rounded;
 }
 </style>

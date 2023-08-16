@@ -59,7 +59,7 @@
           />
         </button>
         <Transition name="dropdownBottom">
-          <FormDropdown
+          <FormBaseDropdown
             v-if="showSearchDropdown"
             class="left-auto right-2 top-10"
             @close="hideDropdown"
@@ -90,7 +90,7 @@
                 </button>
               </div>
             </template>
-          </FormDropdown>
+          </FormBaseDropdown>
         </Transition>
       </div>
     </div>
@@ -137,12 +137,12 @@ const hideDropdown = () => {
 };
 
 //  components
-const overview = resolveComponent("ChatSettingsOverview");
-const files = resolveComponent("ChatSettingsFiles");
-const media = resolveComponent("ChatSettingsMedia");
-const links = resolveComponent("ChatSettingsLinks");
-const encryption = resolveComponent("ChatSettingsEncryption");
-const groups = resolveComponent("ChatSettingsGroups");
+const overview = resolveComponent("ChatSettingsUserOverview");
+const files = resolveComponent("ChatSettingsUserFiles");
+const media = resolveComponent("ChatSettingsUserMedia");
+const links = resolveComponent("ChatSettingsUserLinks");
+const encryption = resolveComponent("ChatSettingsUserEncryption");
+const groups = resolveComponent("ChatSettingsUserGroups");
 
 const tabSettings = {
   overview,

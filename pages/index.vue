@@ -28,12 +28,13 @@
       >
         Get Started</NuxtLink
       >
-      <NuxtLink
+      <button
         to="/auth/login"
-        class="dark:bg-neutral-800 dark:text-white font-medium px-5 py-2 rounded-full hover:bg-gray-200 dark:hover:bg-neutral-700 ring-1 ring-gray-400 dark:ring-gray-500"
+        class="cursor-not-allowed dark:bg-neutral-800 dark:text-white font-medium px-5 py-2 rounded-full hover:bg-gray-200 dark:hover:bg-neutral-700 ring-1 ring-gray-400 dark:ring-gray-500"
+        disabled
       >
-        View on Github</NuxtLink
-      >
+        View on Github
+      </button>
     </div>
   </div>
 </template>

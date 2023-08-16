@@ -8,12 +8,25 @@
 
 <script setup lang="ts">
 const $route = useRoute();
-const ChatsUnarchived = defineAsyncComponent(
-  () => import("./UnarchivedChats.vue"),
-);
-const ChatsArchived = defineAsyncComponent(() => import("./ArchivedChats.vue"));
+const queryParam = computed(() => $route.query.filter);
 
-const activeChat = computed(() => {
-  return $route.path.includes("/chat") ? ChatsUnarchived : ChatsArchived;
+const chatTypes = {
+  unarchived: resolveComponent("ChatsUnarchivedChats"),
+  archived: resolveComponent("ChatsArchivedChats"),
+};
+
+const activeChat = shallowRef();
+const setActiveChat = () => {
+  activeChat.value = queryParam.value
+    ? chatTypes[queryParam.value as keyof typeof chatTypes]
+    : chatTypes.unarchived;
+};
+
+watch($route, () => {
+  setActiveChat();
+});
+
+onMounted(() => {
+  setActiveChat();
 });
 </script>

@@ -1,7 +1,7 @@
 <template>
   <section class="h-full w-full flex flex-col dark:text-white">
     <ChatsContactHeader :contact="`User${$route.params.id}`" />
-    <ChatsMessages :messages="messages" />
+    <ChatsMessagesSection :messages="messages" />
     <div
       class="flex items-center border-t border-black/25 bg-neutral-50 dark:bg-neutral-800 px-2 py-1 gap-4"
     >
