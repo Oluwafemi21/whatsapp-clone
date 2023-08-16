@@ -1,5 +1,5 @@
 <template>
-    <h1>encryption</h1>
+  <h1>encryption</h1>
 </template>
 
 <script>

@@ -4,116 +4,112 @@
 
 html,
 body {
-    font-size: 100%;
-    scroll-behavior: smooth;
-    scrollbar-width: thin;
-    scrollbar-color: #d6d6d6;
-    background: transparent;
+  font-size: 100%;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #d6d6d6;
+  background: transparent;
 }
 
 ::-webkit-scrollbar {
-    width: 2px;
-    height: 1px;
-    transition: all;
+  width: 2px;
+  height: 1px;
+  transition: all;
 }
 
 ::-webkit-scrollbar-track {
-    border-radius: 24px;
+  border-radius: 24px;
 }
 
 ::-webkit-scrollbar-thumb {
-    width: 2px;
-    background-color: #d6d6d6;
-    border-radius: 24px;
+  width: 2px;
+  background-color: #d6d6d6;
+  border-radius: 24px;
 }
-
 
 .page-enter-active,
 .page-leave-active {
-    transition: opacity 0.15s;
+  transition: opacity 0.15s;
 }
 
 .page-enter,
 .page-leave-to {
-    opacity: 0;
+  opacity: 0;
 }
 
 /* Layout */
 .layout-enter-active,
 .layout-leave-active {
-    transition: background-color 0.5s;
-    background-color: hsl(0%, 0%, 10%);
+  transition: background-color 0.5s;
+  background-color: hsl(0%, 0%, 10%);
 }
 
 .layout-enter,
 .layout-leave-active {
-    background-color: hsl(0%, 0%, 10%);
+  background-color: hsl(0%, 0%, 10%);
 }
 
 .fade-enter-active,
 .fade-leave-active {
-    transition: opacity 0.15s ease;
+  transition: opacity 0.15s ease;
 }
 
 .fade-enter-from,
 .fade-leave-to {
-    opacity: 0;
+  opacity: 0;
 }
 
 .slide-bottom-enter-active,
 .slide-bottom-leave-active {
-    transition: all 0.15s ease;
+  transition: all 0.15s ease;
 }
 
 .slide-bottom-enter-from,
 .slide-bottom-leave-to {
-    transform: translateY(100%);
+  transform: translateY(100%);
 }
 
 .slide-top-enter-active,
 .slide-top-leave-active {
-    transition: transform 15s ease-in-out;
+  transition: transform 15s ease-in-out;
 }
 
 .slide-top-enter-from,
 .slide-top-leave-to {
-    transform: translateY(0%);
+  transform: translateY(0%);
 }
 
 .slide-left-enter-active,
 .slide-left-leave-active {
-    transition: all 100ms ease-in-out;
+  transition: all 100ms ease-in-out;
 }
 
 .slide-left-enter-from,
 .slide-left-leave-to {
-    transform: translateX(0%);
-    opacity: 0;
+  transform: translateX(0%);
+  opacity: 0;
 }
-
 
 .dropdownBottom-enter-active,
 .dropdownBottom-leave-active {
-    transform: translateY(0);
-    transition: all 200ms ease-in-out;
-
+  transform: translateY(0);
+  transition: all 200ms ease-in-out;
 }
 
 .dropdownBottom-enter-from,
 .dropdownBottom-leave-to {
-    opacity: 0;
-    transform: translateY(-16px);
+  opacity: 0;
+  transform: translateY(-16px);
 }
 
 .dropdownTop-enter-active,
 .dropdownTop-leave-active {
-    transform: translateY(0);
-    transition: all 200ms ease-in-out;
-
+  transform: translateY(0);
+  transition: all 200ms ease-in-out;
 }
 
 .dropdownTop-enter-from,
 .dropdownTop-leave-to {
-    opacity: 0;
-    transform: translateY(16px);
+  opacity: 0;
+  transform: translateY(16px);
 }

@@ -1,10 +1,10 @@
 <template>
-    <NuxtPage />
+  <NuxtPage />
 </template>
 
 <script setup>
 definePageMeta({
-    layout: "custom",
+  layout: "custom",
 });
 </script>
 

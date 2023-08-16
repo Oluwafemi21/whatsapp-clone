@@ -1,5 +1,5 @@
 <template>
-    <empty-state />
+  <empty-state />
 </template>
 
 <script setup></script>

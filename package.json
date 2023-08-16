@@ -5,22 +5,32 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore --fix .",
+    "format": "prettier --ignore-path .gitignore .  --write"
   },
   "devDependencies": {
     "@nuxtjs/color-mode": "^3.3.0",
+    "@nuxtjs/eslint-module": "^4.1.0",
     "@nuxtjs/supabase": "^0.3.1",
     "@nuxtjs/tailwindcss": "^6.4.1",
     "@types/node": "^20.4.0",
     "@vueuse/nuxt": "^9.13.0",
-    "nuxt": "^3.2.2"
+    "eslint": "^8.47.0",
+    "eslint-config-prettier": "^9.0.0",
+    "nuxt": "^3.2.2",
+    "prettier": "^3.0.1"
   },
   "dependencies": {
+    "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@pinia/nuxt": "^0.4.8",
     "@tailwindcss/forms": "^0.5.3",
+    "@typescript-eslint/parser": "^6.3.0",
     "@vueuse/core": "^9.13.0",
+    "eslint-plugin-prettier": "^5.0.0",
     "nuxt-icon": "^0.3.2",
-    "pinia": "^2.0.34"
+    "pinia": "^2.0.34",
+    "typescript": "^5.1.6"
   },
   "overrides": {
     "vue": "latest"
