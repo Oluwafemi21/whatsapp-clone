@@ -6,7 +6,14 @@
       <li v-for="link in links" :key="link.name" class="relative px-1">
         <NuxtLink
           :to="link.route"
-          class="flex items-center justify-center h-9 hover:bg-gray-200 dark:hover:bg-neutral-800/40 focus:outline-none focus:bg-gray-200 dark:focus:bg-neutral-800/40 relative rounded group"
+          class="nav__link group"
+          :class="
+            $route.query.filter && link.name === 'Chats'
+              ? null
+              : $route.path === link.route || $route.path.includes(link.route)
+              ? 'active-link'
+              : null
+          "
         >
           <ClientOnly>
             <Icon
@@ -24,9 +31,26 @@
         <NuxtLink
           :to="{
             path: `/chat`,
+            query: { filter: 'starred' },
+          }"
+          class="nav__link group"
+          :class="$route.query.filter === 'starred' ? 'active-link' : null"
+        >
+          <ClientOnly>
+            <Icon
+              name="ic:outline-star-outline"
+              class="w-6 h-6 dark:text-white text-neutral-800"
+            />
+          </ClientOnly>
+          <BaseTooltip text="Starred Messages" class="-top-9 w-[115px]" />
+        </NuxtLink>
+        <NuxtLink
+          :to="{
+            path: `/chat`,
             query: { filter: 'archived' },
           }"
-          class="flex items-center justify-center h-9 hover:bg-gray-200 dark:hover:bg-neutral-800/40 focus:outline-none focus:bg-gray-200 dark:focus:bg-neutral-800/40 relative rounded group"
+          class="nav__link group"
+          :class="$route.query.filter === 'archived' ? 'active-link' : null"
         >
           <span
             class="absolute top-0 right-0 grid place-content-center bg-emerald-600 text-black h-4 w-4 font-bold rounded-full text-[10px]"
@@ -38,10 +62,8 @@
               class="w-6 h-6 dark:text-white text-neutral-800"
             />
           </ClientOnly>
-
           <BaseTooltip text="Archived Chats" class="-top-9 w-[100px]" />
         </NuxtLink>
-
         <button
           class="flex items-center justify-center h-9 hover:bg-gray-200 dark:hover:bg-neutral-800/40 group relative rounded focus:outline-none focus:bg-gray-200 dark:focus:bg-neutral-800/40"
           @click="openModal('general')"
@@ -61,7 +83,7 @@
           <BaseTooltip text="Profile" class="-top-9" />
           <ClientOnly>
             <Icon
-              name="ph:user-circle-duotone"
+              name="material-symbols:account-circle"
               class="w-6 h-6 dark:text-white text-neutral-800"
             />
           </ClientOnly>
@@ -88,6 +110,7 @@
 </template>
 
 <script setup>
+const $route = useRoute();
 const showModal = ref(false);
 
 const currentTabOpened = useState("settings", () => {
@@ -150,8 +173,11 @@ const showTab = computed(() => {
 </script>
 
 <style scoped>
-.router-link-active,
-.router-link-exact-active {
+.nav__link {
+  @apply flex items-center justify-center h-9 hover:bg-gray-200 dark:hover:bg-neutral-800/40 focus:outline-none focus:bg-gray-200 dark:focus:bg-neutral-800/40 relative rounded;
+}
+
+.active-link {
   @apply bg-gray-200 dark:bg-neutral-800/40 before:block before:absolute before:h-4 before:w-[3px] before:bg-emerald-700 before:left-0 before:rounded;
 }
 </style>

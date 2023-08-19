@@ -2,4 +2,8 @@
   <empty-state />
 </template>
 
-<script setup></script>
+<script setup lang="ts">
+useHead({
+  title: `Calls | WhatsApp`,
+});
+</script>

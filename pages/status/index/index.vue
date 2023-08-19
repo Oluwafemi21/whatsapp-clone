@@ -29,4 +29,8 @@
     </footer>
   </div>
 </template>
-<script setup></script>
+<script setup lang="ts">
+useHead({
+  title: `Status | WhatsApp`,
+});
+</script>

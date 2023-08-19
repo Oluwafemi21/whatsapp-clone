@@ -13,6 +13,7 @@ const queryParam = computed(() => $route.query.filter);
 const chatTypes = {
   unarchived: resolveComponent("ChatsUnarchivedChats"),
   archived: resolveComponent("ChatsArchivedChats"),
+  starred: resolveComponent("ChatsStarredChat"),
 };
 
 const activeChat = shallowRef();

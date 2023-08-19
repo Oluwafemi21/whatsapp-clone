@@ -2,7 +2,9 @@
   <div
     class="h-screen grid gap-5 place-content-center text-center justify-items-center w-full"
   >
-    <Icon name="logos:whatsapp-icon" class="w-20 h-20" />
+    <ClientOnly>
+      <Icon name="logos:whatsapp-icon" class="w-20 h-20" />
+    </ClientOnly>
     <h2 class="dark:text-white text-lg font-medium">Whatsapp Clone</h2>
     <p class="dark:text-white text-sm">
       This is a clone of the Whatsapp web app. It is built with
@@ -29,7 +31,6 @@
         Get Started</NuxtLink
       >
       <button
-        to="/auth/login"
         class="cursor-not-allowed dark:bg-neutral-800 dark:text-white font-medium px-5 py-2 rounded-full hover:bg-gray-200 dark:hover:bg-neutral-700 ring-1 ring-gray-400 dark:ring-gray-500"
         disabled
       >
