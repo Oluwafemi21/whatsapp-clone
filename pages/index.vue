@@ -30,12 +30,13 @@
       >
         Get Started</NuxtLink
       >
-      <button
-        class="cursor-not-allowed dark:bg-neutral-800 dark:text-white font-medium px-5 py-2 rounded-full hover:bg-gray-200 dark:hover:bg-neutral-700 ring-1 ring-gray-400 dark:ring-gray-500"
-        disabled
+      <NuxtLink
+        to="https://github.com/Oluwafemi21/whatsapp-clone"
+        target="_blank"
+        class="dark:bg-neutral-800 dark:text-white font-medium px-5 py-2 rounded-full hover:bg-gray-200 dark:hover:bg-neutral-700 ring-1 ring-gray-400 dark:ring-gray-500"
       >
         View on Github
-      </button>
+      </NuxtLink>
     </div>
   </div>
 </template>
