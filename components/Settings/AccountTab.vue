@@ -87,8 +87,6 @@
   </section>
 </template>
 
-<script setup>
-import { ref } from "vue";
-
+<script setup lang="ts">
 const showSecurityNotifications = ref(false);
 </script>

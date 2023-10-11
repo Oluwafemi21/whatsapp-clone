@@ -88,9 +88,7 @@
   </section>
 </template>
 
-<script setup>
-import { ref } from "vue";
-
+<script setup lang="ts">
 const showCalls = ref(true);
 const showMessagePreview = ref(true);
 const showMessages = ref(true);

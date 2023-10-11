@@ -4,7 +4,7 @@
       <input
         type="checkbox"
         class="sr-only peer"
-        :checked="checked"
+        :checked="isChecked"
         v-bind="$attrs"
         @change="onCheckedChange"
       />
@@ -13,7 +13,7 @@
       ></div>
     </label>
     <span class="text-sm dark:text-white capitalize">{{
-      checked ? "on" : "off"
+      isChecked ? "on" : "off"
     }}</span>
   </div>
 </template>
@@ -26,10 +26,16 @@ defineProps({
   },
 });
 
+const isChecked = ref(false);
+
 const emit = defineEmits(["update"]);
 
 const onCheckedChange = (e: Event) => {
   emit("update", (e.target as HTMLInputElement).checked);
+  // set the checked value to the value of the checkbox
+  isChecked.value = (e.target as HTMLInputElement).checked;
+  // eslint-disable-next-line no-console
+  console.log((e.target as HTMLInputElement).checked);
 };
 </script>
 
