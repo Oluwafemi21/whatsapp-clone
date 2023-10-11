@@ -23,11 +23,11 @@ const setActiveChat = () => {
     : chatTypes.unarchived;
 };
 
-watch($route, () => {
-  setActiveChat();
-});
-
-onMounted(() => {
-  setActiveChat();
-});
+watch(
+  $route,
+  () => {
+    setActiveChat();
+  },
+  { immediate: true },
+);
 </script>

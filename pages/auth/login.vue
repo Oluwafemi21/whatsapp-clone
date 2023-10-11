@@ -26,21 +26,28 @@
 </template>
 
 <script setup lang="ts">
-const config = useRuntimeConfig();
+// const config = useRuntimeConfig();
 const loggingIn = ref(false);
-const supabase = useSupabaseClient();
+// const supabase = useSupabaseClient();
 // get the url from the runtimeConfig in the nuxt.config.ts file
-const url = config.public.frontendUrl;
+// const url = config.public.frontendUrl;
 
-async function login() {
+// async function login() {
+//   loggingIn.value = true;
+//   await supabase.auth.signInWithOAuth({
+//     provider: "google",
+//     options: {
+//       redirectTo: `${url}/auth/confirm`,
+//     },
+//   });
+// }
+
+const login = () => {
   loggingIn.value = true;
-  await supabase.auth.signInWithOAuth({
-    provider: "google",
-    options: {
-      redirectTo: `${url}/auth/confirm`,
-    },
-  });
-}
+  setTimeout(() => {
+    navigateTo("/chat");
+  }, 1000);
+};
 </script>
 
 <style></style>

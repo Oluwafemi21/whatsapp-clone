@@ -40,5 +40,9 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup lang="ts">
+useHead({
+  title: "Whatsapp Clone",
+});
+</script>
 <style scoped></style>

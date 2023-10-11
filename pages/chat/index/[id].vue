@@ -161,7 +161,7 @@ const messages = ref([
     text_messages: [
       {
         id: "2392094fhbdh",
-        text: "Hey baddie",
+        text: "Hey",
         time: "10:06pm",
       },
       {
@@ -208,12 +208,12 @@ const messages = ref([
       },
       {
         id: "2392094fhbdh",
-        text: "Why are women like this?",
+        text: "Coding takes a lot of my time",
         time: "10:08pm",
       },
       {
         id: "2392094fhbdh",
-        text: "I'm good anyways, I was thinking about you while I was coding",
+        text: "I'm good anyways",
         time: "10:08pm",
       },
       {
@@ -234,23 +234,29 @@ const messages = ref([
       },
       {
         id: "2392094fhbdh",
-        text: "I'm good anyways, I was thinking about you too",
+        text: "I'm good too.",
         time: "10:08pm",
       },
       {
         id: "2392094fhbdh",
-        text: "Can I call you now baby?",
+        text: "Can I call you now?",
         time: "10:08pm",
       },
       {
         id: "2392095fhbdh",
-        text: "I know you have missed me",
+        text: "I want to tell you something",
         time: "10:09pm",
       },
+    ],
+  },
+  {
+    userId: "12d34e",
+    read: true,
+    text_messages: [
       {
-        id: "2392194fhbdh",
-        text: "I have missed you too",
-        time: "10:09pm",
+        id: "2392094fhbdh",
+        text: "Okay sure",
+        time: "10:10pm",
       },
     ],
   },
