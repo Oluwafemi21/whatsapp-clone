@@ -69,17 +69,15 @@
   </header>
 
   <section class="h-screen overflow-y-scroll scroll-p-0 snap-mandatory snap-y">
-    <Transition name="slide-top" mode="out-in">
-      <ul class="flex flex-col gap-2">
-        <li v-for="chat in chats" :key="chat.id">
-          <ChatsChatCard
-            :chat="chat"
-            :chat-route="'chat'"
-            :received-message="chat.recepient === 'user'"
-          />
-        </li>
-      </ul>
-    </Transition>
+    <ul class="flex flex-col gap-2">
+      <li v-for="chat in chats" :key="chat.id">
+        <ChatsChatCard
+          :chat="chat"
+          :chat-route="'chat'"
+          :received-message="chat.recepient === 'user'"
+        />
+      </li>
+    </ul>
   </section>
 </template>
 
