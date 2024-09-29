@@ -30,6 +30,7 @@
     "eslint-plugin-prettier": "^5.0.0",
     "nuxt-icon": "^0.3.2",
     "pinia": "^2.0.34",
+    "rollup": "^4.22.5",
     "typescript": "^5.1.6"
   },
   "overrides": {
