@@ -4,10 +4,9 @@ export default defineNuxtConfig({
     "@nuxtjs/tailwindcss",
     "nuxt-icon",
     "@vueuse/nuxt",
-    "@nuxtjs/supabase",
+    // "@nuxtjs/supabase",
     "@pinia/nuxt",
     "@nuxtjs/color-mode",
-    "@nuxtjs/eslint-module",
   ],
   css: ["@/assets/css/main.css"],
   app: {

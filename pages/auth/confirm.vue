@@ -1,15 +1,15 @@
 <script setup lang="ts">
-const user = useSupabaseUser();
+// const user = useSupabaseUser();
 
-watch(
-  user,
-  () => {
-    if (user.value) {
-      return navigateTo("/chat");
-    }
-  },
-  { immediate: true },
-);
+// watch(
+//   user,
+//   () => {
+//     if (user.value) {
+//       return navigateTo("/chat");
+//     }
+//   },
+//   { immediate: true },
+// );
 </script>
 <template>
   <section

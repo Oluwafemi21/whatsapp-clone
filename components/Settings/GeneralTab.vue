@@ -52,14 +52,15 @@
 </template>
 
 <script setup lang="ts">
-const supabase = useSupabaseClient();
+// const supabase = useSupabaseClient();
 const router = useRouter();
 
 const showWhatsappAtLogin = ref(false);
 
 async function logout() {
-  await supabase.auth.signOut().then(() => {
-    router.push("/auth/login");
-  });
+  // await supabase.auth.signOut().then(() => {
+  //   router.push("/auth/login");
+  // });
+  router.push("/auth/login");
 }
 </script>
