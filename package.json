@@ -26,6 +26,7 @@
     "@tailwindcss/forms": "^0.5.3",
     "@typescript-eslint/parser": "^6.3.0",
     "@vueuse/core": "^9.13.0",
+    "brace-expansion": "^5.0.6",
     "eslint-plugin-prettier": "^5.0.0",
     "flatted": "^3.4.2",
     "glob": "^10.5.0",
@@ -33,6 +34,7 @@
     "minimatch": "^10.2.2",
     "nuxt-icon": "^0.3.2",
     "pinia": "^2.0.34",
+    "postcss": "^8.5.10",
     "rollup": "^4.22.5",
     "typescript": "^5.1.6",
     "undici": "^6.27.0"
